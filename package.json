@@ -1,0 +1,16 @@
+{
+  "name": "roll20-scripts",
+  "version": "0.1.0",
+  "description": "Writh Roll20 Custom Content",
+  "main": "writh.js",
+  "dependencies": {
+    "uglify": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile": "npm run-script compile-js",
+    "compile-js": "uglifyjs -b -o writh.js scripts/*.js",
+  },
+  "author": "Kevin Kragenbrink <kevin@writh.net>",
+  "license": "ISC"
+}

@@ -1,0 +1,155 @@
+.sheet-type {
+    background: transparent;
+    width: 100%;
+    line-height: 0;
+}
+
+.sheet-type > div { display: none; }
+
+input#sheet-type-selector {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+input#sheet-type-selector + label {
+    width: 35px;
+    height: 21px;
+    border-radius: 15px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
+    background: transparent;
+    padding-right: 0;
+    text-indent: 40px;
+    font-family: sans-serif;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+input#sheet-type-selector + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 21px;
+    width: 35px;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    background: dimgrey;
+    -moz-transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+input#sheet-type-selector + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 16px;
+    width: 16px;
+    top: 2px;
+    left: 3px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2), 0 2px 4px rgba(0, 0, 0, .2);
+    -moz-transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+input#sheet-type-selector:checked + label:before {
+    width: 35px;
+    background: #58180D;
+}
+
+input#sheet-type-selector:checked + label:after {
+    left: 16px;
+    box-shadow: inset 0 0 0 1px rgba(43, 169, 220, .2), 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+input.sheet-type-npc:checked ~ div.sheet-type-npc,
+input.sheet-type-npc:not(:checked) ~ div.sheet-type-pc { display: block; }
+
+.sheet-type-npc {
+    position: relative;
+    width: 100%;
+    display-model: border-box;
+}
+
+.sheet-type-npc .sheet-wrapper {
+    background: #FDF1DC;
+    background: url(http://imgsrv.roll20.net/?src=i.imgur.com/hggz0ed.jpg) repeat;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 14px #888;
+    padding: 2mm;
+    min-height: 4cm;
+}
+
+.sheet-type-npc .sheet-wrapper:before { top: 0; }
+.sheet-type-npc .sheet-wrapper:after { bottom: 0; }
+.sheet-type-npc .sheet-wrapper:before, .sheet-type-npc .sheet-wrapper:after {
+    background: #E69A28;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    content: "";
+    height: 4px;
+    position: absolute;
+    width: 100%;
+    left: -3px;
+    padding: 0 3px;
+}
+
+.sheet-type-npc .sheet-wrapper input[type=text],
+.sheet-type-npc .sheet-wrapper select {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.sheet-type-npc .sheet-wrapper .sheet-name input {
+    font-family: 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    color: #58180D;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+}
+
+.sheet-type-npc .sheet-wrapper .sheet-title input {
+    color: #58180D;
+    font-family: 'Scaly Sans', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.sheet-auto-expand-wrap {
+    display: inline-block;
+    position: relative;
+}
+
+.sheet-auto-expand-wrap input,
+.sheet-auto-expand-wrap select,
+.sheet-auto-expand-wrap textarea {
+    left: 0;
+    position: absolute;
+    padding: 0;
+}
+
+.sheet-type select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.sheet-auto-expand-text {
+    display: block;
+    min-height: 1em;
+    min-width: .7rem;
+    padding: 0 1px;
+    visibility: hidden;
+    white-space: pre-line;
+}

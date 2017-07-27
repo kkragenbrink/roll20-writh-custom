@@ -1,0 +1,43 @@
+<div class="sheet-type">
+    <input id="sheet-type-selector" type="checkbox" name="attr_npc" class="sheet-type-npc" checked="checked"><label for="sheet-type-selector">NPC</label>
+
+    <div class="sheet-type-npc">
+        <div class="sheet-wrapper">
+            <div class="sheet-name"><input type="text" name="attr_name" placeholder="Name" /></div>
+            <div class="sheet-title"><input type="text" name="attr_title" placeholder="Title" /></div>
+            <div class="sheet-summary">
+                <span class="sheet-auto-expand-wrap">
+                    <select name="attr_size">
+                        <option>Tiny</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>Huge</option>
+                        <option>Gargantuan</option>
+                    </select>
+                    <span name="attr_size" class="sheet-auto-expand-text">@{size}</span>
+                </span>
+                <span class="sheet-auto-expand-wrap">
+                    <select name="attr_type">
+                        <option>Aberration</option>
+                        <option>Beast</option>
+                        <option>Celestial</option>
+                        <option>Construct</option>
+                        <option>Dragon</option>
+                        <option>Elemental</option>
+                        <option>Fey</option>
+                        <option>Fiend</option>
+                        <option>Giant</option>
+                        <option>Humanoid</option>
+                        <option>Monstrosity</option>
+                        <option>Ooze</option>
+                        <option>Plant</option>
+                        <option>Undead</option>
+                    </select>
+                    <span name="attr_type" class="sheet-auto-expand-text">@{type}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="sheet-type-pc">PC</div>
+</div>

@@ -8,7 +8,6 @@ function follow (evt, selectedId, targetId) {
 
 function getLeaderId (followerId) {
     const leaderId = _.findKey(state.writh.followers, (target) => target.includes(followerId));
-    debug(`leader for ${followerId}: ${leaderId}`);
     return leaderId;
 }
 
@@ -45,15 +44,11 @@ function moveFollower (followerId, targetId) {
     const theight = Math.floor(target.get('height'));
     const twidth = Math.floor(target.get('width'));
 
-    debug('target l:', tleft, ', t:', ttop, 'h:', theight, 'w:', twidth);
-
     const fheight = Math.floor(follower.get('height'));
     const fwidth = Math.floor(follower.get('width'));
 
     const fleft = tleft;
     const ftop = ttop;
-
-    debug('follower l:', fleft, ', t:', ftop, 'h:', fheight, 'w:', fwidth);
 
     follower.set('left', fleft);
     follower.set('top', ftop);

@@ -16,9 +16,9 @@ function setNPCTokenHP(token, represents) {
 		hp += randomInteger(+hitDieType) + hpmod;
 	}
 
-	setTimeout(() => token.set("bar1_link", null), 50);
-	setTimeout(() => token.set("bar1_value", hp), 50);
-	setTimeout(() => token.set("bar1_max", hp), 50);
+	setTimeout(() => token.set("bar1_link", null), 500);
+	setTimeout(() => token.set("bar1_value", hp), 500);
+	setTimeout(() => token.set("bar1_max", hp), 500);
 }
 
 function trackNPCToken(token, represents) {

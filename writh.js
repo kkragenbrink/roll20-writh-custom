@@ -13,7 +13,67 @@ function processCommand(evt) {
       case "!follow":
         follow(evt, ...args);
         break;
+
+      case "!debug":
+        debugTokenProperties(evt, ...args);
+        break;
+
+      case "!searchForTokenAnomalies":
+        searchForTokenAnomalies(evt, ...args);
+        break;
+
+      case "!cleanupTokenAnomalies":
+        cleanupTokenAnomalies(evt, ...args);
+        break;
     }
+}
+
+function debugTokenProperties(evt, selectedId) {
+    const tokens = getSelectedTokens(evt);
+    tokens.forEach(token => {
+        const represents = token.get("represents");
+        const name = token.get("name");
+        debug(`Token For ${name} (${represents})`);
+        const attributes = getAllSheetAttributes(represents);
+        attributes.forEach(attribute => {
+            const attrName = attribute.get("name");
+            debug(`  - ${attrName}`);
+        });
+    });
+}
+
+function searchForTokenAnomalies(evt, selectedId) {
+    const tokens = getSelectedTokens(evt);
+    tokens.forEach(token => {
+        const represents = token.get("represents");
+        const name = token.get("name");
+        debug(`Token For ${name} (${represents})`);
+        const attributes = getAllSheetAttributes(represents);
+        attributes.map(attribute => attribute.get("name")).filter(filterAnomalousAttributes).forEach(attribute => {
+            const attrObj = getSheetAttribute(represents, attribute);
+            const value = attrObj.get("current");
+            debug(`  - ${attribute}: ${value}`);
+        });
+    });
+}
+
+function cleanupTokenAnomalies(evt, selectedId) {
+    const tokens = getSelectedTokens(evt);
+    tokens.forEach(token => {
+        const represents = token.get("represents");
+        const name = token.get("name");
+        debug(`Token For ${name} (${represents})`);
+        const attributes = getAllSheetAttributes(represents);
+        attributes.map(attribute => attribute.get("name")).filter(filterAnomalousAttributes).forEach(attribute => {
+            const attrObj = getSheetAttribute(represents, attribute);
+            attrObj.remove();
+            debug(`  - removed: ${attribute}`);
+        });
+    });
+}
+
+function filterAnomalousAttributes(attribute) {
+    return /pb$/i.test(attribute) || /(.*?)_(bonus$|save_bonus$|mod$|mod_with_sign$|mod_formula$)/i.test(attribute);
 }
 
 on("add:graphic", obj => {
@@ -26,12 +86,11 @@ on("add:graphic", obj => {
 });
 
 on("change:graphic", (obj, prev) => {
-    if (hasObjectMoved(obj, prev) && hasFollowers(obj.id)) {
-        state.writh.followers[obj.id].forEach(follower => moveFollower(follower, obj.id));
-    }
-    if (isObjectToken(obj) && hasObjectMoved(obj, prev)) {
-        setTokenRotation(obj);
-    }
+    if (!isObjectToken(obj)) return;
+    if (!hasObjectMoved(obj, prev)) return;
+    setTokenRotation(obj);
+    if (isFollower(obj.id)) unfollowToken(obj.id);
+    if (hasFollowers(obj.id)) state.writh.followers[obj.id].forEach(follower => moveFollower(follower, obj.id));
 });
 
 on("chat:message", evt => {
@@ -123,6 +182,65 @@ class Move {
     }
 }
 
+function follow(evt, selectedId, targetId) {
+    if (selectedId === targetId) {
+        return unfollowToken(selectedId);
+    }
+    followToken(selectedId, targetId);
+}
+
+function getLeaderId(followerId) {
+    const leaderId = _.findKey(state.writh.followers, target => target.includes(followerId));
+    debug(`leader for ${followerId}: ${leaderId}`);
+    return leaderId;
+}
+
+function isFollower(followerId) {
+    const leaderId = getLeaderId(followerId);
+    return !!leaderId;
+}
+
+function hasFollowers(target) {
+    return Array.isArray(state.writh.followers[target]) && state.writh.followers[target].length > 0;
+}
+
+function followToken(followerId, targetId) {
+    state.writh.followers[targetId] = state.writh.followers[targetId] || [];
+    state.writh.followers[targetId].push(followerId);
+    moveFollower(followerId, targetId);
+    const selected = getTokenById(followerId);
+    const sname = selected.get("name");
+    const target = getTokenById(targetId);
+    const tname = target.get("name");
+    sendChat("System", `${sname} is now following ${tname}.`);
+}
+
+function moveFollower(followerId, targetId) {
+    const follower = getTokenById(followerId);
+    const target = getTokenById(targetId);
+    const tleft = Math.floor(target.get("left"));
+    const ttop = Math.floor(target.get("top"));
+    const theight = Math.floor(target.get("height"));
+    const twidth = Math.floor(target.get("width"));
+    debug("target l:", tleft, ", t:", ttop, "h:", theight, "w:", twidth);
+    const fheight = Math.floor(follower.get("height"));
+    const fwidth = Math.floor(follower.get("width"));
+    const fleft = tleft;
+    const ftop = ttop;
+    debug("follower l:", fleft, ", t:", ftop, "h:", fheight, "w:", fwidth);
+    follower.set("left", fleft);
+    follower.set("top", ftop);
+    follower.set("rotation", target.get("rotation"));
+}
+
+function unfollowToken(followerId) {
+    const target = getLeaderId(followerId);
+    state.writh.followers[target] = _.without(state.writh.followers[target], followerId);
+    const selected = getTokenById(followerId);
+    const sname = selected.get("name");
+    sendChat("System", `${sname} stops following others.`);
+}
+
 function setNPCTokenHP(token, represents) {
     const hpformulaAttr = getSheetAttribute(represents, "npc_hpformula");
     const conAttr = getSheetAttribute(represents, "npcd_con");
@@ -167,56 +285,6 @@ function setOrdinalTokenName(token, represents) {
         name = nameAttr.get("current");
     }
     token.set("name", ord + " " + name);
-}
-
-function follow(evt, selectedId, targetId) {
-    const selected = getTokenById(selectedId);
-    const sname = selected.get("name");
-    if (selectedId === targetId) {
-        unfollowToken(selectedId);
-        return sendChat(evt.who, `${sname} stops following others.`);
-    }
-    const target = getTokenById(targetId);
-    const tname = target.get("name");
-    followToken(selectedId, targetId);
-    sendChat(evt.who, `${sname} is now following ${tname}.`);
-}
-
-function hasFollowers(target) {
-    return Array.isArray(state.writh.followers[target]) && state.writh.followers[target].length > 0;
-}
-
-function followToken(follower, target) {
-    state.writh.followers[target] = state.writh.followers[target] || [];
-    state.writh.followers[target].push(follower);
-    moveFollower(follower, target);
-}
-
-function moveFollower(followerId, targetId) {
-    const follower = getTokenById(followerId);
-    const target = getTokenById(targetId);
-    const tleft = target.get("left");
-    const ttop = target.get("top");
-    const theight = target.get("height");
-    const twidth = target.get("width");
-    debug("target l:", tleft, ", t:", ttop, "h:", theight, "w:", twidth);
-    const center = {
-        left: tleft + twidth / 2,
-        top: ttop + theight / 2
-    };
-    debug("center l:", center.left, ", t:", center.top);
-    const fheight = follower.get("height");
-    const fwidth = follower.get("width");
-    const fleft = Math.floor(center.left - fwidth / 2);
-    const ftop = Math.floor(center.top - fheight / 2);
-    debug("follower l:", fleft, ", t:", ftop, "h:", fheight, "w:", fwidth);
-    follower.set("left", fleft);
-    follower.set("top", ftop);
-}
-
-function unfollowToken(follower) {
-    const target = _.findKey(state.writh.followers, target => target.includes(follower));
-    state.writh.followers[target] = _.without(state.writh.followers[target], follower);
 }
 
 function resize(evt, size) {
@@ -377,6 +445,7 @@ function getOrdinal(n) {
 }
 
 function getSelectedTokens(evt) {
+    if (!evt.selected) return [];
     return evt.selected.map(({_id: _id, _type: _type}) => {
         return getTokenById(_id, _type);
     });

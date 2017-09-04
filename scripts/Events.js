@@ -9,13 +9,13 @@ on('add:graphic', (obj) => {
 });
 
 on('change:graphic', (obj, prev) => {
-    if (hasObjectMoved(obj, prev) && hasFollowers(obj.id)) {
-        state.writh.followers[obj.id].forEach((follower) => moveFollower(follower, obj.id));
-    }
+    if (!isObjectToken(obj)) return;
+    if (!hasObjectMoved(obj, prev)) return;
 
-    if (isObjectToken(obj) && hasObjectMoved(obj, prev)) {
-        setTokenRotation(obj);
-    }
+    setTokenRotation(obj);
+
+    if (isFollower(obj.id)) unfollowToken(obj.id);
+    if (hasFollowers(obj.id)) state.writh.followers[obj.id].forEach((follower) => moveFollower(follower, obj.id));
 });
 
 on('chat:message', (evt) => {

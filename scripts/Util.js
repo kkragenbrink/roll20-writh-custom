@@ -54,6 +54,8 @@ function getOrdinal(n) {
 }
 
 function getSelectedTokens (evt) {
+    if (!evt.selected) return [];
+
     return evt.selected.map(({_id, _type}) => {
         return getTokenById(_id, _type);
     });

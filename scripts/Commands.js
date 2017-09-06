@@ -10,6 +10,7 @@ function processCommand(evt) {
         case '!debug': debugTokenProperties(evt, ...args); break;
         case '!searchForTokenAnomalies': searchForTokenAnomalies(evt, ...args); break;
         case '!cleanupTokenAnomalies': cleanupTokenAnomalies(evt, ...args); break;
+        case '!resetOrdinals': resetOrdinals(evt); break;
     }
 }
 

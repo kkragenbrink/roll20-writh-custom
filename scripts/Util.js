@@ -71,6 +71,15 @@ function getSheetAttribute(characterid, name) {
     })[0];
 }
 
+function getTokenName(token, represents) {
+    let name = token.get("name");
+    if (!name) {
+        const nameAttr = getSheetAttribute(represents, "npc_name");
+        name = nameAttr.get("current");
+    }
+    return name;
+}
+
 function modifier(attribute) {
     return Math.floor(attribute / 2) - 5;
 }

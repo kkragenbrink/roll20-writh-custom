@@ -3,19 +3,22 @@ rules:
     - 2
     - 4
     - SwitchCase: 1
-  quotes:
-    - 2
-    - single
   linebreak-style:
     - 2
     - unix
+  no-unused-vars:
+    - 0
+  prettier/prettier: error
+  quotes:
+    - 2
+    - single
   semi:
     - 2
     - always
-  no-unused-vars:
-    - 0
 env:
   es6: true
   node: true
   mocha: true
-extends: 'eslint:recommended'
+extends: 'eslint:recommended,prettier'
+plugins:
+  - prettier

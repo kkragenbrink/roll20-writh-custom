@@ -6,10 +6,19 @@
   "dependencies": {
     "uglify-es": "^3.0.28"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-prettier": "^2.5.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
+    "prettier": "^1.7.0"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
   "scripts": {
     "compile": "npm run-script compile-js",
-    "compile-js": "uglifyjs -b -o writh.js scripts/*.js"
+    "compile-js": "uglifyjs -b -o writh.js scripts/*.js",
+    "precommit": "lint-staged"
   },
   "author": "Kevin Kragenbrink <kevin@writh.net>",
   "license": "ISC"

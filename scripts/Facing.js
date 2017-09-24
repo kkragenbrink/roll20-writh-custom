@@ -1,5 +1,5 @@
 const BIAS = 45;
-const ROTATIONS = [ 0, 45, 90, 135, 180, 225, 270, 315 ];
+const ROTATIONS = [0, 45, 90, 135, 180, 225, 270, 315];
 const SNAP_TO_GRID = false;
 
 function calculateRotation(from, to) {
@@ -31,32 +31,36 @@ function closestRotation(angle) {
 }
 
 function hasObjectMoved(obj, prev) {
-    return obj.get("left") != prev["left"] || obj.get("top") != prev["top"];
+    return obj.get('left') != prev['left'] || obj.get('top') != prev['top'];
 }
 
 function parseMoves(moves) {
-    moves = moves.split(",").reverse();
+    moves = moves.split(',').reverse();
     let length = moves.length;
     const parsed = [];
     while (length) {
-        parsed.push(new Move({
-            left: Math.floor(moves[--length]),
-            top: Math.floor(moves[--length])
-        }));
+        parsed.push(
+            new Move({
+                left: Math.floor(moves[--length]),
+                top: Math.floor(moves[--length])
+            })
+        );
     }
     return parsed;
 }
 
-function setTokenRotation (obj) {
-    const moveList = parseMoves(obj.get("lastmove"));
-    moveList.push(new Move({
-        left: Math.ceil(obj.get("left")),
-        top: Math.ceil(obj.get("top"))
-    }));
+function setTokenRotation(obj) {
+    const moveList = parseMoves(obj.get('lastmove'));
+    moveList.push(
+        new Move({
+            left: Math.ceil(obj.get('left')),
+            top: Math.ceil(obj.get('top'))
+        })
+    );
     let moves = moveList.length;
     const to = moveList[--moves];
     const from = moveList[--moves];
-    obj.set("rotation", calculateRotation(from, to));
+    obj.set('rotation', calculateRotation(from, to));
 }
 
 class Move {

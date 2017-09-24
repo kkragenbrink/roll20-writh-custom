@@ -1,4 +1,4 @@
-function follow (evt, selectedId, targetId) {
+function follow(evt, selectedId, targetId) {
     if (selectedId === targetId) {
         return unfollowToken(selectedId);
     }
@@ -6,21 +6,26 @@ function follow (evt, selectedId, targetId) {
     followToken(selectedId, targetId);
 }
 
-function getLeaderId (followerId) {
-    const leaderId = _.findKey(state.writh.followers, (target) => target.includes(followerId));
+function getLeaderId(followerId) {
+    const leaderId = _.findKey(state.writh.followers, target =>
+        target.includes(followerId)
+    );
     return leaderId;
 }
 
-function isFollower (followerId) {
+function isFollower(followerId) {
     const leaderId = getLeaderId(followerId);
     return !!leaderId;
 }
 
-function hasFollowers (target) {
-    return Array.isArray(state.writh.followers[target]) && state.writh.followers[target].length > 0;
+function hasFollowers(target) {
+    return (
+        Array.isArray(state.writh.followers[target]) &&
+        state.writh.followers[target].length > 0
+    );
 }
 
-function followToken (followerId, targetId) {
+function followToken(followerId, targetId) {
     state.writh.followers[targetId] = state.writh.followers[targetId] || [];
     state.writh.followers[targetId].push(followerId);
 
@@ -35,7 +40,7 @@ function followToken (followerId, targetId) {
     sendChat('System', `${sname} is now following ${tname}.`);
 }
 
-function moveFollower (followerId, targetId) {
+function moveFollower(followerId, targetId) {
     const follower = getTokenById(followerId);
     const target = getTokenById(targetId);
 
@@ -55,9 +60,12 @@ function moveFollower (followerId, targetId) {
     follower.set('rotation', target.get('rotation'));
 }
 
-function unfollowToken (followerId) {
+function unfollowToken(followerId) {
     const target = getLeaderId(followerId);
-    state.writh.followers[target] = _.without(state.writh.followers[target], followerId);
+    state.writh.followers[target] = _.without(
+        state.writh.followers[target],
+        followerId
+    );
 
     const selected = getTokenById(followerId);
     const sname = selected.get('name');

@@ -11,12 +11,12 @@
 const THPBAR = 3;
 const HPBAR = 1;
 
-function setBar (obj, bar, value) {
+function setBar(obj, bar, value) {
     const link = obj.get('_bar' + bar + '_link');
 
     if (link !== '') {
-        const attr = findObjs({_type : 'attribute', _id : link})[0];
-        attr.set({'current' : value});
+        const attr = findObjs({_type: 'attribute', _id: link})[0];
+        attr.set({current: value});
     }
     obj.set('bar' + bar + '_value', value);
 }
@@ -40,8 +40,9 @@ on('change:token', (obj, prev) => {
         if (hp.change < 0) {
             // HP decreased
             hp.abschange = Math.abs(hp.change);
-            target[THPVALUE] = (thp > hp.abschange) ? thp - hp.abschange : 0;
-            target[HPVALUE] = (thp > hp.abschange) ? hp.old : hp.old - (hp.abschange - thp);
+            target[THPVALUE] = thp > hp.abschange ? thp - hp.abschange : 0;
+            target[HPVALUE] =
+                thp > hp.abschange ? hp.old : hp.old - (hp.abschange - thp);
 
             setBar(obj, HPBAR, target[HPVALUE]);
             setBar(obj, THPBAR, target[THPVALUE]);

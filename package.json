@@ -1,30 +1,29 @@
 {
-    "name": "roll20-scripts",
-    "version": "0.1.0",
-    "description": "Writh Roll20 Custom Content",
-    "main": "writh.js",
-    "dependencies": {},
-    "devDependencies": {
-        "eslint-config-prettier": "^2.5.0",
-        "flow-bin": "^0.55.0",
-        "husky": "^0.14.3",
-        "lint-staged": "^4.2.2",
-        "prettier": "^1.7.0",
-        "uglify-es": "^3.0.28"
-    },
-    "lint-staged": {
-        "*.js": [
-            "npm run-script compile",
-            "npm run-script prettier",
-            "git add"
-        ]
-    },
-    "scripts": {
-        "compile": "npm run-script compile-js",
-        "compile-js": "uglifyjs -b -o writh.js scripts/*.js",
-        "precommit": "lint-staged",
-        "prettier": "prettier --parser flow --write --tab-width 4 --single-quote --no-bracket-spacing"
-    },
-    "author": "Kevin Kragenbrink <kevin@writh.net>",
-    "license": "ISC"
+  "name": "roll20-scripts",
+  "version": "0.1.0",
+  "description": "Writh Roll20 Custom Content",
+  "main": "writh.js",
+  "devDependencies": {
+    "bluebird": "^3.5.0",
+    "eslint-config-prettier": "^2.5.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
+    "prettier": "^1.7.0",
+    "uglify-es": "^3.0.28"
+  },
+  "lint-staged": {
+    "*.(js|scss)": [
+      "prettier --parser flow --write --tab-width 4 --single-quote --no-bracket-spacing",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "compile": "node bin/compile.js",
+    "precommit": "lint-staged && npm run-script compile"
+  },
+  "author": "Kevin Kragenbrink <kevin@writh.net>",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  }
 }

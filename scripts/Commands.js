@@ -1,3 +1,5 @@
+// @flow
+
 function processCommand(evt) {
     const [command, ...args] = evt.content.split(' ');
 
@@ -28,7 +30,7 @@ function processCommand(evt) {
     }
 }
 
-function debugTokenProperties(evt, selectedId) {
+function debugTokenProperties(evt, selectedId: String) {
     const tokens = getSelectedTokens(evt);
     tokens.forEach(token => {
         const represents = token.get('represents');

@@ -35,7 +35,7 @@ async function renderSassFile (file) {
 
 async function renderJSFile (file) {
     const input = await fs.readFileAsync(`./scripts/${file}`);
-    const output = Uglify.minify(input.toString());
+    const output = Uglify.minify(input.toString(), {compress:false, mangle:false});
 
     // if (output.error) throw output.error;
     return output.code || '';

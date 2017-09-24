@@ -897,12 +897,12 @@
             <input type="radio" class="toggle-right" name="attr_advantagetoggle" value="{{query=1}} {{disadvantage=1}} {{r2=[[1d20"><span data-i18n="disadv-u">DISADVANTAGE</span>
         </div>
 
+        <input class="tab-button options" type="radio" name="attr_tab" value="options"><span style="font-family: pictos">y</span>
+        <input class="tab-button core" type="radio" name="attr_tab" value="core" checked="checked"><span data-i18n="core-u">CORE</span>
+        <input class="tab-button bio" type="radio" name="attr_tab" value="bio"><span data-i18n="bio-u">BIO</span>
+        <input class="tab-button notes" type="radio" name="attr_tab" value="notes""><span data-i18n="notes-u">NOTES</span>
         <input class="spells_toggle" name="attr_spells_toggle" type="hidden" value="0">
-
-        <div class="tab-button-container"><input class="tab-button core" type="radio" name="attr_tab" value="core" checked="checked"><span data-i18n="core-u">CORE</span></div>
-        <div class="tab-button-container"><input class="tab-button bio" type="radio" name="attr_tab" value="bio"><span data-i18n="bio-u">BIO</span></div>
-        <div class="tab-button-container"><input class="tab-button spells" type="radio" name="attr_tab" value="spells"><span data-i18n="spells-u">SPELLS</span></div>
-        <div class="tab-button-container"><input class="tab-button options" type="radio" name="attr_tab" value="options"><span style="font-family: pictos">y</span></div>
+        <input class="tab-button spells" type="radio" name="attr_tab" value="spells"><span data-i18n="spells-u">SPELLS</span>
 
         <div class="page core">
             <div class="header">
@@ -1658,6 +1658,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="page notes"></div>
 
         <div class="page spells">
             <div class="header">

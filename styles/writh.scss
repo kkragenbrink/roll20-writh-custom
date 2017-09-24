@@ -21,8 +21,8 @@
 
 input[type=radio].sheet-tab-button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 92px;
+    right: 479px;
     opacity: 0;
     width: 18px;
     height: 18px;
@@ -31,8 +31,8 @@ input[type=radio].sheet-tab-button {
 
 input[type=radio].sheet-tab-button + span {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 92px;
+    right: 479px;
     width: 17px;
     height: 17px;
     border: 1px solid black;
@@ -103,6 +103,7 @@ input[type=radio].sheet-tab-button:checked + span {
 
 input[type=radio].sheet-tab-button.sheet-core:checked ~ .sheet-page.sheet-core,
 input[type=radio].sheet-tab-button.sheet-bio:checked ~ .sheet-page.sheet-bio,
+input[type=radio].sheet-tab-button.sheet-notes:checked ~ .sheet-page.sheet-notes,
 input[type=radio].sheet-tab-button.sheet-spells:checked ~ .sheet-page.sheet-spells,
 input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-options
 {
@@ -114,19 +115,25 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 
 input[type=radio].sheet-tab-button.sheet-core,
 input[type=radio].sheet-tab-button.sheet-core + span {
-    right: 116px;
+    right: 430px;
     width: 45px;
 }
 
 input[type=radio].sheet-tab-button.sheet-bio,
 input[type=radio].sheet-tab-button.sheet-bio + span {
-    right: 83px;
+    right: 395px;
     width: 30px;
+}
+
+input[type=radio].sheet-tab-button.sheet-notes,
+input[type=radio].sheet-tab-button.sheet-notes + span {
+    right: 340px;
+    width: 50px;
 }
 
 input[type=radio].sheet-tab-button.sheet-spells,
 input[type=radio].sheet-tab-button.sheet-spells + span {
-    right: 20px;
+    right: 0;
     width: 60px;
 }
 
@@ -246,7 +253,7 @@ input[type=radio].sheet-tab-button.sheet-spells + span {
 
 .sheet-body {
     width: 750px;
-    margin-top: 21px;
+    margin-top: 30px;
 }
 
 .sheet-col {
@@ -413,7 +420,7 @@ button[type=roll] * {
 }
 
 .sheet-insp-prof-container .sheet-label {
-    width: 137px;
+    width: 136px;
     height: 30px;
     margin-left: -15px;
     margin-top: 3px;

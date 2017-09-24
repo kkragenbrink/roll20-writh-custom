@@ -1,0 +1,884 @@
+<div class="container npc" style="width: 350px;">
+    <input class="npc_options-flag" type="checkbox" name="attr_npc_options-flag" checked="checked"><span>y</span>
+    <div class="npc_options compendium-drop-target monsters">
+        <div class="row title">
+            <span data-i18n="npc-options-u">NPC OPTIONS</span>
+        </div>
+        <div class="row">
+            <span data-i18n="name-u">NAME</span>
+            <input type="text" name="attr_npc_name" accept="Name">
+        </div>
+        <div class="row">
+            <span data-i18n="npc-type-u">NPC TYPE</span>
+            <input type="text" name="attr_npc_type" placeholder="Medium fiend, any evil alignment" data-i18n-placeholder="npc-type-place">
+        </div>
+        <div class="row">
+            <span data-i18n="armor-class-u">ARMOR CLASS</span>
+            <input class="num" type="text" name="attr_npc_ac" placeholder="10">
+            <span data-i18n="type-u">TYPE</span>
+            <input type="text" name="attr_npc_actype" placeholder="scale mail" data-i18n-placeholder="npc-armor-place">
+        </div>
+        <div class="row">
+            <span data-i18n="hit-points-u">HIT POINTS</span>
+            <input class="num" type="text" name="attr_hp_max" placeholder="82">
+            <span data-i18n="formula-u">FORMULA</span>
+            <input type="text" name="attr_npc_hpformula" placeholder="11d8 + 33">
+        </div>
+        <div class="row">
+            <span data-i18n="speed-u">SPEED</span>
+            <input type="text" name="attr_npc_speed" placeholder="30 ft., fly 60ft." accept="Speed" data-i18n-placeholder="npc-speed-place">
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <span data-i18n="attributes-u">ATTRIBUTES</span>
+        </div>
+        <div class="row">
+            <span data-i18n="str-u">STR</span>
+            <input class="num" type="text" name="attr_strength" value="10" accept="STR">
+            <span data-i18n="dex-u">DEX</span>
+            <input class="num" type="text" name="attr_dexterity" value="10" accept="DEX">
+            <span data-i18n="con-u">CON</span>
+            <input class="num" type="text" name="attr_constitution" value="10" accept="CON">
+            <span data-i18n="int-u">INT</span>
+            <input class="num" type="text" name="attr_intelligence" value="10" accept="INT">
+            <span data-i18n="wis-u">WIS</span>
+            <input class="num" type="text" name="attr_wisdom" value="10" accept="WIS">
+            <span data-i18n="cha-u">CHA</span>
+            <input class="num" type="text" name="attr_charisma" value="10" accept="CHA">
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <span data-i18n="saves-u">SAVES</span>
+        </div>
+        <div class="row">
+            <span data-i18n="str-u">STR</span>
+            <input class="num" type="text" name="attr_npc_str_save" placeholder="0">
+            <span data-i18n="dex-u">DEX</span>
+            <input class="num" type="text" name="attr_npc_dex_save" placeholder="0">
+            <span data-i18n="con-u">CON</span>
+            <input class="num" type="text" name="attr_npc_con_save" placeholder="0">
+            <span data-i18n="int-u">INT</span>
+            <input class="num" type="text" name="attr_npc_int_save" placeholder="0">
+            <span data-i18n="wis-u">WIS</span>
+            <input class="num" type="text" name="attr_npc_wis_save" placeholder="0">
+            <span data-i18n="cha-u">CHA</span>
+            <input class="num" type="text" name="attr_npc_cha_save" placeholder="0">
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <span data-i18n="skills-u">SKILLS</span>
+        </div>
+        <div class="row skills-list" data-i18n-list="skills-list">
+            <div class="col">
+                <div class="row" data-i18n-list-item="acrobatics">
+                    <span data-i18n="acrobatics-u">ACROBATICS</span>
+                    <input class="num" type="text" name="attr_npc_acrobatics" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="animal-handling">
+                    <span data-i18n="animal-handling-u">ANIMAL HANDLING</span>
+                    <input class="num" type="text" name="attr_npc_animal_handling" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="arcana">
+                    <span data-i18n="arcana-u">ARCANA</span>
+                    <input class="num" type="text" name="attr_npc_arcana" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="athletics">
+                    <span data-i18n="athletics-u">ATHLETICS</span>
+                    <input class="num" type="text" name="attr_npc_athletics" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="deception">
+                    <span data-i18n="deception-u">DECEPTION</span>
+                    <input class="num" type="text" name="attr_npc_deception" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="history">
+                    <span data-i18n="history-u">HISTORY</span>
+                    <input class="num" type="text" name="attr_npc_history" placeholder="0">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" data-i18n-list-item="insight">
+                    <span data-i18n="insight-u">INSIGHT</span>
+                    <input class="num" type="text" name="attr_npc_insight" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="intimidation">
+                    <span data-i18n="intimidation-u">INTIMIDATION</span>
+                    <input class="num" type="text" name="attr_npc_intimidation" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="investigation">
+                    <span data-i18n="investigation-u">INVESTIGATION</span>
+                    <input class="num" type="text" name="attr_npc_investigation" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="medicine">
+                    <span data-i18n="medicine-u">MEDICINE</span>
+                    <input class="num" type="text" name="attr_npc_medicine" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="nature">
+                    <span data-i18n="nature-u">NATURE</span>
+                    <input class="num" type="text" name="attr_npc_nature" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="perception">
+                    <span data-i18n="perception-u">PERCEPTION</span>
+                    <input class="num" type="text" name="attr_npc_perception" placeholder="0">
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" data-i18n-list-item="performance">
+                    <span data-i18n="performance-u">PERFORMANCE</span>
+                    <input class="num" type="text" name="attr_npc_performance" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="persuasion">
+                    <span data-i18n="persuasion-u">PERSUASION</span>
+                    <input class="num" type="text" name="attr_npc_persuasion" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="religion">
+                    <span data-i18n="religion-u">RELIGION</span>
+                    <input class="num" type="text" name="attr_npc_religion" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="sleight-of-hand">
+                    <span data-i18n="sleight-of-hand-u">SLEIGHT OF HAND</span>
+                    <input class="num" type="text" name="attr_npc_sleight_of_hand" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="stealth">
+                    <span data-i18n="stealth-u">STEALTH</span>
+                    <input class="num" type="text" name="attr_npc_stealth" placeholder="0">
+                </div>
+                <div class="row" data-i18n-list-item="survival">
+                    <span data-i18n="survival-u">SURVIVAL</span>
+                    <input class="num" type="text" name="attr_npc_survival" placeholder="0">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <span data-i18n="damage-vuln-u">DAMAGE VULNERABILITIES</span>
+            <input type="text" name="attr_npc_vulnerabilities" placeholder="fire" accept="Vulnerabilities" data-i18n-placeholder="npc-dmg-vuln-place">
+        </div>
+        <div class="row">
+            <span data-i18n="damage-res-u">DAMAGE RESISTANCES</span>
+            <input type="text" name="attr_npc_resistances" placeholder="cold" accept="Resistances" data-i18n-placeholder="npc-dmg-res-place">
+        </div>
+        <div class="row">
+            <span data-i18n="damage-imm-u">DAMAGE IMMUNITIES</span>
+            <input type="text" name="attr_npc_immunities" placeholder="lighting, thunder" accept="Immunities" data-i18n-placeholder="npc-dmg-imm-place">
+        </div>
+        <div class="row">
+            <span data-i18n="cond-imm-u">CONDITION IMMUNITIES</span>
+            <input type="text" name="attr_npc_condition_immunities" placeholder="charmed" accept="Condition Immunities" data-i18n-placeholder="npc-cond-imm-place">
+        </div>
+        <div class="row">
+            <span data-i18n="senses-u">SENSES</span>
+            <input type="text" name="attr_npc_senses" placeholder="darkvision 120ft., passive Perception 16" data-i18n-placeholder="npc-senses-place">
+        </div>
+        <div class="row">
+            <span data-i18n="langs-u">LANGUAGES</span>
+            <input type="text" name="attr_npc_languages" placeholder="Abyssal, Common, Infernal" accept="Languages" data-i18n-placeholder="npc-langs-place">
+        </div>
+        <div class="row">
+            <span data-i18n="challenge-u">CHALLENGE</span>
+            <input class="num" type="text" name="attr_npc_challenge" placeholder="1" accept="Challenge Rating">
+            <span data-i18n="xp-u">XP</span>
+            <input type="text" name="attr_npc_xp" placeholder="250">
+        </div>
+        <div class="row">
+            <input class="npcspellcastingflag" type="checkbox" name="attr_npcspellcastingflag" value="1">
+            <span data-i18n="spellcast-npc-u">SPELLCASTING NPC</span>
+            <div class="npcspelloptions">
+                <span data-i18n="spell-ability-u">SPELLCASTING ABILITY</span>
+                <select name="attr_spellcasting_ability" style="margin: 0px; width: auto; padding: 0px; height: 15px;">
+                    <option value="0*" data-i18n="none-u">NONE</option>
+                    <option value="@{strength_mod}+" data-i18n="strength-u">STRENGTH</option>
+                    <option value="@{dexterity_mod}+" data-i18n="dexterity-u">DEXTERITY</option>
+                    <option value="@{constitution_mod}+" data-i18n="constitution-u">CONSTITUTION</option>
+                    <option value="@{intelligence_mod}+" data-i18n="intelligence-u">INTELLIGENCE</option>
+                    <option value="@{wisdom_mod}+" data-i18n="wisdom-u">WISDOM</option>
+                    <option value="@{charisma_mod}+" data-i18n="charisma-u">CHARISMA</option>
+                </select>
+            </div>
+            <div class="npcspelloptions">
+                <span data-i18n="spell-dc-u">SPELL DC</span>
+                <input class="num" type="text" name="attr_npc_spelldc" placeholder="10">
+                <span data-i18n="spell-atk-bonus-u">SPELL ATTACK BONUS</span>
+                <input class="num" type="text" name="attr_npc_spellattackmod" placeholder="3">
+            </div>
+        </div>
+        <div class="row">
+            <input type="checkbox" name="attr_npcreactionsflag" value="1">
+            <span data-i18n="has-reaction-u">HAS REACTIONS</span>
+        </div>
+        <div class="row">
+            <span data-i18n="leg-actions:-u">LEGENDARY ACTIONS:</span>
+            <input class="num" type="text" name="attr_npc_legendary_actions" placeholder="0">
+        </div>
+        <input type="hidden" name="attr_npc_sizebase" accept="Size">
+        <input type="hidden" name="attr_npc_typebase" accept="Type">
+        <input type="hidden" name="attr_npc_alignmentbase" accept="Alignment">
+        <input type="hidden" name="attr_npc_acbase" accept="AC">
+        <input type="hidden" name="attr_npc_hpbase" accept="HP">
+        <input type="hidden" name="attr_npc_savingthrowsbase" accept="Saving Throws">
+        <input type="hidden" name="attr_npc_sensesbase" accept="Senses">
+        <input type="hidden" name="attr_npc_passiveperceptionbase" accept="Passive Perception">
+        <input type="hidden" name="attr_npc_skillsbase" accept="Skills">
+        <input type="hidden" name="attr_npc_content" accept="Content">
+        <input type="hidden" name="attr_token_size" accept="Token Size">
+        <div class="row title">
+            <span data-i18n="gen-opts-u">GENERAL OPTIONS</span>
+        </div>
+        <div class="row">
+            <input type="checkbox" name="attr_npc" value="1">
+            <span data-i18n="npc-u">NPC</span>
+        </div>
+        <div class="row">
+            <span data-i18n="roll-queries:-u">ROLL QUERIES:</span>
+            <select name="attr_rtype">
+                <option selected="selected" value="{{query=1}} ?{Advantage?|Normal Roll,&#123&#123normal=1&#125&#125 &#123&#123r2=[[0d20|Advantage,&#123&#123advantage=1&#125&#125 &#123&#123r2=[[1d20|Disadvantage,&#123&#123disadvantage=1&#125&#125 &#123&#123r2=[[1d20}" data-i18n="query-adv">Query Advantage</option>
+                <option value="{{always=1}} {{r2=[[1d20" data-i18n="always-adv">Always Roll Advantage</option>
+                <option value="@{advantagetoggle}" data-i18n="adv-toggle">Advantage Toggle</option>
+                <option value="{{normal=1}} {{r2=[[0d20" data-i18n="never-adv">Never Roll Advantage</option>
+            </select>
+        </div>
+        <div class="row">
+            <span data-i18n="whisp-rolls-gm:-u">WHISPER ROLLS TO GM:</span>
+            <select name="attr_wtype">
+                <option value=""  data-i18n="never-whisp">Never Whisper Rolls</option>
+                <option value="?{Whisper?|Public Roll,|Whisper Roll,/w gm }" data-i18n="query-whisp">Query Whisper</option>
+                <option value="/w gm " data-i18n="always-whisp">Always Whisper Rolls</option>
+            </select>
+        </div>
+        <div class="row">
+            <span data-i18n="auto-dmg-roll:-u">AUTO DAMAGE ROLL:</span>
+            <select class="dtype" name="attr_dtype">
+                <option selected="selected" value="full" data-i18n="always-dmg">Auto Roll Damage & Crit</option>
+                <option value="pick" data-i18n="never-dmg">Don't Auto Roll Damage</option>
+            </select>
+        </div>
+    </div>
+    <div class="display">
+        <div class="row title red">
+            <button type="roll" name="roll_npc_init" style="width: 100%;" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{init}}} {{mod=[[[[@{dexterity_mod}]][DEX]]]}} {{r1=[[1d20+[[@{dexterity_mod}]][DEX] &{tracker}]]}} {{normal=1}}">
+                <input type="text" name="attr_npcd_name" style="text-align: left; margin-left: -4px;">
+            </button>
+        </div>
+        <div class="row subtitle">
+            <input class="italics" type="text" name="attr_npcd_type">
+        </div>
+        <div class="triangle"></div>
+        <div class="row red">
+            <span data-i18n="ac">Armor Class</span>
+            <input class="num" type="text" name="attr_npcd_ac">
+            <input class="parens" type="text" name="attr_npcd_actype">
+        </div>
+        <div class="row red">
+            <span data-i18n="hp">Hit Points</span>
+            <input class="num3" type="text" name="attr_npcd_hp">
+            <button type="roll" name="roll_npc_hpformula" value="@{wtype}&{template:npc} {{normal=1}} {{name=@{npc_name}}} {{rname=^{hp}}} {{mod=@{npc_hpformula}}} {{r1=[[@{npc_hpformula}]]}} charname=@{character_name}">
+                <input class="parens" type="text" name="attr_npcd_hpformula" style="width: 200px; text-align: left;">
+            </button>
+        </div>
+        <div class="row red">
+            <span data-i18n="speed">Speed</span>
+            <input type="text" name="attr_npcd_speed">
+        </div>
+        <div class="triangle"></div>
+        <div class="row red">
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_str" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{strength}}} {{mod=[[[[@{strength_mod}]][STR]]]}} {{r1=[[1d20+[[@{strength_mod}]][STR]]]}} @{rtype}+[[@{strength_mod}]][STR]]]}}">
+                    <span data-i18n="str-u">STR</span>
+                    <input type="text" name="attr_npcd_str">
+                    <input type="text" name="attr_npcd_str_mod">
+                </button>
+            </div>
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_dex" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{dexterity}}} {{mod=[[[[@{dexterity_mod}]][DEX]]]}} {{r1=[[1d20+[[@{dexterity_mod}]][DEX]]]}} @{rtype}+[[@{dexterity_mod}]][DEX]]]}}">
+                    <span data-i18n="dex-u">DEX</span>
+                    <input type="text" name="attr_npcd_dex">
+                    <input type="text" name="attr_npcd_dex_mod">
+                </button>
+            </div>
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_con" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{constitution}}} {{mod=[[[[@{constitution_mod}]][CON]]]}} {{r1=[[1d20+[[@{constitution_mod}]][CON]]]}} @{rtype}+[[@{constitution_mod}]][CON]]]}}">
+                    <span data-i18n="con-u">CON</span>
+                    <input type="text" name="attr_npcd_con">
+                    <input type="text" name="attr_npcd_con_mod">
+                </button>
+            </div>
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_int" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{intelligence}}} {{mod=[[[[@{intelligence_mod}]][INT]]]}} {{r1=[[1d20+[[@{intelligence_mod}]][INT]]]}} @{rtype}+[[@{intelligence_mod}]][INT]]]}}">
+                    <span data-i18n="int-u">INT</span>
+                    <input type="text" name="attr_npcd_int">
+                    <input type="text" name="attr_npcd_int_mod">
+                </button>
+            </div>
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_wis" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{wisdom}}} {{mod=[[[[@{wisdom_mod}]][WIS]]]}} {{r1=[[1d20+[[@{wisdom_mod}]][WIS]]]}} @{rtype}+[[@{wisdom_mod}]][WIS]]]}}">
+                    <span data-i18n="wis-u">WIS</span>
+                    <input type="text" name="attr_npcd_wis">
+                    <input type="text" name="attr_npcd_wis_mod">
+                </button>
+            </div>
+            <div class="attr-container">
+                <button type="roll" name="roll_npc_cha" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{charisma}}} {{mod=[[[[@{charisma_mod}]][CHA]]]}} {{r1=[[1d20+[[@{charisma_mod}]][CHA]]]}} @{rtype}+[[@{charisma_mod}]][CHA]]]}}">
+                    <span data-i18n="cha-u">CHA</span>
+                    <input type="text" name="attr_npcd_cha">
+                    <input type="text" name="attr_npcd_cha_mod">
+                </button>
+            </div>
+        </div>
+        <div class="triangle"></div>
+        <input class="flag" type="hidden" name="attr_npc_saving_flag" value="0">
+        <div class="row saving red">
+            <span data-i18n="saving-throw">Saving Throws</span>
+            <input class="flag" type="hidden" name="attr_npc_str_save_flag" value="0">
+            <button type="roll" name="roll_npc_str_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{strength-save}}} {{mod=[[[[@{npc_str_save}]][STR SAVE]]]}} {{r1=[[1d20+[[@{npc_str_save}]][STR SAVE]]]}} @{rtype}+[[@{npc_str_save}]][STR SAVE]]]}}">
+                <span data-i18n="str+">Str +</span>
+                <input type="text" name="attr_npcd_str_save">
+            </button>
+            <input class="flag" type="hidden" name="attr_npc_dex_save_flag" value="0">
+            <button type="roll" name="roll_npc_dex_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{dexterity-save}}} {{mod=[[[[@{npc_dex_save}]][DEX SAVE]]]}} {{r1=[[1d20+[[@{npc_dex_save}]][DEX SAVE]]]}} @{rtype}+[[@{npc_dex_save}]][DEX SAVE]]]}}">
+                <span class="spacer">, </span>
+                <span data-i18n="dex+">Dex +</span>
+                <input type="text" name="attr_npcd_dex_save">
+            </button>
+            <input class="flag" type="hidden" name="attr_npc_con_save_flag" value="0">
+            <button type="roll" name="roll_npc_con_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{constitution-save}}} {{mod=[[[[@{npc_con_save}]][CON SAVE]]]}} {{r1=[[1d20+[[@{npc_con_save}]][CON SAVE]]]}} @{rtype}+[[@{npc_con_save}]][CON SAVE]]]}}">
+                <span class="spacer">, </span>
+                <span data-i18n="con+">Con +</span>
+                <input type="text" name="attr_npcd_con_save">
+            </button>
+            <input class="flag" type="hidden" name="attr_npc_int_save_flag" value="0">
+            <button type="roll" name="roll_npc_int_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{intelligence-save}}} {{mod=[[[[@{npc_int_save}]][INT SAVE]]]}} {{r1=[[1d20+[[@{npc_int_save}]][INT SAVE]]]}} @{rtype}+[[@{npc_int_save}]][INT SAVE]]]}}">
+                <span class="spacer">, </span>
+                <span data-i18n="int+">Int +</span>
+                <input type="text" name="attr_npcd_int_save">
+            </button>
+            <input class="flag" type="hidden" name="attr_npc_wis_save_flag" value="0">
+            <button type="roll" name="roll_npc_wis_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{wisdom-save}}} {{mod=[[[[@{npc_wis_save}]][WIS SAVE]]]}} {{r1=[[1d20+[[@{npc_wis_save}]][WIS SAVE]]]}} @{rtype}+[[@{npc_wis_save}]][WIS SAVE]]]}}">
+                <span class="spacer">, </span>
+                <span data-i18n="wis+">Wis +</span>
+                <input type="text" name="attr_npcd_wis_save">
+            </button>
+            <input class="flag" type="hidden" name="attr_npc_cha_save_flag" value="0">
+            <button type="roll" name="roll_npc_cha_save" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{charisma-save}}} {{mod=[[[[@{npc_cha_save}]][CHA SAVE]]]}} {{r1=[[1d20+[[@{npc_cha_save}]][CHA SAVE]]]}} @{rtype}+[[@{npc_cha_save}]][CHA SAVE]]]}}">
+                <span class="spacer">, </span>
+                <span data-i18n="cha+">Cha +</span>
+                <input type="text" name="attr_npcd_cha_save">
+            </button>
+        </div>
+        <input class="flag" type="hidden" name="attr_npc_skills_flag" value="0">
+        <div class="row skills skills-list red" data-i18n-list="skills-list">
+            <span data-i18n="skills">Skills</span>
+            <span data-i18n-list-item="acrobatics">
+                <input class="flag" type="hidden" name="attr_npc_acrobatics_flag" value="0">
+                <button type="roll" name="roll_npc_acrobatics" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{acrobatics}}} {{mod=@{npc_acrobatics}}} {{r1=[[1d20+@{npc_acrobatics}]]}} @{rtype}+@{npc_acrobatics}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="acrobatics+">Acrobatics +</span>
+                    <input type="text" name="attr_npcd_acrobatics">
+                </button>
+            </span>
+            <span data-i18n-list-item="animal-handling">
+                <input class="flag" type="hidden" name="attr_npc_animal_handling_flag" value="0">
+                <button type="roll" name="roll_npc_animal_handling" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{animal-handling}}} {{mod=@{npc_animal_handling}}} {{r1=[[1d20+@{npc_animal_handling}]]}} @{rtype}+@{npc_animal_handling}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="animal-handling+">Animal Handling +</span>
+                    <input type="text" name="attr_npcd_animal_handling">
+                </button>
+            </span>
+            <span data-i18n-list-item="arcana">
+                <input class="flag" type="hidden" name="attr_npc_arcana_flag" value="0">
+                <button type="roll" name="roll_npc_arcana" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{arcana}}} {{mod=@{npc_arcana}}} {{r1=[[1d20+@{npc_arcana}]]}} @{rtype}+@{npc_arcana}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="arcana+">Arcana +</span>
+                    <input type="text" name="attr_npcd_arcana">
+                </button>
+            </span>
+            <span data-i18n-list-item="athletics">
+                <input class="flag" type="hidden" name="attr_npc_athletics_flag" value="0">
+                <button type="roll" name="roll_npc_athletics" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{athletics}}} {{mod=@{npc_athletics}}} {{r1=[[1d20+@{npc_athletics}]]}} @{rtype}+@{npc_athletics}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="athletics+">Athletics +</span>
+                    <input type="text" name="attr_npcd_athletics">
+                </button>
+            </span>
+            <span data-i18n-list-item="deception">
+                <input class="flag" type="hidden" name="attr_npc_deception_flag" value="0">
+                <button type="roll" name="roll_npc_deception" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{deception}}} {{mod=@{npc_deception}}} {{r1=[[1d20+@{npc_deception}]]}} @{rtype}+@{npc_deception}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="deception+">Deception +</span>
+                    <input type="text" name="attr_npcd_deception">
+                </button>
+            </span>
+            <span data-i18n-list-item="history">
+                <input class="flag" type="hidden" name="attr_npc_history_flag" value="0">
+                <button type="roll" name="roll_npc_history" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{history}}} {{mod=@{npc_history}}} {{r1=[[1d20+@{npc_history}]]}} @{rtype}+@{npc_history}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="history+">History +</span>
+                    <input type="text" name="attr_npcd_history">
+                </button>
+            </span>
+            <span data-i18n-list-item="insight">
+                <input class="flag" type="hidden" name="attr_npc_insight_flag" value="0">
+                <button type="roll" name="roll_npc_insight" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{insight}}} {{mod=@{npc_insight}}} {{r1=[[1d20+@{npc_insight}]]}} @{rtype}+@{npc_insight}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="insight+">Insight +</span>
+                    <input type="text" name="attr_npcd_insight">
+                </button>
+            </span>
+            <span data-i18n-list-item="intimidation">
+                <input class="flag" type="hidden" name="attr_npc_intimidation_flag" value="0">
+                <button type="roll" name="roll_npc_intimidation" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{intimidation}}} {{mod=@{npc_intimidation}}} {{r1=[[1d20+@{npc_intimidation}]]}} @{rtype}+@{npc_intimidation}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="intimidation+">Intimidation +</span>
+                    <input type="text" name="attr_npcd_intimidation">
+                </button>
+            </span>
+            <span data-i18n-list-item="investigation">
+                <input class="flag" type="hidden" name="attr_npc_investigation_flag" value="0">
+                <button type="roll" name="roll_npc_investigation" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{investigation}}} {{mod=@{npc_investigation}}} {{r1=[[1d20+@{npc_investigation}]]}} @{rtype}+@{npc_investigation}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="investigation+">Investigation +</span>
+                    <input type="text" name="attr_npcd_investigation">
+                </button>
+            </span>
+            <span data-i18n-list-item="medicine">
+                <input class="flag" type="hidden" name="attr_npc_medicine_flag" value="0">
+                <button type="roll" name="roll_npc_medicine" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{medicine}}} {{mod=@{npc_medicine}}} {{r1=[[1d20+@{npc_medicine}]]}} @{rtype}+@{npc_medicine}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="medicine+">Medicine +</span>
+                    <input type="text" name="attr_npcd_medicine">
+                </button>
+            </span>
+            <span data-i18n-list-item="nature">
+                <input class="flag" type="hidden" name="attr_npc_nature_flag" value="0">
+                <button type="roll" name="roll_npc_nature" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{nature}}} {{mod=@{npc_nature}}} {{r1=[[1d20+@{npc_nature}]]}} @{rtype}+@{npc_nature}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="nature+">Nature +</span>
+                    <input type="text" name="attr_npcd_nature">
+                </button>
+            </span>
+            <span data-i18n-list-item="perception">
+                <input class="flag" type="hidden" name="attr_npc_perception_flag" value="0">
+                <button type="roll" name="roll_npc_perception" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{perception}}} {{mod=@{npc_perception}}} {{r1=[[1d20+@{npc_perception}]]}} @{rtype}+@{npc_perception}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="perception+">Perception +</span>
+                    <input type="text" name="attr_npcd_perception">
+                </button>
+            </span>
+            <span data-i18n-list-item="performance">
+                <input class="flag" type="hidden" name="attr_npc_performance_flag" value="0">
+                <button type="roll" name="roll_npc_performance" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{performance}}} {{mod=@{npc_performance}}} {{r1=[[1d20+@{npc_performance}]]}} @{rtype}+@{npc_performance}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="performance+">Performance +</span>
+                    <input type="text" name="attr_npcd_performance">
+                </button>
+            </span>
+            <span data-i18n-list-item="persuasion">
+                <input class="flag" type="hidden" name="attr_npc_persuasion_flag" value="0">
+                <button type="roll" name="roll_npc_persuasion" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{persuasion}}} {{mod=@{npc_persuasion}}} {{r1=[[1d20+@{npc_persuasion}]]}} @{rtype}+@{npc_persuasion}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="persuasion+">Persuasion +</span>
+                    <input type="text" name="attr_npcd_persuasion">
+                </button>
+            </span>
+            <span data-i18n-list-item="religion">
+                <input class="flag" type="hidden" name="attr_npc_religion_flag" value="0">
+                <button type="roll" name="roll_npc_religion" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{religion}}} {{mod=@{npc_religion}}} {{r1=[[1d20+@{npc_religion}]]}} @{rtype}+@{npc_religion}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="religion+">Religion +</span>
+                    <input type="text" name="attr_npcd_religion">
+                </button>
+            </span>
+            <span data-i18n-list-item="sleight-of-hand">
+                <input class="flag" type="hidden" name="attr_npc_sleight_of_hand_flag" value="0">
+                <button type="roll" name="roll_npc_sleight_of_hand" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{sleight-of-hand}}} {{mod=@{npc_sleight_of_hand}}} {{r1=[[1d20+@{npc_sleight_of_hand}]]}} @{rtype}+@{npc_sleight_of_hand}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="sleight-of-hand+">Sleight of Hand +</span>
+                    <input type="text" name="attr_npcd_sleight_of_hand">
+                </button>
+            </span>
+            <span data-i18n-list-item="stealth">
+                <input class="flag" type="hidden" name="attr_npc_stealth_flag" value="0">
+                <button type="roll" name="roll_npc_stealth" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{stealth}}} {{mod=@{npc_stealth}}} {{r1=[[1d20+@{npc_stealth}]]}} @{rtype}+@{npc_stealth}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="stealth+">Stealth +</span>
+                    <input type="text" name="attr_npcd_stealth">
+                </button>
+            </span>
+            <span data-i18n-list-item="survival">
+                <input class="flag" type="hidden" name="attr_npc_survival_flag" value="0">
+                <button type="roll" name="roll_npc_survival" value="@{wtype}&{template:npc} {{name=@{npc_name}}} {{rname=^{survival}}} {{mod=@{npc_survival}}} {{r1=[[1d20+@{npc_survival}]]}} @{rtype}+@{npc_survival}]]}}">
+                    <span class="spacer">, </span>
+                    <span data-i18n="survival+">Survival +</span>
+                    <input type="text" name="attr_npcd_survival">
+                </button>
+            </span>
+        </div>
+        <input class="flag" type="hidden" name="attr_npc_vulnerabilities_flag" value="0">
+        <div class="row vulnerabilities red">
+            <span data-i18n="dmg-vuln">Damage Vulnerabilities</span>
+            <span class="info" name="attr_npcd_vulnerabilities"></span>
+        </div>
+        <input class="flag" type="hidden" name="attr_npc_resistances_flag" value="0">
+        <div class="row resistances red">
+            <span data-i18n="dmg-res">Damage Resistances</span>
+            <span class="info" name="attr_npcd_resistances"></span>
+        </div>
+        <input class="flag" type="hidden" name="attr_npc_immunities_flag" value="0">
+        <div class="row immunities red">
+            <span data-i18n="dmg-imm">Damage Immunities</span>
+            <span class="info" name="attr_npcd_immunities"></span>
+        </div>
+        <input class="flag" type="hidden" name="attr_npc_condition_immunities_flag" value="0">
+        <div class="row condition_immunities red">
+            <span data-i18n="cond-imm">Condition Immunities</span>
+            <span class="info" name="attr_npcd_condition_immunities"></span>
+        </div>
+        <div class="row senses red">
+            <span data-i18n="senses">Senses</span>
+            <span class="info" name="attr_npcd_senses"></span>
+        </div>
+        <div class="row languages red">
+            <span data-i18n="langs">Languages</span>
+            <span class="info" name="attr_npcd_languages"></span>
+        </div>
+        <div class="row red">
+            <span data-i18n="challenge">Challenge</span>
+            <input class="num" type="text" name="attr_npcd_challenge">
+            <input type="text" name="attr_npcd_xp">
+        </div>
+        <div class="triangle"></div>
+        <div class="row traits">
+            <fieldset class="repeating_npctrait">
+                <div class="trait">
+                    <input type="text" name="attr_name" placeholder="False Appearance." data-i18n-placeholder="npc-trait-name-place">
+                    <textarea name="attr_desc" placeholder="If the dragon fails..." data-i18n-placeholder="npc-trait-desc-place"></textarea>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="actions_container"></div>
+    <input class="dflag" type="hidden" name="attr_dflag" value="pick">
+    <div class="row actions">
+        <div class="row actiontitle" style="position: relative;">
+            <span class="title red" data-i18n="actions">Actions</span>
+            <input type="hidden" class="toggleflag" name="attr_toggleflag">
+            <div class="advantagetoggle" style="top: 0px; right: 0px;">
+                <input type="radio" class="toggle-left" name="attr_advantagetoggle" value="{{query=1}}  {{advantage=1}} {{r2=[[1d20"><span data-i18n="adv">Advantage</span>
+                <input type="radio" class="toggle-center" name="attr_advantagetoggle" value="{{query=1}}  {{normal=1}} {{r2=[[0d20" checked="checked"><span data-i18n="norm">Normal</span>
+                <input type="radio" class="toggle-right" name="attr_advantagetoggle" value="{{query=1}}  {{disadvantage=1}} {{r2=[[1d20"><span data-i18n="disadv">Disadvantage</span>
+            </div>
+        </div>
+        <fieldset class="repeating_npcaction">
+            <div class="action compendium-drop-target">
+                <input class="npc_options-flag" type="checkbox" name="attr_npc_options-flag" checked="checked"><span>y</span>
+                <div class="npc_options">
+                    <div class="row">
+                        <span data-i18n="name:-u">NAME:</span>
+                        <input type="text" name="attr_name" accept="Name">
+                    </div>
+                    <div class="row">
+                        <input type="checkbox" name="attr_attack_flag">
+                        <span data-i18n="attack-u">ATTACK</span>
+                    </div>
+                    <input type="hidden" class="attack_options" name="attr_attack_options" value="0">
+                    <div class="row attack_option">
+                        <span data-i18n="type:-u">TYPE:</span>
+                        <select name="attr_attack_type" accept="Spell Attack">
+                            <option value="Melee" data-i18n="melee">Melee</option>
+                            <option value="Ranged" data-i18n="ranged">Ranged</option>
+                        </select>
+                        <span style="margin-left: 15px;" data-i18n="range-reach:-u">RANGE/REACH:</span>
+                        <input type="text" name="attr_attack_range" placeholder="5 ft." style="width: 100px;" accept="Range" data-i18n-placeholder="range-reach-place">
+                    </div>
+                    <div class="row attack_option">
+                        <span data-i18n="to-hit:-u">TO HIT:</span>
+                        <input type="text" name="attr_attack_tohit" placeholder="5" style="width: 30px;">
+                        <span style="margin-left: 15px;" data-i18n="target:-u">TARGET:</span>
+                        <input type="text" name="attr_attack_target" placeholder="One target" style="width: 100px;" data-i18n-placeholder="to-hit-place">
+                    </div>
+                    <input type="hidden" name="attr_damage_flag">
+                    <div class="row attack_option">
+                        <span data-i18n="on-hit:-u">ON HIT:</span>
+                        <input type="text" name="attr_attack_damage" placeholder="1d10" style="width: 65px;" accept="Damage">
+                        <input type="text" name="attr_attack_damagetype" placeholder="slashing" style="width: 100px;" accept="Damage Type" data-i18n-placeholder="on-hit-place">
+                        <input type="hidden" name="attr_attack_crit">
+                    </div>
+                    <div class="row attack_option">
+                        <span data-i18n="on-hit2:-u">ON HIT 2:</span>
+                        <input type="text" name="attr_attack_damage2" placeholder="2d6+5" style="width: 65px;" accept="Secondary Damage">
+                        <input type="text" name="attr_attack_damagetype2" placeholder="fire" style="width: 100px;" accept="Secondary Damage Type" data-i18n-placeholder="on-hit-2-place">
+                        <input type="hidden" name="attr_attack_crit2">
+                    </div>
+                    <div class="row">
+                        <textarea name="attr_description" accept="Content"></textarea>
+                    </div>
+                </div>
+                <div class="display">
+                    <button class="pick" type="roll" name="roll_npc_action" value="@{rollbase}">
+                        <div class="row wide">
+                            <input class="bold wide" type="text" name="attr_name_display">
+                        </div>
+                        <input class="attack_options" type="hidden" name="attr_attack_display_flag"  value="0">
+                        <div class="row attack attack_option">
+                            <input class="italics" type="text" name="attr_attack_type_display" style="width: 140px; text-align: left;"><input type="text" name="attr_attack_tohitrange" style="width: 220px; text-align: left;">
+                        </div>
+                        <div class="row attack attack_option">
+                            <span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;" data-i18n="hit:">Hit: </span><input type="text" name="attr_attack_onhit" style="width: 340px; text-align: left;">
+                        </div>
+                        <input class="description_flag" type="hidden" name="attr_description_flag" value="0">
+                        <textarea name="attr_description"></textarea>
+                    </button>
+                </div>
+                <input type="hidden" name="attr_updateflag">
+                <input type="hidden" name="attr_rollbase">
+                <button type="roll" style="display: none;" name="roll_npc_dmg" value="@{wtype}&{template:npcdmg} @{damage_flag} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}}"></button>
+                <button type="roll" style="display: none;" name="roll_npc_crit" value="@{wtype}&{template:npcdmg} @{damage_flag} {{crit=1}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}}"></button>
+            </div>
+        </fieldset>
+    </div>
+    <input class="reaction_flag" type="hidden" name="attr_reaction_flag">
+    <div class="row actions reaction">
+        <div class="row actiontitle">
+            <span class="title red" data-i18n="reactions">Reactions</span>
+        </div>
+        <fieldset class="repeating_npcreaction">
+            <div class="trait">
+                <input type="text" name="attr_name" placeholder="Parry." data-i18n-placeholder="npc-repeating-name-place">
+                <textarea name="attr_desc" placeholder="The creature adds 2 to its AC against..." data-i18n-placeholder="npc-repeating-desc-place"></textarea>
+            </div>
+        </fieldset>
+    </div>
+    <input class="npcspell_flag" type="hidden" name="attr_npcspell_flag">
+    <div class="row actions npcspell spells">
+        <div class="row actiontitle">
+            <span class="title red" style="font-weight: normal; text-align: left;" data-i18n="spells">Spells</span>
+        </div>
+        <div class="spell-container">
+            <fieldset class="repeating_spell-npc">
+                <div class="spell compendium-drop-target">
+                    <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                    <div class="options">
+                        <div class="row">
+                            <span data-i18n="name:-u">NAME:</span>
+                            <input type="text" name="attr_spellname_base" accept="Name">
+                            <input type="checkbox" name="attr_spellprepared" value="1" checked="checked">
+                            <span data-i18n="prep-u">PREP</span>
+                        </div>
+                        <div class="row">
+                            <span data-i18n="school:-u">SCHOOL:</span>
+                            <select name="attr_spellschool" accept="School">
+                                <option value="abjuration" data-i18n="abjuration">Abjuration</option>
+                                <option value="conjuration" data-i18n="conjuration">Conjuration</option>
+                                <option value="divination" data-i18n="divination">Divination</option>
+                                <option value="enchantment" data-i18n="enchantment">Enchantment</option>
+                                <option value="evocation" data-i18n="evocation">Evocation</option>
+                                <option value="illusion" data-i18n="illusion">Illusion</option>
+                                <option value="necromancy" data-i18n="necromancy">Necromancy</option>
+                                <option value="transmutation" data-i18n="transmutation">Transmutation</option>
+                            </select>
+                            <input type="hidden" name="attr_spellritualflag" accept="Ritual">
+                            <input type="checkbox" name="attr_spellritual" value="{{ritual=1}}">
+                            <span data-i18n="ritual-u">RITUAL</span>
+                        </div>
+                        <div class="row">
+                            <span data-i18n="casting-time:-u">CASTING TIME:</span>
+                            <input type="text" name="attr_spellcastingtime" accept="Casting Time">
+                        </div>
+                        <div class="row">
+                            <span data-i18n="range:-u">RANGE:</span>
+                            <input type="text" name="attr_spellrange" accept="Range">
+                        </div>
+                        <div class="row">
+                            <span data-i18n="target:-u">TARGET:</span>
+                            <input type="text" name="attr_spelltarget" accept="Target">
+                        </div>
+                        <input type="hidden" name="attr_spellcomp" accept="Components">
+                        <div class="row">
+                            <span data-i18n="components:-u">COMPONENTS:</span>
+                            <input type="checkbox" name="attr_spellcomp_v" value="{{v=1}}" checked="checked">
+                            <span data-i18n="spell-component-verbal">V</span>
+                            <input type="checkbox" name="attr_spellcomp_s" value="{{s=1}}" checked="checked">
+                            <span data-i18n="spell-component-somatic">S</span>
+                            <input type="checkbox" name="attr_spellcomp_m" value="{{m=1}}" checked="checked">
+                            <span data-i18n="spell-component-material">M</span>
+                            <input type="text" name="attr_spellcomp_materials" accept="Material" style="margin-left: 17px;" placeholder="ruby dust worth 50gp" data-i18n-placeholder="ruby-dust-place">
+                        </div>
+                        <div class="row">
+                            <input type="hidden" name="attr_spellconcentrationflag" accept="Concentration">
+                            <input type="checkbox" name="attr_spellconcentration" value="{{concentration=1}}">
+                            <span data-i18n="concentration-u">CONCENTRATION</span>
+                        </div>
+                        <div class="row">
+                            <span data-i18n="duration:-u">DURATION:</span>
+                            <input type="text" name="attr_spellduration" accept="Duration">
+                        </div>
+                        <div class="row">
+                            <span data-i18n="output:-u">OUTPUT:</span>
+                            <select name="attr_spelloutput">
+                                <option value="SPELLCARD" data-i18n="spellcard-u">SPELLCARD</option>
+                                <option value="ATTACK" data-i18n="attack-u">ATTACK</option>
+                            </select>
+                        </div>
+                        <input type="hidden" class="spellattackinfoflag" name="attr_spellattackinfoflag">
+                        <div class="spellattackinfo">
+                            <div class="row">
+                                <span data-i18n="spell-atk:-u">SPELL ATTACK:</span>
+                                <select name="attr_spellattack" accept="Spell Attack">
+                                    <option value="None" data-i18n="none">None</option>
+                                    <option value="Melee" data-i18n="melee">Melee</option>
+                                    <option value="Melee" data-i18n="ranged">Ranged</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span data-i18n="dmg:-u">DAMAGE:</span>
+                                <input type="text" name="attr_spelldamage" accept="Damage" style="width: 50px;">
+                                <span data-i18n="type:-u">TYPE:</span>
+                                <input type="text" name="attr_spelldamagetype" accept="Damage Type" style="width: 103px;">
+                            </div>
+                            <div class="row">
+                                <span data-i18n="dmg2:-u">DAMAGE2:</span>
+                                <input type="text" name="attr_spelldamage2" accept="Secondary Damage" style="width: 45px;">
+                                <span data-i18n="type:-u">TYPE:</span>
+                                <input type="text" name="attr_spelldamagetype2" accept="Secondary Damage Type" style="width: 103px;">
+                            </div>
+                            <div class="row">
+                                <span data-i18n="healing:-u">HEALING:</span>
+                                <input type="text" name="attr_spellhealing" accept="Healing" style="width: 45px;">
+                            </div>
+                            <div class="row">
+                                <input type="checkbox" name="attr_spelldmgmod" value="Yes" accept="Add Casting Modifier">
+                                <span data-i18n="add-ability-mod-u">ADD ABILITY MOD TO DAMAGE OR HEALING</span>
+                            </div>
+                            <div class="row">
+                                <span data-i18n="saving-throw:-u">SAVING THROW:</span>
+                                <select name="attr_spellsave" accept="Save">
+                                    <option value="" selected="selected" data-i18n="none-u">NONE</option>
+                                    <option value="Strength" data-i18n="str-u">STR</option>
+                                    <option value="Dexterity" data-i18n="dex-u">DEX</option>
+                                    <option value="Constitution" data-i18n="con-u">CON</option>
+                                    <option value="Intelligence" data-i18n="int-u">INT</option>
+                                    <option value="Wisdom" data-i18n="wis-u">WIS</option>
+                                    <option value="Charisma" data-i18n="cha-u">CHA</option>
+                                </select>
+                                <span data-i18n="effect:-u">EFFECT:</span>
+                                <input type="text" name="attr_spellsavesuccess" accept="Save Success" style="width: 78px;" placeholder="Half damage" data-i18n-placeholder="npc-atk-effect-place">
+                            </div>
+                            <div class="row">
+                                <span data-i18n="at-higher-lvl-dmg:-u">HIGHER LVL CAST DMG:</span>
+                                <input type="text" name="attr_spellhldie" placeholder="1" accept="Higher Spell Slot Dice" style="width: 15px; text-align: right;">
+                                <select name="attr_spellhldietype" accept="Higher Spell Slot Die">
+                                    <option value="" selected="selected" data-i18n="none-u">NONE</option>
+                                    <option value="d4">d4</option>
+                                    <option value="d6">d6</option>
+                                    <option value="d8">d8</option>
+                                    <option value="d10">d10</option>
+                                    <option value="d12">d12</option>
+                                    <option value="d20">d20</option>
+                                </select>
+                                <span>+</span>
+                                <input type="text" name="attr_spellhlbonus" placeholder="0" accept="Higher Spell Slot Bonus" style="width: 15px; text-align: center;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span data-i18n="desc:-u">DESCRIPTION:</span>
+                        </div>
+                        <input type="hidden" name="attr_spellcontent" accept="Content">
+                        <div class="row">
+                            <textarea name="attr_spelldescription"></textarea>
+                        </div>
+                        <div class="row">
+                            <span data-i18n="at-higher-lvl:-u">AT HIGHER LEVELS:</span>
+                        </div>
+                        <div class="row">
+                            <textarea name="attr_spellathigherlevels" style="height: 36px; min-height: 36px;"></textarea>
+                        </div>
+                        <input type="hidden" name="attr_spellattackid">
+                        <input type="hidden" name="attr_spelllevel" accept="Level">
+                        <input type="hidden" name="attr_spell_updateflag">
+                        <input type="hidden" name="attr_rollbase">
+                    </div>
+                    <div class="display">
+                        <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname_base}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spellcomp_v} @{spellcomp_s} @{spellcomp_m} {{material=@{spellcomp_materials}}} {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} @{spellritual} @{spellconcentration} @{charname_output}">
+                        <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
+                            <input type="hidden" name="attr_prep" value=""><span class="prep"></span>
+                            <input type="text" name="attr_spellname" style="width: 225px; margin-left: 13px;" value="">
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <input class="legendary_flag" type="hidden" name="attr_legendary_flag">
+    <div class="row actions legendary">
+        <div class="row actiontitle">
+            <span class="title red" data-i18n="leg-actions">Legendary Actions</span>
+        </div>
+        <div class="row">
+            <div class="legendaryactions" data-i18n="leg-actions-desc">The <span name="attr_npc_name"></span> can take <span name="attr_npc_legendary_actions"></span> legendary actions, choosing from the options below. Only one legendary option can be used at a time and only at the end of another creature's turn. The <span name="attr_npc_name"></span> regains spent legendary actions at the start of its turn.</div>
+        </div>
+        <fieldset class="repeating_npcaction-l">
+            <div class="action">
+                <input class="npc_options-flag" type="checkbox" name="attr_npc_options-flag" checked="checked"><span>y</span>
+                <div class="npc_options">
+                    <div class="row">
+                        <span data-i18n="name:-u">NAME:</span>
+                        <input type="text" name="attr_name">
+                    </div>
+                    <div class="row">
+                        <input type="checkbox" name="attr_attack_flag">
+                        <span data-i18n="attack-u">ATTACK</span>
+                    </div>
+                    <input type="hidden" class="attack_options" name="attr_attack_options" value="0">
+                    <div class="row attack_option">
+                        <span data-i18n="type:-u">TYPE:</span>
+                        <select name="attr_attack_type">
+                            <option value="Melee" data-i18n="melee">Melee</option>
+                            <option value="Ranged">Ranged</option>
+                        </select>
+                        <span style="margin-left: 15px;" data-i18n="range-reach:-u">RANGE/REACH:</span>
+                        <input type="text" name="attr_attack_range" placeholder="5 ft." style="width: 100px;" data-i18n-placeholder="atk-range-place">
+                    </div>
+                    <div class="row attack_option">
+                        <span data-i18n="to-hit:-u">TO HIT:</span>
+                        <input type="text" name="attr_attack_tohit" placeholder="5" style="width: 30px;">
+                        <span style="margin-left: 15px;" data-i18n="target:-u">TARGET:</span>
+                        <input type="text" name="attr_attack_target" placeholder="One target" style="width: 100px;" data-i18n-placeholder="atk-target-place">
+                    </div>
+                    <input type="hidden" name="attr_damage_flag">
+                    <div class="row attack_option">
+                        <span data-i18n="on-hit:-u">ON HIT:</span>
+                        <input type="text" name="attr_attack_damage" placeholder="1d10" style="width: 65px;">
+                        <input type="text" name="attr_attack_damagetype" placeholder="slashing" style="width: 100px;" data-i18n-placeholder="atk-dmg-type-place">
+                        <input type="hidden" name="attr_attack_crit">
+                    </div>
+                    <div class="row attack_option">
+                        <span data-i18n="on-hit2:-u">ON HIT 2:</span>
+                        <input type="text" name="attr_attack_damage2" placeholder="2d6+5" style="width: 65px;">
+                        <input type="text" name="attr_attack_damagetype2" placeholder="fire" style="width: 100px;" data-i18n-placeholder="atk-dmg-type2-place">
+                        <input type="hidden" name="attr_attack_crit2">
+                    </div>
+                    <div class="row">
+                        <textarea name="attr_description"></textarea>
+                    </div>
+                </div>
+                <div class="display">
+                    <button class="pick" type="roll" name="roll_npc_action" value="@{rollbase}">
+                        <div class="row wide">
+                            <input class="bold wide" type="text" name="attr_name_display">
+                        </div>
+                        <input class="attack_options" type="hidden" name="attr_attack_display_flag"  value="0">
+                        <div class="row attack attack_option">
+                            <input class="italics" type="text" name="attr_attack_type_display" style="width: 140px; text-align: left;"><input type="text" name="attr_attack_tohitrange" style="width: 220px; text-align: left;">
+                        </div>
+                        <div class="row attack attack_option">
+                            <span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;">Hit: </span><input type="text" name="attr_attack_onhit" style="width: 340px; text-align: left;">
+                        </div>
+                        <input class="description_flag" type="hidden" name="attr_description_flag" value="0">
+                        <textarea name="attr_description"></textarea>
+                    </button>
+                </div>
+                <input type="hidden" name="attr_updateflag">
+                <input type="hidden" name="attr_rollbase">
+                <button type="roll" style="display: none;" name="roll_npc_dmg" value="@{wtype}&{template:npcdmg} @{damage_flag} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}}"></button>
+                <button type="roll" style="display: none;" name="roll_npc_crit" value="@{wtype}&{template:npcdmg} @{damage_flag} {{crit=1}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}}"></button>
+            </div>
+        </fieldset>
+    </div>
+</div>

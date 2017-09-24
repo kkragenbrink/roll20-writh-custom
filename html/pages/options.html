@@ -1,0 +1,505 @@
+<div class="page options">
+    <div class="header">
+        <div class="name-container">
+            <img src="http://i.imgur.com/ZgULBCp.png" style="padding-bottom: 5px;">
+            <input type="text" name="attr_character_name" style="width: 100%;">
+            <span class="label" data-i18n="char-name-u">CHARACTER NAME</span>
+        </div>
+        <div class="header-info">
+            <div class="top">
+                <div class="hlabel-container">
+                    <input class="flag" type="hidden" name="attr_customclass_flag" value="0">
+                    <input class="showing" type="text" name="attr_cust_class" value="@{cust_classname}" disabled="true" style="width: 64px; height: 28px; padding-top: 10px;">
+                    <select class="hiding class" name="attr_class">
+                        <option value="Barbarian" data-i18n="barbarian">Barbarian</option>
+                        <option value="Bard" data-i18n="bard">Bard</option>
+                        <option value="Cleric" data-i18n="cleric">Cleric</option>
+                        <option value="Druid" data-i18n="druid">Druid</option>
+                        <option value="Fighter" data-i18n="fighter">Fighter</option>
+                        <option value="Monk" data-i18n="monk">Monk</option>
+                        <option value="Paladin" data-i18n="paladin">Paladin</option>
+                        <option value="Ranger" data-i18n="ranger">Ranger</option>
+                        <option value="Rogue" data-i18n="rogue">Rogue</option>
+                        <option value="Sorcerer" data-i18n="sorcerer">Sorcerer</option>
+                        <option value="Warlock" data-i18n="warlock">Warlock</option>
+                        <option value="Wizard" data-i18n="wizard">Wizard</option>
+                    </select>
+                    <input type="number" class="class-level" name="attr_base_level" value="1">
+                    <span class="label" data-i18n="class-level-u">CLASS & LEVEL</span>
+                </div>
+                <div class="hlabel-container multiclass-container">
+                    <input class="flag" type="hidden" name="attr_mutliclass1_showingflag" value="0">
+                    <span class="hiding multiclass-display"></span>
+                    <span class="hiding multiclass-display-level"></span>
+                    <span class="showing multiclass-display" name="attr_multiclass1" data-i18n-dynamic></span>
+                    <span class="showing multiclass-display-level" name="attr_multiclass1_lvl"></span>
+                </div>
+                <div class="hlabel-container multiclass-container">
+                    <input class="flag" type="hidden" name="attr_mutliclass2_showingflag" value="0">
+                    <span class="hiding multiclass-display"></span>
+                    <span class="hiding multiclass-display-level"></span>
+                    <span class="showing multiclass-display" name="attr_multiclass2" data-i18n-dynamic></span>
+                    <span class="showing multiclass-display-level" name="attr_multiclass2_lvl"></span>
+                </div>
+                <div class="hlabel-container multiclass-container">
+                    <input class="flag" type="hidden" name="attr_mutliclass3_showingflag" value="0">
+                    <span class="hiding multiclass-display"></span>
+                    <span class="hiding multiclass-display-level"></span>
+                    <span class="showing multiclass-display" name="attr_multiclass3" data-i18n-dynamic></span>
+                    <span class="showing multiclass-display-level" name="attr_multiclass3_lvl"></span>
+                </div>
+                <div class="hlabel-container">
+                    <input type="text" name="attr_background" style="width: 122px;">
+                    <span class="label" data-i18n="background-u">BACKGROUND</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="hlabel-container">
+                    <input type="text" name="attr_race">
+                    <span class="label" data-i18n="race-u">RACE</span>
+                </div>
+                <div class="hlabel-container">
+                    <input type="text" name="attr_alignment">
+                    <span class="label" data-i18n="alignment-u">ALIGNMENT</span>
+                </div>
+                <div class="hlabel-container">
+                    <input type="text" name="attr_experience">
+                    <span class="label" data-i18n="exp-pts-u">EXPERIENCE POINTS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="col col1">
+            <div class="class_options">
+                <div class="row">
+                    <span data-i18n="hit-die:-u">HIT DIE:</span>
+                    <select name="attr_hitdietype">
+                        <option value="4">D4</option>
+                        <option value="6">D6</option>
+                        <option value="8">D8</option>
+                        <option value="10">D10</option>
+                        <option value="12">D12</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="initiative-mod:-u">INITIATIVE MODIFIER:</span>
+                    <input type="text" class="num" name="attr_initmod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="glob-saving-mod:-u">GLOBAL SAVING THROW MODIFIER:</span>
+                    <input type="text" class="num" name="attr_globalsavemod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="glob-ac-mod:-u">GLOBAL ARMOR CLASS MODIFIER:</span>
+                    <input type="text" class="num" name="attr_globalacmod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="glob-atk-mod:-u">GLOBAL MAGIC ATTACK MODIFIER:</span>
+                    <input type="text" class="num" name="attr_globalmagicmod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="pass-perc-mod:-u">PASSIVE PERCEPTION MODIFIER:</span>
+                    <input type="text" class="num" name="attr_passiveperceptionmod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="death-save-mod:-u">DEATH SAVE MODIFIER:</span>
+                    <input type="text" class="num" name="attr_deathsavemod" placeholder="0" value="0">
+                </div>
+                <div class="row">
+                    <span data-i18n="magic-caster-lvl:-u">MAGIC CASTER LEVEL:</span>
+                    <input type="text" class="num" name="attr_caster_level">
+                </div>
+                <div class="row">
+                    <span data-i18n="spell_dc_mod:-u">SPELL SAVE DC MOD:</span>
+                    <input type="text" class="num" name="attr_spell_dc_mod" placeholde="0" value="0">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_custom_ac_flag" value="1">
+                    <span data-i18n="custom_ac:-u">CUSTOM AC:</span>
+                    <input type="text" class="num" name="attr_custom_ac_base" placeholde="10" value="10">
+                    <span>+</span>
+                    <select name="attr_custom_ac_part1">
+                        <option value="none" selected="selected" data-i18n="none-u">NONE</option>
+                        <option value="Strength" data-i18n="str-u">STR</option>
+                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
+                        <option value="Constitution" data-i18n="con-u">CON</option>
+                        <option value="Intelligence" data-i18n="int-u">INT</option>
+                        <option value="Wisdom" data-i18n="wis-u">WIS</option>
+                        <option value="Charisma" data-i18n="cha-u">CHA</option>
+                    </select>
+                    <span>+</span>
+                    <select name="attr_custom_ac_part2">
+                        <option value="none" selected="selected" data-i18n="none-u">NONE</option>
+                        <option value="Strength" data-i18n="str-u">STR</option>
+                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
+                        <option value="Constitution" data-i18n="con-u">CON</option>
+                        <option value="Intelligence" data-i18n="int-u">INT</option>
+                        <option value="Wisdom" data-i18n="wis-u">WIS</option>
+                        <option value="Charisma" data-i18n="cha-u">CHA</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_halflingluck_flag" value="1">
+                    <span data-i18n="halfling-luck-u">HALFLING LUCK</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_arcane_fighter" value="1">
+                    <span data-i18n="arcane-fighter-u">ARCANE FIGHTER</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_arcane_rogue" value="1">
+                    <span data-i18n="arcane-rogue-u">ARCANE ROGUE</span>
+                </div>
+                <div class="row title">
+                    <span data-i18n="class-options-u">CLASS OPTIONS (<span name="attr_class" data-i18n-dynamic></span>)</span>
+                </div>
+            </div>
+            <div class="class_options">
+                <div class="row">
+                    <input type="checkbox" name="attr_multiclass1_flag" value="1">
+                    <span data-i18n="2nd-class:-u">2ND CLASS:</span>
+                    <select name="attr_multiclass1" style="width: 64px;">
+                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
+                        <option value="bard" data-i18n="bard">Bard</option>
+                        <option value="cleric" data-i18n="cleric">Cleric</option>
+                        <option value="druid" data-i18n="druid">Druid</option>
+                        <option value="fighter" data-i18n="fighter">Fighter</option>
+                        <option value="monk" data-i18n="monk">Monk</option>
+                        <option value="paladin" data-i18n="paladin">Paladin</option>
+                        <option value="ranger" data-i18n="ranger">Ranger</option>
+                        <option value="rogue" data-i18n="rogue">Rogue</option>
+                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
+                        <option value="warlock" data-i18n="warlock">Warlock</option>
+                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                    </select>
+                    <span data-i18n="lvl:-u">LEVEL:</span>
+                    <input type="text" name="attr_multiclass1_lvl" value="1" style="width: 28px; text-align: center;">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_multiclass2_flag" value="1">
+                    <span data-i18n="3rd-class:-u">3RD CLASS:</span>
+                    <select name="attr_multiclass2" style="width: 64px;">
+                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
+                        <option value="bard" data-i18n="bard">Bard</option>
+                        <option value="cleric" data-i18n="cleric">Cleric</option>
+                        <option value="druid" data-i18n="druid">Druid</option>
+                        <option value="fighter" data-i18n="fighter">Fighter</option>
+                        <option value="monk" data-i18n="monk">Monk</option>
+                        <option value="paladin" data-i18n="paladin">Paladin</option>
+                        <option value="ranger" data-i18n="ranger">Ranger</option>
+                        <option value="rogue" data-i18n="rogue">Rogue</option>
+                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
+                        <option value="warlock" data-i18n="warlock">Warlock</option>
+                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                    </select>
+                    <span data-i18n="lvl:-u">LEVEL:</span>
+                    <input type="text" name="attr_multiclass2_lvl" value="1" style="width: 28px; text-align: center;">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_multiclass3_flag" value="1">
+                    <span data-i18n="4th-class:-u">4TH CLASS:</span>
+                    <select name="attr_multiclass3" style="width: 64px;">
+                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
+                        <option value="bard" data-i18n="bard">Bard</option>
+                        <option value="cleric" data-i18n="cleric">Cleric</option>
+                        <option value="druid" data-i18n="druid">Druid</option>
+                        <option value="fighter" data-i18n="fighter">Fighter</option>
+                        <option value="monk" data-i18n="monk">Monk</option>
+                        <option value="paladin" data-i18n="paladin">Paladin</option>
+                        <option value="ranger" data-i18n="ranger">Ranger</option>
+                        <option value="rogue" data-i18n="rogue">Rogue</option>
+                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
+                        <option value="warlock" data-i18n="warlock">Warlock</option>
+                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                    </select>
+                    <span data-i18n="lvl:-u">LEVEL:</span>
+                    <input type="text" name="attr_multiclass3_lvl" value="1" style="width: 28px; text-align: center;">
+                </div>
+                <div class="row title">
+                    <span data-i18n="mutliclass-opts-u">MULTICLASS OPTIONS</span>
+                </div>
+            </div>
+            <div class="class_options">
+                <div class="row">
+                    <input type="checkbox" name="attr_custom_class" value="1">
+                    <span data-i18n="use-cust-class-u">USE CUSTOM CLASS</span>
+                </div>
+                <div class="row">
+                    <span data-i18n="class-name:-u">CLASS NAME:</span>
+                    <input type="text" name="attr_cust_classname">
+                </div>
+                <div class="row">
+                    <span data-i18n="hit-die:-u">HIT DIE:</span>
+                    <select name="attr_cust_hitdietype">
+                        <option value="4">D4</option>
+                        <option value="6">D6</option>
+                        <option value="8">D8</option>
+                        <option value="10">D10</option>
+                        <option value="12">D12</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="spellcasting-ability:-u">SPELLCASTING ABILITY:</span>
+                    <select name="attr_cust_spellcasting_ability">
+                        <option value="0*" data-i18n="none-u">NONE</option>
+                        <option value="@{strength_mod}+" data-i18n="strength-u">STRENGTH</option>
+                        <option value="@{dexterity_mod}+" data-i18n="dexterity-u">DEXTERITY</option>
+                        <option value="@{constitution_mod}+" data-i18n="constitution-u">CONSTITUTION</option>
+                        <option value="@{intelligence_mod}+" data-i18n="intelligence-u">INTELLIGENCE</option>
+                        <option value="@{wisdom_mod}+" data-i18n="wisdom-u">WISDOM</option>
+                        <option value="@{charisma_mod}+" data-i18n="charisma-u">CHARISMA</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="spell-slots:-u">SPELL SLOTS:</span>
+                    <select name="attr_cust_spellslots">
+                        <option value="none" data-i18n="none-u">NONE</option>
+                        <option value="full" data-i18n="spell-full-u">FULL (Cleric, Druid, Wizard)</option>
+                        <option value="half" data-i18n="spell-half-u">HALF (Paladin, Ranger)</option>
+                        <option value="third" data-i18n="spell-third-u">THIRD (Arcane Fighter/Rogue)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="saves-u">SAVES</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_strength_save_prof" value="(@{pb})">
+                    <span data-i18n="strength">Strength</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_dexterity_save_prof" value="(@{pb})">
+                    <span data-i18n="dexterity">Dexterity</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_constitution_save_prof" value="(@{pb})">
+                    <span data-i18n="constitution">Constitution</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_intelligence_save_prof" value="(@{pb})">
+                    <span data-i18n="intelligence">Intelligence</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_wisdom_save_prof" value="(@{pb})">
+                    <span data-i18n="wisdom">Wisdom</span>
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_cust_charisma_save_prof" value="(@{pb})">
+                    <span data-i18n="charisma">Charisma</span>
+                </div>
+                <div class="row title">
+                    <span data-i18n="cust-class-opts">CUSTOM CLASS OPTIONS</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col col2">
+            <div class="skill_options" style="width: 234px;">
+                <div data-i18n-list="skills-list">
+                    <div class="row skill" data-i18n-list-item="acrobatics">
+                        <select name="attr_acrobatics_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="acrobatics-core">Acrobatics <span>(Dex)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_acrobatics_flat" value="0" placeholder="0" title="@{acrobatics_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="animal-handling">
+                        <select name="attr_animal_handling_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="animal-handling-core">Animal Handling <span>(Wis)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_animal_handling_flat" value="0" placeholder="0" title="@{animal_handling_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="arcana">
+                        <select name="attr_arcana_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="arcana-core">Arcana <span>(Int)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_arcana_flat" value="0" placeholder="0" title="@{arcana_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="athletics">
+                        <select name="attr_athletics_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="athletics-core">Athletics <span>(Str)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_athletics_flat" value="0" placeholder="0" title="@{athletics_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="deception">
+                        <select name="attr_deception_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="deception-core">Deception <span>(Cha)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_deception_flat" value="0" placeholder="0" title="@{deception_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="history">
+                        <select name="attr_history_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="history-core">History <span>(Int)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_history_flat" value="0" placeholder="0" title="@{history_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="insight">
+                        <select name="attr_insight_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="insight-core">Insight <span>(Wis)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_insight_flat" value="0" placeholder="0" title="@{insight_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="intimidation">
+                        <select name="attr_intimidation_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="intimidation-core">Intimidation <span>(Cha)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_intimidation_flat" value="0" placeholder="0" title="@{intimidation_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="investigation">
+                        <select name="attr_investigation_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="investigation-core">Investigation <span>(Int)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_investigation_flat" value="0" placeholder="0" title="@{investigation_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="medicine">
+                        <select name="attr_medicine_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="medicine-core">Medicine <span>(Wis)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_medicine_flat" value="0" placeholder="0" title="@{medicine_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="nature">
+                        <select name="attr_nature_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="nature-core">Nature <span>(Int)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_nature_flat" value="0" placeholder="0" title="@{nature_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="perception">
+                        <select name="attr_perception_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="perception-core">Perception <span>(Wis)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_perception_flat" value="0" placeholder="0" title="@{perception_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="performance">
+                        <select name="attr_performance_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="performance-core">Performance <span>(Cha)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_performance_flat" value="0" placeholder="0" title="@{performance_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="persuasion">
+                        <select name="attr_persuasion_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="persuasion-core">Persuasion <span>(Cha)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_persuasion_flat" value="0" placeholder="0" title="@{persuasion_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="religion">
+                        <select name="attr_religion_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="religion-core">Religion <span>(Int)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_religion_flat" value="0" placeholder="0" title="@{religion_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="sleight-of-hand">
+                        <select name="attr_sleight_of_hand_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="sleight-of-hand-core">Sleight of Hand <span>(Dex)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_sleight_of_hand_flat" value="0" placeholder="0" title="@{sleight_of_hand_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="stealth">
+                        <select name="attr_stealth_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="stealth-core">Stealth <span>(Dex)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_stealth_flat" value="0" placeholder="0" title="@{stealth_flat}">
+                    </div>
+                    <div class="row skill" data-i18n-list-item="survival">
+                        <select name="attr_survival_type"><option value="1" selected="selected" data-i18n="normal">Normal</option><option value="2" data-i18n="expirtise">Expertise</option></select>
+                        <span data-i18n="survival-core">Survival <span>(Wis)</span></span>
+                        <span>+</span><input type="text" class="num" name="attr_survival_flat" value="0" placeholder="0" title="@{survival_flat}">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <input type="checkbox" name="attr_jack_of_all_trades" value="(floor(@{pb}/2))">
+                    <span data-i18n="jack-of-all-u">JACK OF ALL TRADES</span>
+                </div>
+                <div class="row title">
+                    <span data-i18n="skill-opts-u">SKILL OPTIONS</span>
+                </div>
+            </div>
+        </div>
+        <div class="col col3">
+            <div class="general_options">
+                <div class="version">
+                    <span data-i18n="version">v</span>
+                    <input type="text" name="attr_version" value="2.0">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_npc" value="1">
+                    <span data-i18n="npc-u">NPC</span>
+
+                    <input type="checkbox" name="attr_spellcaster" value="1">
+                    <span data-i18n="spellcaster-u">Spellcaster</span>
+
+                    <input type="checkbox" name="attr_psionicist" value="1">
+                    <span data-i18n="psionicist-u">Psionicist</span>
+                </div>
+                <div class="row">
+                    <span data-i18n="roll-queries:-u">ROLL QUERIES:</span>
+                    <select name="attr_rtype">
+                        <option selected="selected" value="{{query=1}} ?{Advantage?|Normal Roll,&#123&#123normal=1&#125&#125 &#123&#123r2=[[0d20|Advantage,&#123&#123advantage=1&#125&#125 &#123&#123r2=[[1d20|Disadvantage,&#123&#123disadvantage=1&#125&#125 &#123&#123r2=[[1d20}" data-i18n="query-roll-adv">Query Advantage</option>
+                        <option value="{{always=1}} {{r2=[[1d20" data-i18n="always-roll-adv">Always Roll Advantage</option>
+                        <option value="@{advantagetoggle}" data-i18n="toggle-roll-adv">Advantage Toggle</option>
+                        <option value="{{normal=1}} {{r2=[[0d20" data-i18n="never-roll-adv">Never Roll Advantage</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="whisp-rolls-gm:-u">WHISPER ROLLS TO GM:</span>
+                    <select name="attr_wtype">
+                        <option value="" data-i18n="never-whisper-roll">Never Whisper Rolls</option>
+                        <option value="?{Whisper?|Public Roll,|Whisper Roll,/w gm }" data-i18n="query-whisper-roll">Query Whisper</option>
+                        <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="auto-dmg-roll:-u">AUTO DAMAGE ROLL:</span>
+                    <select class="dtype" name="attr_dtype">
+                        <option value="full" data-i18n="always-roll-dmg" selected="selected">Auto Roll Damage & Crit</option>
+                        <option value="pick" data-i18n="never-roll-dmg">Don't Auto Roll Damage</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="add-char-to-templates:-u">ADD CHARACTER NAME TO TEMPLATES:</span>
+                    <select class="dtype" name="attr_charname_output">
+                        <option value="{{charname=@{character_name}}}" selected="selected" data-i18n="on">On</option>
+                        <option value="charname=@{character_name}" data-i18n="off">Off</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="inventory:-u">INVENTORY:</span>
+                    <select name="attr_simpleinventory">
+                        <option value="complex" data-i18n="compendium-compatible">Compendium Compatible</option>
+                        <option value="simple" data-i18n="simple">Simple</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="encumberance:-u">ENCUMBERANCE:</span>
+                    <select name="attr_encumberance_setting">
+                        <option value="on" data-i18n="on">On</option>
+                        <option value="off" data-i18n="off">Off</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="ammo-tracking:-u">AMMO TRACKING:</span>
+                    <select name="attr_ammotracking">
+                        <option value="on" data-i18n="on">On</option>
+                        <option value="off" selected="selected" data-i18n="off">Off</option>
+                    </select>
+                    <span data-i18n-title="api-required-title" data-i18n="api-required-u" title="Try it now with easy one click API installation available with your Pro subscription." style="color:#666; cursor:help;">(API REQUIRED)</span>
+                </div>
+                <div class="row title">
+                    <span data-i18n="general-opts-u">GENERAL OPTIONS</span>
+                </div>
+            </div>
+            <!-- TRANSITION SCRIPT -->
+            <input type="hidden" class="already_transitioned" name="attr_already_transitioned" value="0">
+            <div class="transition_options">
+                <div class="row">
+                    <span class="transition_text" data-i18n="transition-text">Clicking one of the images below will reformat the data from your current sheet to this sheet. These changes are permanent and cannot be undone.</span>
+                    <span class="transition_text_highlight" data-i18n="transition-text-highlight">Please make a copy of your game before you use this tool.</span>
+
+                    <span data-i18n="choose-sheet-transfer">CHOOSE THE SHEET YOU ARE TRANSFERING FROM</span>
+
+
+                    <div class="sheet_select">
+                        <span data-i18n="community-sheet-u">COMMUNITY SHEET</span>
+                        <input type="checkbox" name="attr_is_simple" id="isSimple" value="1" style="display: none;">
+                        <label for="isSimple" style="cursor: pointer;"><img src="http://i.imgur.com/py5B0cm.png" width="220" height="177"></label>
+                    </div>
+
+                    <div class="sheet_select">
+                        <span data-i18n="shaped-sheet-u">SHAPED SHEET</span>
+                        <input type="checkbox" name="attr_is_shaped" id="isShaped" value="1" style="display: none;">
+                        <label for="isShaped"><img src="http://i.imgur.com/LoT21n1.png" width="220" height="177"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="checkbox" class="already_transitioned" name="attr_already_transitioned" value="1">
+                    Hide TRANSITION OPTIONS
+                </div>
+                <div class="row title">
+                    <span data-i18n="transition-opts-u">TRANSITION OPTIONS</span>
+                </div>
+            </div>
+            <!-- /TRANSITION SCRIPT -->
+        </div>
+    </div>
+</div>

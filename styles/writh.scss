@@ -22,7 +22,7 @@
 input[type=radio].sheet-tab-button {
     position: absolute;
     top: 92px;
-    right: 479px;
+    right: 0;
     opacity: 0;
     width: 18px;
     height: 18px;
@@ -32,7 +32,7 @@ input[type=radio].sheet-tab-button {
 input[type=radio].sheet-tab-button + span {
     position: absolute;
     top: 92px;
-    right: 479px;
+    right: 0px;
     width: 17px;
     height: 17px;
     border: 1px solid black;
@@ -111,30 +111,38 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 }
 
 .sheet-spells_toggle[value="0"] ~ input[type=radio].sheet-tab-button.sheet-spells,
-.sheet-spells_toggle[value="0"] ~ input[type=radio].sheet-tab-button.sheet-spells + span { display: none; }
+.sheet-spells_toggle[value="0"] ~ input[type=radio].sheet-tab-button.sheet-spells + span,
+.sheet-psionics_toggle[value="0"] ~ input[type=radio].sheet-tab-button.sheet-psionics,
+.sheet-psionics_toggle[value="0"] ~ input[type=radio].sheet-tab-button.sheet-psionics + span{ display: none; }
 
 input[type=radio].sheet-tab-button.sheet-core,
 input[type=radio].sheet-tab-button.sheet-core + span {
-    right: 430px;
+    left: 251px;
     width: 45px;
 }
 
 input[type=radio].sheet-tab-button.sheet-bio,
 input[type=radio].sheet-tab-button.sheet-bio + span {
-    right: 395px;
+    left: 301px;
     width: 30px;
 }
 
 input[type=radio].sheet-tab-button.sheet-notes,
 input[type=radio].sheet-tab-button.sheet-notes + span {
-    right: 340px;
+    left: 335px;
     width: 50px;
 }
 
 input[type=radio].sheet-tab-button.sheet-spells,
 input[type=radio].sheet-tab-button.sheet-spells + span {
-    right: 0;
+    left: 425px;
     width: 60px;
+}
+
+input[type=radio].sheet-tab-button.sheet-psionics,
+input[type=radio].sheet-tab-button.sheet-psionics + span {
+  left: 490px;
+  width: 75px;
 }
 
 .sheet-header {

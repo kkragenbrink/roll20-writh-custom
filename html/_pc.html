@@ -1,0 +1,32 @@
+<div class="container pc">
+
+    <input type="hidden" class="toggleflag" name="attr_toggleflag">
+    <div class="advantagetoggle">
+        <input type="radio" class="toggle-left" name="attr_advantagetoggle" value="{{query=1}} {{advantage=1}} {{r2=[[1d20"><span data-i18n="adv-u">ADVANTAGE</span>
+        <input type="radio" class="toggle-center" name="attr_advantagetoggle" value="{{query=1}} {{normal=1}} {{r2=[[0d20" checked="checked"><span data-i18n="norm-u">NORMAL</span>
+        <input type="radio" class="toggle-right" name="attr_advantagetoggle" value="{{query=1}} {{disadvantage=1}} {{r2=[[1d20"><span data-i18n="disadv-u">DISADVANTAGE</span>
+    </div>
+
+    <input class="tab-button options" type="radio" name="attr_tab" value="options"><span style="font-family: pictos">y</span>
+    <input class="tab-button core" type="radio" name="attr_tab" value="core" checked="checked"><span data-i18n="core-u">CORE</span>
+    <input class="tab-button bio" type="radio" name="attr_tab" value="bio"><span data-i18n="bio-u">BIO</span>
+    <input class="tab-button notes" type="radio" name="attr_tab" value="notes"><span data-i18n="notes-u">NOTES</span>
+    <input class="spells_toggle" name="attr_spells_toggle" type="hidden" value="0">
+    <input class="tab-button spells" type="radio" name="attr_tab" value="spells"><span data-i18n="spells-u">SPELLS</span>
+    <input class="psionics_toggle" name="attr_psionics_toggle" type="hidden" value="0">
+    <input class="tab-button psionics" type="radio" name="attr_tab" value="psionics"><span data-i18n="psionics-u">PSIONICS</span>
+    <input class="tab-button options" type="radio" name="attr_tab" value="options"><span style="font-family: pictos">y</span>
+
+@include "pages/core.html";
+@include "pages/bio.html";
+@include "pages/notes.html";
+@include "pages/spells.html";
+@include "pages/options.html";
+
+    <div class="footer" style="font-size: 10px; color: rgb(165, 165, 165);">
+            <span data-i18n="portions-sheet-utilize">
+                Portions of this sheet utilize content from the System Reference Document 5.0 under the OGL License. View OGL License and Copyright Notice. https://wiki.roll20.net/SRD_5.0_OGL_License
+            </span>
+    </div>
+
+</div>

@@ -15,14 +15,15 @@
     "lint-staged": {
         "*.js": [
             "npm run-script compile",
-            "prettier --parser flow --write --tab-width 4 --single-quote --no-bracket-spacing",
+            "npm run-script prettier",
             "git add"
         ]
     },
     "scripts": {
         "compile": "npm run-script compile-js",
         "compile-js": "uglifyjs -b -o writh.js scripts/*.js",
-        "precommit": "lint-staged"
+        "precommit": "lint-staged",
+        "prettier": "prettier --parser flow --write --tab-width 4 --single-quote --no-bracket-spacing"
     },
     "author": "Kevin Kragenbrink <kevin@writh.net>",
     "license": "ISC"

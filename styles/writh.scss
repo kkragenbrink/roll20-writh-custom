@@ -1198,7 +1198,7 @@ span.sheet-label.sheet-deprecated:after {
     text-align: left;
 }
 
-.sheet-tool .sheet-options input,
+.sheet-tool .sheet-options input[type=text],
 .sheet-feature .sheet-options input[type=text],
 .sheet-attack .sheet-options input[type=text],
 .sheet-spell .sheet-options input[type=text],
@@ -1239,7 +1239,7 @@ span.sheet-label.sheet-deprecated:after {
 }
 
 .sheet-tool .sheet-options input[type=checkbox],
-.sheet-feature .4 input[type=checkbox],
+.sheet-feature .sheet-options input[type=checkbox],
 .sheet-attack .sheet-options input[type=checkbox],
 .sheet-spell .sheet-options input[type=checkbox],
 .sheet-options .sheet-body input[type=checkbox],

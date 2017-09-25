@@ -41,7 +41,7 @@ async function renderJSFile (file, path) {
     return output.code || '';
 }
 
-const html_include = /^@include "(.*?)";$/gm;
+const html_include = /^\s*@include "(.*?)";$/gm;
 async function parseHTMLFile (content) {
     const matches = content.match(html_include);
     if (!matches) return content;

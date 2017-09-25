@@ -10,20 +10,7 @@
                 <div class="hlabel-container">
                     <input class="flag" type="hidden" name="attr_customclass_flag" value="0">
                     <input class="showing" type="text" name="attr_cust_class" value="@{cust_classname}" disabled="true" style="width: 64px; height: 28px; padding-top: 10px;">
-                    <select class="hiding class" name="attr_class">
-                        <option value="Barbarian" data-i18n="barbarian">Barbarian</option>
-                        <option value="Bard" data-i18n="bard">Bard</option>
-                        <option value="Cleric" data-i18n="cleric">Cleric</option>
-                        <option value="Druid" data-i18n="druid">Druid</option>
-                        <option value="Fighter" data-i18n="fighter">Fighter</option>
-                        <option value="Monk" data-i18n="monk">Monk</option>
-                        <option value="Paladin" data-i18n="paladin">Paladin</option>
-                        <option value="Ranger" data-i18n="ranger">Ranger</option>
-                        <option value="Rogue" data-i18n="rogue">Rogue</option>
-                        <option value="Sorcerer" data-i18n="sorcerer">Sorcerer</option>
-                        <option value="Warlock" data-i18n="warlock">Warlock</option>
-                        <option value="Wizard" data-i18n="wizard">Wizard</option>
-                    </select>
+                    @include "_classes.html";
                     <input type="number" class="class-level" name="attr_base_level" value="1">
                     <span class="label" data-i18n="class-level-u">CLASS & LEVEL</span>
                 </div>
@@ -160,18 +147,7 @@
                     <input type="checkbox" name="attr_multiclass1_flag" value="1">
                     <span data-i18n="2nd-class:-u">2ND CLASS:</span>
                     <select name="attr_multiclass1" style="width: 64px;">
-                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
-                        <option value="bard" data-i18n="bard">Bard</option>
-                        <option value="cleric" data-i18n="cleric">Cleric</option>
-                        <option value="druid" data-i18n="druid">Druid</option>
-                        <option value="fighter" data-i18n="fighter">Fighter</option>
-                        <option value="monk" data-i18n="monk">Monk</option>
-                        <option value="paladin" data-i18n="paladin">Paladin</option>
-                        <option value="ranger" data-i18n="ranger">Ranger</option>
-                        <option value="rogue" data-i18n="rogue">Rogue</option>
-                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
-                        <option value="warlock" data-i18n="warlock">Warlock</option>
-                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                        @include "_class-list.html";
                     </select>
                     <span data-i18n="lvl:-u">LEVEL:</span>
                     <input type="text" name="attr_multiclass1_lvl" value="1" style="width: 28px; text-align: center;">
@@ -180,18 +156,7 @@
                     <input type="checkbox" name="attr_multiclass2_flag" value="1">
                     <span data-i18n="3rd-class:-u">3RD CLASS:</span>
                     <select name="attr_multiclass2" style="width: 64px;">
-                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
-                        <option value="bard" data-i18n="bard">Bard</option>
-                        <option value="cleric" data-i18n="cleric">Cleric</option>
-                        <option value="druid" data-i18n="druid">Druid</option>
-                        <option value="fighter" data-i18n="fighter">Fighter</option>
-                        <option value="monk" data-i18n="monk">Monk</option>
-                        <option value="paladin" data-i18n="paladin">Paladin</option>
-                        <option value="ranger" data-i18n="ranger">Ranger</option>
-                        <option value="rogue" data-i18n="rogue">Rogue</option>
-                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
-                        <option value="warlock" data-i18n="warlock">Warlock</option>
-                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                        @include "_class-list.html";
                     </select>
                     <span data-i18n="lvl:-u">LEVEL:</span>
                     <input type="text" name="attr_multiclass2_lvl" value="1" style="width: 28px; text-align: center;">
@@ -200,18 +165,7 @@
                     <input type="checkbox" name="attr_multiclass3_flag" value="1">
                     <span data-i18n="4th-class:-u">4TH CLASS:</span>
                     <select name="attr_multiclass3" style="width: 64px;">
-                        <option value="barbarian" data-i18n="barbarian">Barbarian</option>
-                        <option value="bard" data-i18n="bard">Bard</option>
-                        <option value="cleric" data-i18n="cleric">Cleric</option>
-                        <option value="druid" data-i18n="druid">Druid</option>
-                        <option value="fighter" data-i18n="fighter">Fighter</option>
-                        <option value="monk" data-i18n="monk">Monk</option>
-                        <option value="paladin" data-i18n="paladin">Paladin</option>
-                        <option value="ranger" data-i18n="ranger">Ranger</option>
-                        <option value="rogue" data-i18n="rogue">Rogue</option>
-                        <option value="sorcerer" data-i18n="sorcerer">Sorcerer</option>
-                        <option value="warlock" data-i18n="warlock">Warlock</option>
-                        <option value="wizard" data-i18n="wizard">Wizard</option>
+                        @include "_class-list.html";
                     </select>
                     <span data-i18n="lvl:-u">LEVEL:</span>
                     <input type="text" name="attr_multiclass3_lvl" value="1" style="width: 28px; text-align: center;">

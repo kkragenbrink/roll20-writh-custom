@@ -1171,7 +1171,14 @@
         </div>
     </div>
 </div>
-@include "pages/core/inspiration-and-proficiency.html":
+<div class="insp-prof-container" style="width: 100%; margin-top: 2px;">
+    <div class="value">
+        <input type="text" name="attr_passive_wisdom" title="@{passive_wisdom}" value="(10+@{perception_bonus}+@{passiveperceptionmod})" disabled="true" ><span></span>
+    </div>
+    <div class="label" style="width: 217px;">
+        <span data-i18n="pass-wis-u">PASSIVE WISDOM (PERCEPTION)</span>
+    </div>
+</div>
 <div class="tool_proficiencies" style="margin-bottom: 10px; min-height: 100px; position: relative;">
     <div class="top">
         <span class="label" style="width: 95px;" data-i18n="tool-u">TOOL</span>
@@ -1516,19 +1523,19 @@
         </div>
         <div class="col col3">
 <div class="textbox">
-    <textarea name="attr_personality_traits" style="min-height: 50px; height: 50px;"></textarea>
+    <textarea name="attr_personality_traits" style="min-height: 49px; height: 49px;"></textarea>
     <span class="label" data-i18n="personality-traits-u">PERSONALITY TRAITS</span>
 </div>
 <div class="textbox">
-    <textarea name="attr_ideals"></textarea>
+    <textarea name="attr_ideals" style="min-height: 49px; height: 49px;"></textarea>
     <span class="label" data-i18n="ideals-u">IDEALS</span>
 </div>
 <div class="textbox">
-    <textarea name="attr_bonds"></textarea>
+    <textarea name="attr_bonds" style="min-height: 49px; height: 49px;"></textarea>
     <span class="label" data-i18n="bonds-u">BONDS</span>
 </div>
-<div class="textbox">
-    <textarea name="attr_flaws" style="min-height: 46px; height: 46px;"></textarea>
+<div class="textbox" style="margin-bottom: 10px;">
+    <textarea name="attr_flaws" style="min-height: 48px; height: 48px;"></textarea>
     <span class="label" data-i18n="flaws-u">FLAWS</span>
 </div>
 <div class="features">
@@ -1604,7 +1611,7 @@
 
 <!-- DEPRECATED -->
 <div class="textbox" style="">
-    <textarea name="attr_features_and_traits" style="min-height: 230px; height: 230px;"></textarea>
+    <textarea name="attr_features_and_traits" style="min-height: 157px; height: 157px;"></textarea>
     <span class="label deprecated" data-i18n="feats-traits-u">FEATURES & TRAITS</span>
 </div>
 <!-- /DEPRECATED -->

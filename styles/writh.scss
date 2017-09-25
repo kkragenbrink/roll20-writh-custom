@@ -449,6 +449,12 @@ button[type=roll] * {
     font-weight: bold;
 }
 
+.sheet-features {
+  max-height: 563px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .sheet-features > .sheet-label {
     position: absolute;
     bottom: 0;

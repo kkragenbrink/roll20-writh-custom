@@ -1,0 +1,150 @@
+<div class="skills-saves-container">
+    <div class="insp-prof-container">
+        <div class="value">
+            <input type="checkbox" name="attr_inspiration"><span></span>
+        </div>
+        <div class="label">
+            <span data-i18n="inspiration-u">INSPIRATION</span>
+        </div>
+    </div>
+    <div class="insp-prof-container">
+        <div class="value">
+            <input type="text" name="attr_pb" title="@{pb}" value="(ceil((@{level})/1e10) + ceil((@{level})/4))" disabled="true" ><span></span>
+        </div>
+        <div class="label">
+            <span data-i18n="prof-bonus-u">PROFICIENCY BONUS</span>
+        </div>
+    </div>
+    <div class="saving-throw-container">
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_strength_save_prof" title="@{strength_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_strength_save_bonus" title="@{strength_save_bonus}" value="(@{strength_mod}+@{strength_save_prof})" disabled="true">
+            <button type="roll" name="roll_strength_save" value="@{wtype}&{template:simple} {{rname=^{strength-save-u}}} {{mod=[[[[@{strength_save_bonus}]][STR+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{strength_save_bonus}]][STR+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{strength_save_bonus}]][STR+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="strength">Strength</button>
+        </div>
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_dexterity_save_prof" title="@{dexterity_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_dexterity_save_bonus" title="@{dexterity_save_bonus}" value="(@{dexterity_mod}+@{dexterity_save_prof})" disabled="true">
+            <button type="roll" name="roll_dexterity_save" value="@{wtype}&{template:simple} {{rname=^{dexterity-save-u}}} {{mod=[[[[@{dexterity_save_bonus}]][DEX+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{dexterity_save_bonus}]][DEX+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{dexterity_save_bonus}]][DEX+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="dexterity">Dexterity</button>
+        </div>
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_constitution_save_prof" title="@{constitution_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_constitution_save_bonus" title="@{constitution_save_bonus}" value="(@{constitution_mod}+@{constitution_save_prof})" disabled="true">
+            <button type="roll" name="roll_constitution_save" value="@{wtype}&{template:simple} {{rname=^{constitution-save-u}}} {{mod=[[[[@{constitution_save_bonus}]][CON+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{constitution_save_bonus}]][CON+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{constitution_save_bonus}]][CON+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="constitution">Constitution</button>
+        </div>
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_intelligence_save_prof" title="@{intelligence_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_intelligence_save_bonus" title="@{intelligence_save_bonus}" value="(@{intelligence_mod}+@{intelligence_save_prof})" disabled="true">
+            <button type="roll" name="roll_intelligence_save" value="@{wtype}&{template:simple} {{rname=^{intelligence-save-u}}} {{mod=[[[[@{intelligence_save_bonus}]][INT+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{intelligence_save_bonus}]][INT+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{intelligence_save_bonus}]][INT+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="intelligence">Intelligence</button>
+        </div>
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_wisdom_save_prof" title="@{wisdom_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_wisdom_save_bonus" title="@{wisdom_save_bonus}" value="(@{wisdom_mod}+@{wisdom_save_prof})" disabled="true">
+            <button type="roll" name="roll_wisdom_save" value="@{wtype}&{template:simple} {{rname=^{wisdom-save-u}}} {{mod=[[[[@{wisdom_save_bonus}]][WIS+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{wisdom_save_bonus}]][WIS+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{wisdom_save_bonus}]][WIS+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="wisdom">Wisdom</button>
+        </div>
+        <div class="saving-throw">
+            <input type="checkbox" name="attr_charisma_save_prof" title="@{charisma_save_prof}" value="(@{pb})">
+            <input type="text" name="attr_charisma_save_bonus" title="@{charisma_save_bonus}" value="(@{charisma_mod}+@{charisma_save_prof})" disabled="true">
+            <button type="roll" name="roll_charisma_save" value="@{wtype}&{template:simple} {{rname=^{charisma-save-u}}} {{mod=[[[[@{charisma_save_bonus}]][CHA+PROF]@{globalsavingthrowbonus}]]}} {{r1=[[1d20@{halflingluck}+[[@{charisma_save_bonus}]][CHA+PROF]@{globalsavingthrowbonus}]]}} @{rtype}@{halflingluck}+[[@{charisma_save_bonus}]][CHA+PROF]@{globalsavingthrowbonus}]]}} @{charname_output}" data-i18n="charisma">Charisma</button>
+        </div>
+        <div class="label">
+            <span data-i18n="saving-throws-u">SAVING THROWS</span>
+        </div>
+    </div>
+    <div class="skills-container skills-list">
+        <div data-i18n-list="skills-list">
+            <div class="skill" data-i18n-list-item="acrobatics">
+                <input type="checkbox" name="attr_acrobatics_prof" title="@{acrobatics_prof}" value="(@{pb}*@{acrobatics_type})">
+                <input type="text" name="attr_acrobatics_bonus" title="@{acrobatics_bonus}" value="(@{dexterity_mod}+@{acrobatics_proficiency}+@{acrobatics_flat})" disabled="true">
+                <button type="roll" name="roll_acrobatics" value="@{wtype}&{template:simple} {{rname=^{acrobatics-u}}} {{mod=[[[[@{acrobatics_bonus}]][ACR]]]}} {{r1=[[1d20@{halflingluck}+[[@{acrobatics_bonus}]][ACR]]]}} @{rtype}@{halflingluck}+[[@{acrobatics_bonus}]][ACR]]]}} @{charname_output}" data-i18n="acrobatics-core">Acrobatics <span>(Dex)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="animal-handling">
+                <input type="checkbox" name="attr_animal_handling_prof" title="@{animal_handling_prof}" value="(@{pb}*@{animal_handling_type})">
+                <input type="text" name="attr_animal_handling_bonus" title="@{animal_handling_bonus}" value="(@{wisdom_mod}+@{animal_handling_proficiency}+@{animal_handling_flat})" disabled="true">
+                <button type="roll" name="roll_animal_handling" value="@{wtype}&{template:simple} {{rname=^{animal-handling-u}}} {{mod=[[[[@{animal_handling_bonus}]][ANI]]]}} {{r1=[[1d20@{halflingluck}+[[@{animal_handling_bonus}]][ANI]]]}} @{rtype}@{halflingluck}+[[@{animal_handling_bonus}]][ANI]]]}} @{charname_output}" data-i18n="animal-handling-core">Animal Handling <span>(Wis)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="arcana">
+                <input type="checkbox" name="attr_arcana_prof" title="@{arcana_prof}" value="(@{pb}*@{arcana_type})">
+                <input type="text" name="attr_arcana_bonus" title="@{arcana_bonus}" value="(@{intelligence_mod}+@{arcana_proficiency}+@{arcana_flat})" disabled="true">
+                <button type="roll" name="roll_arcana" value="@{wtype}&{template:simple} {{rname=^{arcana-u}}} {{mod=[[[[@{arcana_bonus}]][ARC]]]}} {{r1=[[1d20@{halflingluck}+[[@{arcana_bonus}]][ARC]]]}} @{rtype}@{halflingluck}+[[@{arcana_bonus}]][ARC]]]}} @{charname_output}" data-i18n="arcana-core">Arcana <span>(Int)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="athletics">
+                <input type="checkbox" name="attr_athletics_prof" title="@{athletics_prof}" value="(@{pb}*@{athletics_type})">
+                <input type="text" name="attr_athletics_bonus" title="@{athletics_bonus}" value="(@{strength_mod}+@{athletics_proficiency}+@{athletics_flat})" disabled="true">
+                <button type="roll" name="roll_athletics" value="@{wtype}&{template:simple} {{rname=^{athletics-u}}} {{mod=[[[[@{athletics_bonus}]][ATH]]]}} {{r1=[[1d20@{halflingluck}+[[@{athletics_bonus}]][ATH]]]}} @{rtype}@{halflingluck}+[[@{athletics_bonus}]][ATH]]]}} @{charname_output}" data-i18n="athletics-core">Athletics <span>(Str)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="deception">
+                <input type="checkbox" name="attr_deception_prof" title="@{deception_prof}" value="(@{pb}*@{deception_type})">
+                <input type="text" name="attr_deception_bonus" title="@{deception_bonus}" value="(@{charisma_mod}+@{deception_proficiency}+@{deception_flat})" disabled="true">
+                <button type="roll" name="roll_deception" value="@{wtype}&{template:simple} {{rname=^{deception-u}}} {{mod=[[[[@{deception_bonus}]][DEC]]]}} {{r1=[[1d20@{halflingluck}+[[@{deception_bonus}]][DEC]]]}} @{rtype}@{halflingluck}+[[@{deception_bonus}]][DEC]]]}} @{charname_output}" data-i18n="deception-core">Deception <span>(Cha)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="history">
+                <input type="checkbox" name="attr_history_prof" title="@{history_prof}" value="(@{pb}*@{history_type})">
+                <input type="text" name="attr_history_bonus" title="@{history_bonus}" value="(@{intelligence_mod}+@{history_proficiency}+@{history_flat})" disabled="true">
+                <button type="roll" name="roll_history" value="@{wtype}&{template:simple} {{rname=^{history-u}}} {{mod=[[[[@{history_bonus}]][HIS]]]}} {{r1=[[1d20@{halflingluck}+[[@{history_bonus}]][HIS]]]}} @{rtype}@{halflingluck}+[[@{history_bonus}]][HIS]]]}} @{charname_output}" data-i18n="history-core">History <span>(Int)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="insight">
+                <input type="checkbox" name="attr_insight_prof" title="@{insight_prof}" value="(@{pb}*@{insight_type})">
+                <input type="text" name="attr_insight_bonus" title="@{insight_bonus}" value="(@{wisdom_mod}+@{insight_proficiency}+@{insight_flat})" disabled="true">
+                <button type="roll" name="roll_insight" value="@{wtype}&{template:simple} {{rname=^{insight-u}}} {{mod=[[[[@{insight_bonus}]][INS]]]}} {{r1=[[1d20@{halflingluck}+[[@{insight_bonus}]][INS]]]}} @{rtype}@{halflingluck}+[[@{insight_bonus}]][INS]]]}} @{charname_output}" data-i18n="insight-core">Insight <span>(Wis)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="intimidation">
+                <input type="checkbox" name="attr_intimidation_prof" title="@{intimidation_prof}" value="(@{pb}*@{intimidation_type})">
+                <input type="text" name="attr_intimidation_bonus" title="@{intimidation_bonus}" value="(@{charisma_mod}+@{intimidation_proficiency}+@{intimidation_flat})" disabled="true">
+                <button type="roll" name="roll_intimidation" value="@{wtype}&{template:simple} {{rname=^{intimidation-u}}} {{mod=[[[[@{intimidation_bonus}]][INT]]]}} {{r1=[[1d20@{halflingluck}+[[@{intimidation_bonus}]][INT]]]}} @{rtype}@{halflingluck}+[[@{intimidation_bonus}]][INT]]]}} @{charname_output}" data-i18n="intimidation-core">Intimidation <span>(Cha)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="investigation">
+                <input type="checkbox" name="attr_investigation_prof" title="@{investigation_prof}" value="(@{pb}*@{investigation_type})">
+                <input type="text" name="attr_investigation_bonus" title="@{investigation_bonus}" value="(@{intelligence_mod}+@{investigation_proficiency}+@{investigation_flat})" disabled="true">
+                <button type="roll" name="roll_investigation" value="@{wtype}&{template:simple} {{rname=^{investigation-u}}} {{mod=[[[[@{investigation_bonus}]][INV]]]}} {{r1=[[1d20@{halflingluck}+[[@{investigation_bonus}]][INV]]]}} @{rtype}@{halflingluck}+[[@{investigation_bonus}]][INV]]]}} @{charname_output}" data-i18n="investigation-core">Investigation <span>(Int)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="medicine">
+                <input type="checkbox" name="attr_medicine_prof" title="@{medicine_prof}" value="(@{pb}*@{medicine_type})">
+                <input type="text" name="attr_medicine_bonus" title="@{medicine_bonus}" value="(@{wisdom_mod}+@{medicine_proficiency}+@{medicine_flat})" disabled="true">
+                <button type="roll" name="roll_medicine" value="@{wtype}&{template:simple} {{rname=^{medicine-u}}} {{mod=[[[[@{medicine_bonus}]][MED]]]}} {{r1=[[1d20@{halflingluck}+[[@{medicine_bonus}]][MED]]]}} @{rtype}@{halflingluck}+[[@{medicine_bonus}]][MED]]]}} @{charname_output}" data-i18n="medicine-core">Medicine <span>(Wis)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="nature">
+                <input type="checkbox" name="attr_nature_prof" title="@{nature_prof}" value="(@{pb}*@{nature_type})">
+                <input type="text" name="attr_nature_bonus" title="@{nature_bonus}" value="(@{intelligence_mod}+@{nature_proficiency}+@{nature_flat})" disabled="true">
+                <button type="roll" name="roll_nature" value="@{wtype}&{template:simple} {{rname=^{nature-u}}} {{mod=[[[[@{nature_bonus}]][NAT]]]}} {{r1=[[1d20@{halflingluck}+[[@{nature_bonus}]][NAT]]]}} @{rtype}@{halflingluck}+[[@{nature_bonus}]][NAT]]]}} @{charname_output}" data-i18n="nature-core">Nature <span>(Int)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="perception">
+                <input type="checkbox" name="attr_perception_prof" title="@{perception_prof}" value="(@{pb}*@{perception_type})">
+                <input type="text" name="attr_perception_bonus" title="@{perception_bonus}" value="(@{wisdom_mod}+@{perception_proficiency}+@{perception_flat})" disabled="true">
+                <button type="roll" name="roll_perception" value="@{wtype}&{template:simple} {{rname=^{perception-u}}} {{mod=[[[[@{perception_bonus}]][PER]]]}} {{r1=[[1d20@{halflingluck}+[[@{perception_bonus}]][PER]]]}} @{rtype}@{halflingluck}+[[@{perception_bonus}]][PER]]]}} @{charname_output}" data-i18n="perception-core">Perception <span>(Wis)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="performance">
+                <input type="checkbox" name="attr_performance_prof" title="@{performance_prof}" value="(@{pb}*@{performance_type})">
+                <input type="text" name="attr_performance_bonus" title="@{performance_bonus}" value="(@{charisma_mod}+@{performance_proficiency}+@{performance_flat})" disabled="true">
+                <button type="roll" name="roll_performance" value="@{wtype}&{template:simple} {{rname=^{performance-u}}} {{mod=[[[[@{performance_bonus}]][PER]]]}} {{r1=[[1d20@{halflingluck}+[[@{performance_bonus}]][PER]]]}} @{rtype}@{halflingluck}+[[@{performance_bonus}]][PER]]]}} @{charname_output}" data-i18n="performance-core">Performance <span>(Cha)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="persuasion">
+                <input type="checkbox" name="attr_persuasion_prof" title="@{persuasion_prof}" value="(@{pb}*@{persuasion_type})">
+                <input type="text" name="attr_persuasion_bonus" title="@{persuasion_bonus}" value="(@{charisma_mod}+@{persuasion_proficiency}+@{persuasion_flat})" disabled="true">
+                <button type="roll" name="roll_persuasion" value="@{wtype}&{template:simple} {{rname=^{persuasion-u}}} {{mod=[[[[@{persuasion_bonus}]][PER]]]}} {{r1=[[1d20@{halflingluck}+[[@{persuasion_bonus}]][PER]]]}} @{rtype}@{halflingluck}+[[@{persuasion_bonus}]][PER]]]}} @{charname_output}" data-i18n="persuasion-core">Persuasion <span>(Cha)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="religion">
+                <input type="checkbox" name="attr_religion_prof" title="@{religion_prof}" value="(@{pb}*@{religion_type})">
+                <input type="text" name="attr_religion_bonus" title="@{religion_bonus}" value="(@{intelligence_mod}+@{religion_proficiency}+@{religion_flat})" disabled="true">
+                <button type="roll" name="roll_religion" value="@{wtype}&{template:simple} {{rname=^{religion-u}}} {{mod=[[[[@{religion_bonus}]][REL]]]}} {{r1=[[1d20@{halflingluck}+[[@{religion_bonus}]][REL]]]}} @{rtype}@{halflingluck}+[[@{religion_bonus}]][REL]]]}} @{charname_output}" data-i18n="religion-core">Religion <span>(Int)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="sleight-of-hand">
+                <input type="checkbox" name="attr_sleight_of_hand_prof" title="@{sleight_of_hand_prof}" value="(@{pb}*@{sleight_of_hand_type})">
+                <input type="text" name="attr_sleight_of_hand_bonus" title="@{sleight_of_hand_bonus}" value="(@{dexterity_mod}+@{sleight_of_hand_proficiency}+@{sleight_of_hand_flat})" disabled="true">
+                <button type="roll" name="roll_sleight_of_hand" value="@{wtype}&{template:simple} {{rname=^{sleight-of-hand-u}}} {{mod=[[[[@{sleight_of_hand_bonus}]][SLE]]]}} {{r1=[[1d20@{halflingluck}+[[@{sleight_of_hand_bonus}]][SLE]]]}} @{rtype}@{halflingluck}+[[@{sleight_of_hand_bonus}]][SLE]]]}} @{charname_output}" data-i18n="sleight-of-hand-core">Sleight of Hand <span>(Dex)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="stealth">
+                <input type="checkbox" name="attr_stealth_prof" title="@{stealth_prof}" value="(@{pb}*@{stealth_type})">
+                <input type="text" name="attr_stealth_bonus" title="@{stealth_bonus}" value="(@{dexterity_mod}+@{stealth_proficiency}+@{stealth_flat})" disabled="true">
+                <button type="roll" name="roll_stealth" value="@{wtype}&{template:simple} {{rname=^{stealth-u}}} {{mod=[[[[@{stealth_bonus}]][STE]]]}} {{r1=[[1d20@{halflingluck}+[[@{stealth_bonus}]][STE]]]}} @{rtype}@{halflingluck}+[[@{stealth_bonus}]][STE]]]}} @{charname_output}" data-i18n="stealth-core">Stealth <span>(Dex)</span></button>
+            </div>
+            <div class="skill" data-i18n-list-item="survival">
+                <input type="checkbox" name="attr_survival_prof" title="@{survival_prof}" value="(@{pb}*@{survival_type})">
+                <input type="text" name="attr_survival_bonus" title="@{survival_bonus}" value="(@{wisdom_mod}+@{survival_proficiency}+@{survival_flat})" disabled="true">
+                <button type="roll" name="roll_survival" value="@{wtype}&{template:simple} {{rname=^{survival-u}}} {{mod=[[[[@{survival_bonus}]][SUR]]]}} {{r1=[[1d20@{halflingluck}+[[@{survival_bonus}]][SUR]]]}} @{rtype}@{halflingluck}+[[@{survival_bonus}]][SUR]]]}} @{charname_output}" data-i18n="survival-core">Survival <span>(Wis)</span></button>
+            </div>
+        </div>
+        <div class="label">
+            <span data-i18n="skills-u">SKILLS</span>
+        </div>
+    </div>
+</div>

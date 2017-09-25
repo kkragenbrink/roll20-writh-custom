@@ -1,0 +1,14 @@
+<div class="ac-init-speed-container">
+    <div class="ac" style="margin-right: 1px;">
+        <input type="text" name="attr_ac" title="@{ac}">
+        <span class="label pc-ac" data-i18n="armor-class-u">ARMOR CLASS</span>
+    </div>
+    <div class="init">
+        <input type="text" name="attr_initiative_bonus" title="@{initiative_bonus}" value="(@{dexterity_mod}+@{initmod}+@{jack_of_all_trades})" disabled="true">
+        <button type="roll" name="roll_initiative" value="@{wtype}&{template:simple} {{rname=^{init-u}}} {{mod=[[@{initiative_bonus}[INIT]]]}} {{r1=[[1d20@{halflingluck}+[[@{initiative_bonus}]][INIT] &{tracker}]]}} {{normal=1}} @{charname_output}" data-i18n="init-u">INITIATIVE</button>
+    </div>
+    <div class="speed">
+        <input type="text" name="attr_speed" title="@{speed}">
+        <span class="label" data-i18n="speed-u">SPEED</span>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="tool_proficiencies" style="margin-bottom: 10px; min-height: 100px; position: relative;">
+    <div class="top">
+        <span class="label" style="width: 95px;" data-i18n="tool-u">TOOL</span>
+        <span class="label" style="width: 25px;" data-i18n="pro-u">PRO</span>
+        <span class="label" style="width: 95px;" data-i18n="attr-u">ATTRIBUTE</span>
+    </div>
+    <fieldset class="repeating_tool">
+        <div class="tool">
+            <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+            <div class="options">
+                <div class="row">
+                    <span data-i18n="name:-u">NAME:</span>
+                    <input type="text" name="attr_toolname_base" style="width: 95px;">
+                </div>
+                <div class="row">
+                    <span data-i18n="prof-bonus:-u">PROFICIENCY BONUS:</span>
+                    <select name="attr_toolbonus_base">
+                        <option value="(@{pb})" selected="selected" data-i18n="prof-u">PROFICIENT</option>
+                        <option value="(@{pb}*2)" data-i18n="expertise-u">EXPERTISE</option>
+                        <option value="(floor(@{pb}/2))" data-i18n="jack-of-all-u">JACK OF ALL TRADES</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span data-i18n="attr:-u">ATTRIBUTE:</span>
+                    <select name="attr_toolattr_base">
+                        <option value="@{strength_mod}" selected="selected" data-i18n="strength-u">STRENGTH</option>
+                        <option value="@{dexterity_mod}" data-i18n="dexterity-u">DEXTERITY</option>
+                        <option value="@{constitution_mod}" data-i18n="constitution-u">CONSTITUTION</option>
+                        <option value="@{intelligence_mod}" data-i18n="intelligence-u">INTELLIGENCE</option>
+                        <option value="@{wisdom_mod}" data-i18n="wisdom-u">WISDOM</option>
+                        <option value="@{charisma_mod}" data-i18n="charisma-u">CHARISMA</option>
+                    </select>
+                    <span data-i18n="mods:-u">MODS:</span>
+                    <input type="text" class="num" name="attr_tool_mod" title="@{tool_mod}" value="0">
+                </div>
+            </div>
+            <div class="display">
+                <button type="roll" name="roll_tool" value="@{wtype}&{template:simple} {{rname=@{toolname}}} {{mod=[[[[@{toolbonus}]][TOOL]]]}} {{r1=[[1d20@{halflingluck}+[[@{toolbonus}]][TOOL]]]}} @{rtype}@{halflingluck}+[[@{toolbonus}]][TOOL]]]}} @{charname_output}">
+                    <input type="text" name="attr_toolname" style="width: 95px;">
+                    <input type="text" name="attr_toolbonus" style="width: 30px; text-align: center;">
+                    <input type="text" name="attr_toolattr" style="width: 100px;">
+                </button>
+            </div>
+        </div>
+    </fieldset>
+    <div class="label" style="position: absolute; bottom: 0px; width: 100%;">
+        <span data-i18n="tool-prof-u">TOOL PROFICIENCIES</span>
+    </div>
+</div>

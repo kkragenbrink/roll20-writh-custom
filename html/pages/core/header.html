@@ -1,0 +1,57 @@
+<div class="header">
+    <div class="name-container">
+        <img src="http://i.imgur.com/ZgULBCp.png" style="padding-bottom: 5px;">
+        <input type="text" name="attr_character_name" style="width: 100%;">
+        <span class="label" data-i18n="char-name-u">CHARACTER NAME</span>
+    </div>
+    <div class="header-info">
+        <div class="top">
+            <div class="hlabel-container">
+                <input class="flag" type="hidden" name="attr_customclass_flag" value="0">
+                <input class="showing" type="text" name="attr_cust_class" value="@{cust_classname}" disabled="true" style="width: 64px; height: 28px; padding-top: 10px;">
+                @include "_classes.html";
+                <input type="number" class="class-level" name="attr_base_level" value="1">
+                <span class="label" data-i18n="class-level-u">CLASS & LEVEL</span>
+            </div>
+            <div class="hlabel-container multiclass-container">
+                <input class="flag" type="hidden" name="attr_mutliclass1_showingflag" value="0">
+                <span class="hiding multiclass-display"></span>
+                <span class="hiding multiclass-display-level"></span>
+                <span class="showing multiclass-display" name="attr_multiclass1" data-i18n-dynamic></span>
+                <span class="showing multiclass-display-level" name="attr_multiclass1_lvl"></span>
+            </div>
+            <div class="hlabel-container multiclass-container">
+                <input class="flag" type="hidden" name="attr_mutliclass2_showingflag" value="0">
+                <span class="hiding multiclass-display"></span>
+                <span class="hiding multiclass-display-level"></span>
+                <span class="showing multiclass-display" name="attr_multiclass2" data-i18n-dynamic></span>
+                <span class="showing multiclass-display-level" name="attr_multiclass2_lvl"></span>
+            </div>
+            <div class="hlabel-container multiclass-container">
+                <input class="flag" type="hidden" name="attr_mutliclass3_showingflag" value="0">
+                <span class="hiding multiclass-display"></span>
+                <span class="hiding multiclass-display-level"></span>
+                <span class="showing multiclass-display" name="attr_multiclass3" data-i18n-dynamic></span>
+                <span class="showing multiclass-display-level" name="attr_multiclass3_lvl"></span>
+            </div>
+            <div class="hlabel-container">
+                <input type="text" name="attr_background" style="width: 122px;">
+                <span class="label" data-i18n="background-u">BACKGROUND</span>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="hlabel-container">
+                <input type="text" name="attr_race">
+                <span class="label" data-i18n="race-u">RACE</span>
+            </div>
+            <div class="hlabel-container">
+                <input type="text" name="attr_alignment">
+                <span class="label" data-i18n="alignment-u">ALIGNMENT</span>
+            </div>
+            <div class="hlabel-container">
+                <input type="text" name="attr_experience">
+                <span class="label" data-i18n="exp-pts-u">EXPERIENCE POINTS</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<input type="hidden" class="ammoflag" name="attr_ammoflag">
+<div class="attacks" style="position: relative;">
+    <div class="top">
+        <span class="label" style="width: 95px;" data-i18n="name-u">NAME</span>
+        <span class="label" style="width: 25px;" data-i18n="atk-u">ATK</span>
+        <span class="label" style="width: 95px;" data-i18n="dmg-type-u">DAMAGE/TYPE</span>
+    </div>
+    <fieldset class="repeating_attack">
+        <div class="attack">
+            <input type="hidden" name="attr_updateflag">
+            <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+            <div class="options">
+                <div class="row">
+                    <span data-i18n="name:-u">NAME:</span>
+                    <input type="text" name="attr_atkname_base">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_atkflag" value="{{attack=1}}" checked="checked">
+                    <span data-i18n="attack:-u">ATTACK:</span>
+                    <select name="attr_atkattr_base">
+                        <option value="@{strength_mod}" selected="selected" data-i18n="str-u">STR</option>
+                        <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
+                        <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                        <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
+                        <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
+                        <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
+                        <option value="0">-</option>
+                    </select>
+                    <span>+</span>
+                    <input type="text" class="num" name="attr_atkmod" placeholder="0">
+                    <span>+</span>
+                    <input type="checkbox" name="attr_atkprofflag" value="(@{pb})" checked="checked" style="margin-left: 3px;">
+                    <span data-i18n="proficient-u">PROFICIENT</span>
+                </div>
+                <div class="row">
+                    <span style="margin-left: 17px;" data-i18n="range:-u">RANGE:</span>
+                    <input type="text" name="attr_atkrange" placeholder="Self (60-foot cone)" style="width: 170px;" data-i18n-placeholder="range-place">
+                </div>
+                <div class="row">
+                    <span style="margin-left: 17px;" data-i18n="magic-bonus:-u">MAGIC BONUS:</span>
+                    <input type="text" class="num" name="attr_atkmagic" placeholder="0">
+                    <span data-i18n="crit-range-u">CRIT RANGE:</span>
+                    <input type="text" class="num" name="attr_atkcritrange" value="20" placeholder="20">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_dmgflag" value="{{damage=1}} {{dmg1flag=1}}" checked="checked">
+                    <span data-i18n="damage:-u">DAMAGE:</span>
+                    <input type="text" name="attr_dmgbase" placeholder="1d6" style="width: 50px;">
+                    <span>+</span>
+                    <select name="attr_dmgattr">
+                        <option value="@{strength_mod}" selected="selected" data-i18n="str-u">STR</option>
+                        <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
+                        <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                        <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
+                        <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
+                        <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
+                        <option value="0">-</option>
+                    </select>
+                    <span>+</span>
+                    <input type="text" class="num" name="attr_dmgmod" placeholder="0">
+                </div>
+                <div class="row">
+                    <span style="margin-left: 17px;" data-i18n="type:-u">TYPE:</span>
+                    <input type="text" name="attr_dmgtype" placeholder="Slashing" style="width: 50px;" data-i18n-placeholder="dmg-type-place">
+                    <span data-i18n="crit:-u">CRIT:</span>
+                    <input type="text" name="attr_dmgcustcrit" placeholder="1d6" style="width: 80px;">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_dmg2flag" value="{{damage=1}} {{dmg2flag=1}}">
+                    <span data-i18n="damage2:-u">DAMAGE2:</span>
+                    <input type="text" name="attr_dmg2base" placeholder="1d6" style="width: 50px;">
+                    <span>+</span>
+                    <select name="attr_dmg2attr">
+                        <option value="@{strength_mod}" selected="selected" data-i18n="str-u">STR</option>
+                        <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
+                        <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                        <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
+                        <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
+                        <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
+                        <option value="0">-</option>
+                    </select>
+                    <span>+</span>
+                    <input type="text" class="num" name="attr_dmg2mod" placeholder="0">
+                </div>
+                <div class="row">
+                    <span style="margin-left: 17px;" data-i18n="type:-u">TYPE:</span>
+                    <input type="text" name="attr_dmg2type" placeholder="Slashing" style="width: 50px;" data-i18n-placeholder="dmg-type-place">
+                    <span data-i18n="crit:-u">CRIT:</span>
+                    <input type="text" name="attr_dmg2custcrit" placeholder="1d6" style="width: 80px;">
+                </div>
+                <div class="row">
+                    <input type="checkbox" name="attr_saveflag" value="{{save=1}} {{saveattr=@{saveattr}}} {{savedesc=@{saveeffect}}} {{savedc=[[[[@{savedc}]][SAVE]]]}}">
+                    <span data-i18n="saving-throw:-u">SAVING THROW:</span>
+                    <select name="attr_saveattr">
+                        <option value="Strength" selected="selected" data-i18n="str-u">STR</option>
+                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
+                        <option value="Constitution" data-i18n="con-u">CON</option>
+                        <option value="Intelligence" data-i18n="int-u">INT</option>
+                        <option value="Wisdom" data-i18n="wis-u">WIS</option>
+                        <option value="Charisma" data-i18n="cha-u">CHA</option>
+                    </select>
+                    <span data-i18n="vs-dc:-u">VS DC:</span>
+                    <select name="attr_savedc">
+                        <option value="(@{spell_save_dc})" selected="selected" data-i18n="spell-u">SPELL</option>
+                        <option value="(@{strength_mod}+8+@{pb})" data-i18n="str-u">STR</option>
+                        <option value="(@{dexterity_mod}+8+@{pb})" data-i18n="dex-u">DEX</option>
+                        <option value="(@{constitution_mod}+8+@{pb})" data-i18n="con-u">CON</option>
+                        <option value="(@{intelligence_mod}+8+@{pb})" data-i18n="int-u">INT</option>
+                        <option value="(@{wisdom_mod}+8+@{pb})" data-i18n="wis-u">WIS</option>
+                        <option value="(@{charisma_mod}+8+@{pb})" data-i18n="cha-u">CHA</option>
+                        <option value="(@{saveflat})" data-i18n="flat-u">FLAT</option>
+                    </select>
+                    <input class="flatflag" type="hidden" name="attr_flatflag">
+                    <input class="num flat" type="text" name="attr_saveflat" placeholder="10">
+                </div>
+                <div class="row">
+                    <span data-i18n="save-effect:-u">SAVE EFFECT:</span>
+                    <input type="text" name="attr_saveeffect" placeholder="half damage" style="width: 160px;" data-i18n-placeholder="save-effect-place">
+                </div>
+                <div class="row ammo">
+                    <span data-i18n="ammunition:-u">AMMUNITION:</span>
+                    <input type="text" name="attr_ammo" placeholder="Arrows" style="width: 160px;" data-i18n-placeholder="ammunition-place">
+                </div>
+                <div class="row">
+                    <span data-i18n="description:-u">DESCRIPTION:</span>
+                    <textarea name="attr_atk_desc" placeholder="Up to 2 creatures within 5 feet" data-i18n-placeholder="description-place"></textarea>
+                </div>
+            </div>
+            <div class="display">
+                <button type="roll" name="roll_attack" value="@{rollbase}">
+                    <input type="text" name="attr_atkname" style="width: 95px;" value="">
+                    <input type="text" name="attr_atkbonus" style="width: 35px; text-align: center;" value="">
+                    <input type="text" name="attr_atkdmgtype" style="width: 95px;" value="">
+                </button>
+            </div>
+        </div>
+        <input type="hidden" name="attr_hidden_r1base">
+        <input type="hidden" name="attr_hidden_r2base">
+        <input type="hidden" name="attr_hidden_atkbonus">
+        <input type="hidden" name="attr_hidden_dmg1">
+        <input type="hidden" name="attr_hidden_dmg2">
+        <input type="hidden" name="attr_hidden_dmg1type">
+        <input type="hidden" name="attr_hidden_dmg2type">
+        <input type="hidden" name="attr_hidden_crit1">
+        <input type="hidden" name="attr_hidden_crit2">
+        <input type="hidden" name="attr_hldmg">
+        <input type="hidden" name="attr_spelllevel">
+        <input type="hidden" name="attr_rollbase">
+        <button type="roll" name="roll_attack_dmg" style="display: none;" value="@{wtype}&{template:dmg} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[@{hidden_dmg1}]]}} {{dmg1type=@{hidden_dmg1type}}} @{dmg2flag} {{dmg2=[[@{hidden_dmg2}]]}} {{dmg2type=@{hidden_dmg2type}}} @{saveflag} {{desc=@{atk_desc}}} @{hldmg} @{spelllevel} @{charname_output}"></button>
+        <button type="roll" name="roll_attack_crit" style="display: none;" value="@{wtype}&{template:dmg} {{crit=1}} {{rname=@{atkname}}} @{atkflag} {{range=@{atkrange}}} @{dmgflag} {{dmg1=[[@{hidden_dmg1}]]}} {{dmg1type=@{hidden_dmg1type}}} @{dmg2flag} {{dmg2=[[@{hidden_dmg2}]]}} {{dmg2type=@{hidden_dmg2type}}} {{crit1=[[@{hidden_crit1}]]}} {{crit2=[[@{hidden_crit2}]]}} @{saveflag} {{desc=@{atk_desc}}} @{hldmg} @{spelllevel} @{charname_output}"></button>
+        <input type="hidden" name="attr_itemid">
+        <input type="hidden" name="attr_spellid">
+    </fieldset>
+    <span class="label" style="margin-top: 0px; position: absolute; bottom: 0px;" data-i18n="atk-spellcasting-u">ATTACKS & SPELLCASTING</span>
+</div>

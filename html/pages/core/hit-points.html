@@ -1,0 +1,37 @@
+<div class="hp"  style="height: 76px;">
+    <div class="top">
+        <span data-i18n="hp-max-u">Hit Point Maximum</span>
+        <input type="text" name="attr_hp_max" title="@{hp_max}">
+    </div>
+    <input type="number" name="attr_hp" title="@{hp}">
+    <span class="label" data-i18n="hp-current-u">CURRENT HIT POINTS</span>
+</div>
+<div class="hp" style="height: 56px;">
+    <input type="number" name="attr_hp_temp" title="@{hp_temp}">
+    <span class="label" data-i18n="hp-temp-u">TEMPORARY HIT POINTS</span>
+</div>
+<div class="hdice-dsaves-container" style="width: 242px;">
+    <div class="subcontainer">
+        <div class="top">
+            <span data-i18n="total">Total</span>
+            <input type="text" name="attr_hit_dice_max" title="@{hit_dice_max}">
+        </div>
+        <input type="number" name="attr_hit_dice" title="@{hit_dice}" style="margin-bottom: -6px;">
+        <button type="roll" name="roll_hit_dice" value="@{wtype}&{template:simple} {{rname=^{hit-dice-u}}} {{mod=D@{hitdie_final}+[[@{constitution_mod}[CON]]]}} {{r1=[[1d@{hitdie_final}+[[@{constitution_mod}]][CON]]]}} {{normal=1}} @{charname_output}" data-i18n="hit-dice-u">HIT DICE</button>
+    </div>
+    <div class="subcontainer" style="float: right;">
+        <div class="row-container">
+            <span class="label" data-i18n="successes-u">SUCCESSES</span>
+            <input type="checkbox" name="attr_deathsave_succ1">
+            <input type="checkbox" name="attr_deathsave_succ2">
+            <input type="checkbox" name="attr_deathsave_succ3">
+        </div>
+        <div class="row-container">
+            <span class="label" data-i18n="failures-u">FAILURES</span>
+            <input type="checkbox" name="attr_deathsave_fail1">
+            <input type="checkbox" name="attr_deathsave_fail2">
+            <input type="checkbox" name="attr_deathsave_fail3">
+        </div>
+        <button type="roll" name="roll_death_save" style="margin-top: 6px;" value="@{wtype}&{template:simple} {{rname=^{death-save-u}}} {{mod=@{deathsavemod}}} {{r1=[[1d20@{halflingluck}+@{deathsavemod}[MOD]]]}} {{normal=1}} @{charname_output}" data-i18n="death-saves-u">DEATH SAVES</button>
+    </div>
+</div>

@@ -11,6 +11,7 @@
   "formula-u": "FORMULA",
   "speed-u": "SPEED",
   "npc-speed-place": "30 ft., fly 60ft.",
+  "deprecated-u": "DEPRECATED",
   "attributes-u": "ATTRIBUTES",
   "str-u": "STR",
   "dex-u": "DEX",

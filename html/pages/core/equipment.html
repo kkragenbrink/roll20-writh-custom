@@ -1,0 +1,77 @@
+<div class="equipment">
+    <div class="money">
+        <div class="coin">
+            <span class="label" data-i18n="copper-piece-u">CP</span>
+            <input type="text" name="attr_cp" title="@{cp}">
+        </div>
+        <div class="coin">
+            <span class="label" data-i18n="silver-piece-u">SP</span>
+            <input type="text" name="attr_sp" title="@{sp}">
+        </div>
+        <div class="coin">
+            <span class="label" data-i18n="electrum-piece-u">EP</span>
+            <input type="text" name="attr_ep" title="@{ep}">
+        </div>
+        <div class="coin">
+            <span class="label" data-i18n="gold-piece-u">GP</span>
+            <input type="text" name="attr_gp" title="@{gp}">
+        </div>
+        <div class="coin">
+            <span class="label" data-i18n="platinum-piece-u">PP</span>
+            <input type="text" name="attr_pp" title="@{pp}">
+        </div>
+    </div>
+    <input type="hidden" class="inventoryflag" name="attr_inventoryflag" value="complex">
+    <textarea class="simple" name="attr_equipment"></textarea>
+    <div class="complex">
+        <input type="hidden" class="warningflag" name="attr_armorwarningflag">
+        <div class="warning">
+                        <span data-i18n="warning-armor-sets-u">
+                            <input type="checkbox" name="attr_armorwarning" value="hide">
+                            WARNING - MULTIPLE SETS OF ARMOR OR SHIELDS HAVE BEEN ADDED AND AC IS NOT CORRECTLY CALCULATED. UNEQUIP THE ARMOR PIECE FROM THE ITEM DETAILS.
+                        </span>
+        </div>
+        <div class="header" style="height: auto;">
+            <span class="pictos" style="width: 25px; font-size: 15px;">*</span>
+            <span style="width: 100px; text-align: left;" data-i18n="item-name-u">ITEM NAME</SPAN>
+            <span style="width: 25px;"><img src="http://i.imgur.com/3OxOqmb.png" style="width: 15px; margin-bottom: -3px;"></span>
+        </div>
+        <fieldset class="repeating_inventory">
+            <input type="hidden" class="equippedflag" name="attr_equippedflag">
+            <div class="item compendium-drop-target">
+                <input class="weight" type="text" name="attr_itemcount" value="1">
+                <input class="name" type="text" name="attr_itemname" accept="Name">
+                <input class="weight" type="text" name="attr_itemweight" accept="Weight">
+                <input class="inventorysubflag" type="checkbox" name="attr_inventorysubflag"><span>i</span>
+                <div class="subitem">
+                    <input class="equipped" type="checkbox" name="attr_equipped" value="1" checked="checked">
+                    <span class="equippedlabel" data-i18n="equipped-u">EQUIPPED</span>
+                    <input class="equipped" type="checkbox" name="attr_useasresource" value="1">
+                    <span class="equippedlabel" data-i18n="use-as-resource-u">USE AS A RESOURCE</span>
+                    <span class="label" data-i18n="prop:-u">PROP:</span>
+                    <input class="subfield" type="text" name="attr_itemproperties" accept="Properties">
+                    <span class="label" data-i18n="mods:-u">MODS:</span>
+                    <input class="subfield" type="text" name="attr_itemmodifiers" accept="Modifiers">
+                    <textarea class="subtextarea" name="attr_itemcontent" accept="Content"></textarea>
+                </div>
+                <input type="hidden" name="attr_itemtype" accept="Item Type">
+                <input type="hidden" name="attr_itemdamage" accept="Damage">
+                <input type="hidden" name="attr_itemdamagetype" accept="Damage Type">
+                <input type="hidden" name="attr_itemrange" accept="Range">
+                <input type="hidden" name="attr_itemac" accept="AC">
+                <input type="hidden" name="attr_itemattackid">
+                <input type="hidden" name="attr_itemresourceid">
+            </div>
+        </fieldset>
+        <div class="weighttotal">
+            <span class="label" data-i18n="total-weight-u">TOTAL WEIGHT</span>
+            <input type="text" name="attr_weighttotal" value="0">
+            <input type="hidden" class="encumberance" name="attr_encumberance">
+            <span class="encumb immobile" data-i18n="immobile-u">IMMOBILE</span>
+            <span class="encumb heavily" data-i18n="heavily-encumbered-u">HEAVILY ENCUMBERED</span>
+            <span class="encumb encumbered" data-i18n="encumbered-u">ENCUMBERED</span>
+            <span class="encumb over" data-i18n="over-carrying-cap-u">OVER CARRYING CAPACITY</span>
+        </div>
+    </div>
+    <span class="label" style="margin-top: 0px; position: absolute; bottom: 0px;" data-i18n="equipment-u">EQUIPMENT</span>
+</div>

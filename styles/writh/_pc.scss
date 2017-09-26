@@ -1,0 +1,24 @@
+.sheet-pc {
+  border: 1px solid rgba(0,0,0,.25);
+  box-shadow: 3px 3px rgba(0,0,0,.1);
+
+  background: white;
+
+  box-sizing: border-box;
+  height: 11in;
+  width: 8.5in;
+  position: relative;
+
+  padding: 0.25in;
+
+  @import "pc/header";
+
+  .sheet-trademark {
+    color: #999;
+    font-size: 7pt;
+
+    position: absolute;
+    bottom: 0.2in;
+    right: 0.25in;
+  }
+}

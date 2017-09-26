@@ -1,8 +1,18 @@
 {
-  "alignment": "alignment",
-  "background": "background",
-  "classlevel": "class &amp; level",
-  "experience": "experience",
-  "race": "race",
+  "character-name": "Character Name",
+
+  "alignment": "Alignment",
+  "background": "Background",
+  "class-level": "Class &amp; Level",
+  "experience": "Experience",
+  "race": "Race",
+
+  "strength": "Strength",
+  "dexterity": "Dexterity",
+  "constitution": "Constitution",
+  "intelligence": "Intelligence",
+  "wisdom": "Wisdom",
+  "charisma": "Charisma",
+
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

@@ -1,14 +1,6 @@
-@import "writh/colors";
-//.sheet-hidden { display: none; }
-
 .sheet-container {
-  * {
-    box-sizing: border-box;
-    font-size: 10pt;
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
+  @import "writh/colors";
+  @import "writh/reset";
 
   .sheet-npc, .sheet-pc { display: none; }
   .sheet-npc-toggle:checked ~ .sheet-npc, .sheet-npc-toggle:not(:checked) ~ .sheet-pc { display: block; }

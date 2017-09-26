@@ -6,26 +6,6 @@
   height: 130px;
   width: 765px;
 
-  input {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-
-    display: inline-block;
-  }
-
-  label {
-    color: $label;
-    font-size: 7.5pt;
-    font-weight: normal;
-    text-align: left;
-    text-transform: uppercase;
-
-    display: inline-block;
-    width: auto;
-  }
-
   input[name=attr_name] {
     position: absolute;
     top: 64px;
@@ -35,6 +15,7 @@
     font-size: 15pt;
     font-weight: bold;
   }
+
   label.attr_name {
     position: absolute;
     left: 80px;

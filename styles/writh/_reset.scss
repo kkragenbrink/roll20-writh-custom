@@ -1,4 +1,29 @@
 * {
+  box-sizing: border-box;
   font-size: 10pt;
-  line-height: 10pt;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.sheet-hidden { display: none; }
+
+input {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+
+  display: inline-block;
+}
+
+label {
+  color: $label;
+  font-size: 7.5pt;
+  font-weight: normal;
+  text-align: left;
+  text-transform: uppercase;
+
+  display: inline-block;
+  width: auto;
 }

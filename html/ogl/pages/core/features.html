@@ -1,4 +1,5 @@
-<div class="features">
+<div class="features scrollable">
+    <input type="checkbox" class="feature-collapse" name="attr_feature-collapse" checked="checked"><label>collapse</label>
     <fieldset class="repeating_feature">
         <div class="feature">
             <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
@@ -15,8 +16,8 @@
             <div class="display">
                 <input type="hidden" name="attr_rollfeature" value="@{wtype}&{template:feature} {{name=@{featurename}}} {{description=@{featuredesc}}} @{charname_output}">
                 <button type="roll" name="roll_feature" value="@{rollfeature}">
-                    <input type="text" name="attr_featurename" value="" style="width:95px;" />
-                    <textarea name="attr_featuredesc"></textarea>
+                    <span class="feature-name" name="attr_featurename"></span>
+                    <span class="feature-desc" name="attr_featuredesc"></span>
                 </button>
             </div>
         </div>

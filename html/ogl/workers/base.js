@@ -1,104 +1,134 @@
-on(
-    'change:class change:cust_classname change:cust_hitdietype change:cust_spellcasting_ability change:cust_spellslots change:cust_strength_save_prof change:cust_dexterity_save_prof change:cust_constitution_save_prof change:cust_intelligence_save_prof change:cust_wisdom_save_prof change:cust_charisma_save_prof',
-    () => updateClass()
-);
+on(['change:class', 'change:cust_classname', 'change:cust_hitdietype',
+    'change:cust_spellcasting_ability', 'change:cust_spellslots', 'change:cust_strength_save_prof',
+    'change:cust_dexterity_save_prof', 'change:cust_constitution_save_prof', 'change:cust_intelligence_save_prof',
+    'change:cust_wisdom_save_prof', 'change:cust_charisma_save_prof'
+].join(), () => updateClass());
 
-on(
-    'change:base_level change:multiclass1 change:multiclass1_lvl change:multiclass2 change:multiclass2_lvl change:multiclass3 change:multiclass3_lvl change:arcane_fighter change:arcane_rogue',
-    function () {
-        setlevel();
-    }
-);
-on(
-    'change:repeating_tool:toolname_base change:repeating_tool:toolbonus_base change:repeating_tool:toolattr_base change:repeating_tool:tool_mod',
-    function () {
-        updateTool();
-    }
-);
+on(['change:base_level', 'change:multiclass1', 'change:multiclass1_lvl',
+    'change:multiclass2', 'change:multiclass2_lvl', 'change:multiclass3',
+    'change:multiclass3_lvl', 'change:arcane_fighter', 'change:arcane_rogue'
+].join(), () => setlevel());
 
-on(
-    'change:repeating_attack:atkflag change:repeating_attack:atkname_base change:repeating_attack:atkattr_base change:repeating_attack:atkmod change:repeating_attack:atkmagic change:repeating_attack:atkprofflag change:repeating_attack:dmgflag change:repeating_attack:dmgbase change:repeating_attack:dmgattr change:repeating_attack:dmgmod change:repeating_attack:dmgtype change:repeating_attack:dmg2flag change:repeating_attack:dmg2base change:repeating_attack:dmg2attr change:repeating_attack:dmg2mod change:repeating_attack:dmg2type change:repeating_attack:saveflag change:repeating_attack:savedc change:repeating_attack:saveflat change:repeating_attack:updateflag change:repeating_attack:dmgcustcrit change:repeating_attack:dmg2custcrit change:repeating_attack:ammo',
-    function (eventinfo) {
-        updateAttack(eventinfo);
-    }
-);
+on(['change:repeating_tool:toolname_base',
+    'change:repeating_tool:toolbonus_base',
+    'change:repeating_tool:toolattr_base',
+    'change:repeating_tool:tool_mod'
+], () => updateTool());
 
-on('change:dtype', function () {
+on(['change:repeating_attack:atkflag', 'change:repeating_attack:atkname_base', 'change:repeating_attack:atkattr_base',
+    'change:repeating_attack:atkmod', 'change:repeating_attack:atkmagic', 'change:repeating_attack:atkprofflag',
+    'change:repeating_attack:dmgflag', 'change:repeating_attack:dmgbase', 'change:repeating_attack:dmgattr',
+    'change:repeating_attack:dmgmod', 'change:repeating_attack:dmgtype', 'change:repeating_attack:dmg2flag',
+    'change:repeating_attack:dmg2base', 'change:repeating_attack:dmg2attr', 'change:repeating_attack:dmg2mod',
+    'change:repeating_attack:dmg2type', 'change:repeating_attack:saveflag', 'change:repeating_attack:savedc',
+    'change:repeating_attack:saveflat', 'change:repeating_attack:updateflag', 'change:repeating_attack:dmgcustcrit',
+    'change:repeating_attack:dmg2custcrit', 'change:repeating_attack:ammo'
+], (eventinfo) => updateAttack(eventinfo));
+
+on('change:dtype', () => {
     force_refresh_attacks();
     force_refresh_npcactions();
-    // getAttrs(["dtype"], function(v) {
-    //     setAttrs({
-    //         dflag: v.dtype
-    //     });
-    //     var updatepickbase = v.dtype;
-    //     getSectionIDs("repeating_attack", function(idarray) {
-    //         _.each(idarray, function(currentID) {
-    //             getAttrs(["repeating_attack_" + currentID + "_atkflag", "repeating_attack_" + currentID + "_dmgflag"], function(v) {
-    //                 update = {};
-    //                 if(updatepickbase === "full") {
-    //                     update["repeating_attack_" + currentID + "_hidden_pickbase"] = "full";
-    //                 }
-    //                 else {
-    //                     if(!v["repeating_attack_" + currentID + "_atkflag"] || v["repeating_attack_" + currentID + "_atkflag"] != 0) {
-    //                         update["repeating_attack_" + currentID + "_hidden_pickbase"] = "pick";
-    //                     }
-    //                     else if(!v["repeating_attack_" + currentID + "_dmgflag"] || v["repeating_attack_" + currentID + "_dmgflag"] != 0) {
-    //                         update["repeating_attack_" + currentID + "_hidden_pickbase"] = "dmg";
-    //                     }
-    //                     else {
-    //                         update["repeating_attack_" + currentID + "_hidden_pickbase"] = "empty";
-    //                     }
-    //                 }
-    //                 setAttrs(update);
-    //             });
-    //         });
-    //     });
-    // });
 });
 
-on(
-    'change:repeating_spell-cantrip:spellname_base change:repeating_spell-1:spellname_base change:repeating_spell-1:spellprepared change:repeating_spell-2:spellname_base change:repeating_spell-2:spellprepared change:repeating_spell-3:spellname_base change:repeating_spell-3:spellprepared change:repeating_spell-4:spellname_base change:repeating_spell-4:spellprepared change:repeating_spell-5:spellname_base change:repeating_spell-5:spellprepared change:repeating_spell-6:spellname_base change:repeating_spell-6:spellprepared change:repeating_spell-7:spellname_base change:repeating_spell-7:spellprepared change:repeating_spell-8:spellname_base change:repeating_spell-8:spellprepared change:repeating_spell-9:spellname_base change:repeating_spell-9:spellprepared change:repeating_spell-cantrip:spellrange change:repeating_spell-1:spellrange change:repeating_spell-2:spellrange change:repeating_spell-3:spellrange change:repeating_spell-4:spellrange change:repeating_spell-5:spellrange change:repeating_spell-6:spellrange change:repeating_spell-7:spellrange change:repeating_spell-8:spellrange change:repeating_spell-9:spellrange change:repeating_spell-cantrip:spelltarget change:repeating_spell-1:spelltarget change:repeating_spell-2:spelltarget change:repeating_spell-3:spelltarget change:repeating_spell-4:spelltarget change:repeating_spell-5:spelltarget change:repeating_spell-6:spelltarget change:repeating_spell-7:spelltarget change:repeating_spell-8:spelltarget change:repeating_spell-9:spelltarget change:repeating_spell-cantrip:spelldamage change:repeating_spell-1:spelldamage change:repeating_spell-2:spelldamage change:repeating_spell-3:spelldamage change:repeating_spell-4:spelldamage change:repeating_spell-5:spelldamage change:repeating_spell-6:spelldamage change:repeating_spell-7:spelldamage change:repeating_spell-8:spelldamage change:repeating_spell-9:spelldamage change:repeating_spell-cantrip:spelldamagetype change:repeating_spell-1:spelldamagetype change:repeating_spell-2:spelldamagetype change:repeating_spell-3:spelldamagetype change:repeating_spell-4:spelldamagetype change:repeating_spell-5:spelldamagetype change:repeating_spell-6:spelldamagetype change:repeating_spell-7:spelldamagetype change:repeating_spell-8:spelldamagetype change:repeating_spell-9:spelldamagetype change:repeating_spell-cantrip:spelldamage2 change:repeating_spell-1:spelldamage2 change:repeating_spell-2:spelldamage2 change:repeating_spell-3:spelldamage2 change:repeating_spell-4:spelldamage2 change:repeating_spell-5:spelldamage2 change:repeating_spell-6:spelldamage2 change:repeating_spell-7:spelldamage2 change:repeating_spell-8:spelldamage2 change:repeating_spell-9:spelldamage2 change:repeating_spell-cantrip:spelldamagetype2 change:repeating_spell-1:spelldamagetype2 change:repeating_spell-2:spelldamagetype2 change:repeating_spell-3:spelldamagetype2 change:repeating_spell-4:spelldamagetype2 change:repeating_spell-5:spelldamagetype2 change:repeating_spell-6:spelldamagetype2 change:repeating_spell-7:spelldamagetype2 change:repeating_spell-8:spelldamagetype2 change:repeating_spell-9:spelldamagetype2 change:repeating_spell-cantrip:spellhealing change:repeating_spell-1:spellhealing change:repeating_spell-2:spellhealing change:repeating_spell-3:spellhealing change:repeating_spell-4:spellhealing change:repeating_spell-5:spellhealing change:repeating_spell-6:spellhealing change:repeating_spell-7:spellhealing change:repeating_spell-8:spellhealing change:repeating_spell-9:spellhealing change:repeating_spell-cantrip:spelldmgmod change:repeating_spell-1:spelldmgmod change:repeating_spell-2:spelldmgmod change:repeating_spell-3:spelldmgmod change:repeating_spell-4:spelldmgmod change:repeating_spell-5:spelldmgmod change:repeating_spell-6:spelldmgmod change:repeating_spell-7:spelldmgmod change:repeating_spell-8:spelldmgmod change:repeating_spell-9:spelldmgmod change:repeating_spell-cantrip:spellsave change:repeating_spell-1:spellsave change:repeating_spell-2:spellsave change:repeating_spell-3:spellsave change:repeating_spell-4:spellsave change:repeating_spell-5:spellsave change:repeating_spell-6:spellsave change:repeating_spell-7:spellsave change:repeating_spell-8:spellsave change:repeating_spell-9:spellsave change:repeating_spell-cantrip:spellsavesuccess change:repeating_spell-1:spellsavesuccess change:repeating_spell-2:spellsavesuccess change:repeating_spell-3:spellsavesuccess change:repeating_spell-4:spellsavesuccess change:repeating_spell-5:spellsavesuccess change:repeating_spell-6:spellsavesuccess change:repeating_spell-7:spellsavesuccess change:repeating_spell-8:spellsavesuccess change:repeating_spell-9:spellsavesuccess change:repeating_spell-cantrip:spellhldie change:repeating_spell-1:spellhldie change:repeating_spell-2:spellhldie change:repeating_spell-3:spellhldie change:repeating_spell-4:spellhldie change:repeating_spell-5:spellhldie change:repeating_spell-6:spellhldie change:repeating_spell-7:spellhldie change:repeating_spell-8:spellhldie change:repeating_spell-9:spellhldie change:repeating_spell-cantrip:spellhldietype change:repeating_spell-1:spellhldietype change:repeating_spell-2:spellhldietype change:repeating_spell-3:spellhldietype change:repeating_spell-4:spellhldietype change:repeating_spell-5:spellhldietype change:repeating_spell-6:spellhldietype change:repeating_spell-7:spellhldietype change:repeating_spell-8:spellhldietype change:repeating_spell-9:spellhldietype change:repeating_spell-cantrip:spell_updateflag change:repeating_spell-1:spell_updateflag change:repeating_spell-2:spell_updateflag change:repeating_spell-3:spell_updateflag change:repeating_spell-4:spell_updateflag change:repeating_spell-5:spell_updateflag change:repeating_spell-6:spell_updateflag change:repeating_spell-7:spell_updateflag change:repeating_spell-8:spell_updateflag change:repeating_spell-9:spell_updateflag change:repeating_spell-cantrip:spellattack change:repeating_spell-1:spellattack change:repeating_spell-2:spellattack change:repeating_spell-3:spellattack change:repeating_spell-4:spellattack change:repeating_spell-5:spellattack change:repeating_spell-6:spellattack change:repeating_spell-7:spellattack change:repeating_spell-8:spellattack change:repeating_spell-9:spellattack change:repeating_spell-cantrip:spellhlbonus change:repeating_spell-1:spellhlbonus change:repeating_spell-2:spellhlbonus change:repeating_spell-3:spellhlbonus change:repeating_spell-4:spellhlbonus change:repeating_spell-5:spellhlbonus change:repeating_spell-6:spellhlbonus change:repeating_spell-7:spellhlbonus change:repeating_spell-8:spellhlbonus change:repeating_spell-9:spellhlbonus change:repeating_spell-npc:spellname_base change:repeating_spell-npc:spellrange change:repeating_spell-npc:spelltarget change:repeating_spell-npc:spelldamage change:repeating_spell-npc:spelldamagetype change:repeating_spell-npc:spelldamage2 change:repeating_spell-npc:spelldamagetype2 change:repeating_spell-npc:spellhealing change:repeating_spell-npc:spelldmgmod change:repeating_spell-npc:spellsave change:repeating_spell-npc:spellsavesuccess change:repeating_spell-npc:spellhldie change:repeating_spell-npc:spellhldietype change:repeating_spell-npc:spell_updateflag change:repeating_spell-npc:spellattack change:repeating_spell-npc:spellhlbonus change:repeating_spell-npc:spellprepared',
-    function (eventinfo) {
-        updateSpell('', '', eventinfo);
-    }
-);
+on(['change:repeating_spell-cantrip:spellname_base', 'change:repeating_spell-1:spellname_base', 'change:repeating_spell-1:spellprepared',
+    'change:repeating_spell-2:spellname_base', 'change:repeating_spell-2:spellprepared', 'change:repeating_spell-3:spellname_base',
+    'change:repeating_spell-3:spellprepared', 'change:repeating_spell-4:spellname_base', 'change:repeating_spell-4:spellprepared',
+    'change:repeating_spell-5:spellname_base', 'change:repeating_spell-5:spellprepared', 'change:repeating_spell-6:spellname_base',
+    'change:repeating_spell-6:spellprepared', 'change:repeating_spell-7:spellname_base', 'change:repeating_spell-7:spellprepared',
+    'change:repeating_spell-8:spellname_base', 'change:repeating_spell-8:spellprepared', 'change:repeating_spell-9:spellname_base',
+    'change:repeating_spell-9:spellprepared', 'change:repeating_spell-cantrip:spellrange', 'change:repeating_spell-1:spellrange',
+    'change:repeating_spell-2:spellrange', 'change:repeating_spell-3:spellrange', 'change:repeating_spell-4:spellrange',
+    'change:repeating_spell-5:spellrange', 'change:repeating_spell-6:spellrange', 'change:repeating_spell-7:spellrange',
+    'change:repeating_spell-8:spellrange', 'change:repeating_spell-9:spellrange', 'change:repeating_spell-cantrip:spelltarget',
+    'change:repeating_spell-1:spelltarget', 'change:repeating_spell-2:spelltarget', 'change:repeating_spell-3:spelltarget',
+    'change:repeating_spell-4:spelltarget', 'change:repeating_spell-5:spelltarget', 'change:repeating_spell-6:spelltarget',
+    'change:repeating_spell-7:spelltarget', 'change:repeating_spell-8:spelltarget', 'change:repeating_spell-9:spelltarget',
+    'change:repeating_spell-cantrip:spelldamage', 'change:repeating_spell-1:spelldamage', 'change:repeating_spell-2:spelldamage',
+    'change:repeating_spell-3:spelldamage', 'change:repeating_spell-4:spelldamage', 'change:repeating_spell-5:spelldamage',
+    'change:repeating_spell-6:spelldamage', 'change:repeating_spell-7:spelldamage', 'change:repeating_spell-8:spelldamage',
+    'change:repeating_spell-9:spelldamage', 'change:repeating_spell-cantrip:spelldamagetype', 'change:repeating_spell-1:spelldamagetype',
+    'change:repeating_spell-2:spelldamagetype', 'change:repeating_spell-3:spelldamagetype', 'change:repeating_spell-4:spelldamagetype',
+    'change:repeating_spell-5:spelldamagetype', 'change:repeating_spell-6:spelldamagetype', 'change:repeating_spell-7:spelldamagetype',
+    'change:repeating_spell-8:spelldamagetype', 'change:repeating_spell-9:spelldamagetype', 'change:repeating_spell-cantrip:spelldamage2',
+    'change:repeating_spell-1:spelldamage2', 'change:repeating_spell-2:spelldamage2', 'change:repeating_spell-3:spelldamage2',
+    'change:repeating_spell-4:spelldamage2', 'change:repeating_spell-5:spelldamage2', 'change:repeating_spell-6:spelldamage2',
+    'change:repeating_spell-7:spelldamage2', 'change:repeating_spell-8:spelldamage2', 'change:repeating_spell-9:spelldamage2',
+    'change:repeating_spell-cantrip:spelldamagetype2', 'change:repeating_spell-1:spelldamagetype2', 'change:repeating_spell-2:spelldamagetype2',
+    'change:repeating_spell-3:spelldamagetype2', 'change:repeating_spell-4:spelldamagetype2', 'change:repeating_spell-5:spelldamagetype2',
+    'change:repeating_spell-6:spelldamagetype2', 'change:repeating_spell-7:spelldamagetype2', 'change:repeating_spell-8:spelldamagetype2',
+    'change:repeating_spell-9:spelldamagetype2', 'change:repeating_spell-cantrip:spellhealing', 'change:repeating_spell-1:spellhealing',
+    'change:repeating_spell-2:spellhealing', 'change:repeating_spell-3:spellhealing', 'change:repeating_spell-4:spellhealing',
+    'change:repeating_spell-5:spellhealing', 'change:repeating_spell-6:spellhealing', 'change:repeating_spell-7:spellhealing',
+    'change:repeating_spell-8:spellhealing', 'change:repeating_spell-9:spellhealing', 'change:repeating_spell-cantrip:spelldmgmod',
+    'change:repeating_spell-1:spelldmgmod', 'change:repeating_spell-2:spelldmgmod', 'change:repeating_spell-3:spelldmgmod',
+    'change:repeating_spell-4:spelldmgmod', 'change:repeating_spell-5:spelldmgmod', 'change:repeating_spell-6:spelldmgmod',
+    'change:repeating_spell-7:spelldmgmod', 'change:repeating_spell-8:spelldmgmod', 'change:repeating_spell-9:spelldmgmod',
+    'change:repeating_spell-cantrip:spellsave', 'change:repeating_spell-1:spellsave', 'change:repeating_spell-2:spellsave',
+    'change:repeating_spell-3:spellsave', 'change:repeating_spell-4:spellsave', 'change:repeating_spell-5:spellsave',
+    'change:repeating_spell-6:spellsave', 'change:repeating_spell-7:spellsave', 'change:repeating_spell-8:spellsave',
+    'change:repeating_spell-9:spellsave', 'change:repeating_spell-cantrip:spellsavesuccess', 'change:repeating_spell-1:spellsavesuccess',
+    'change:repeating_spell-2:spellsavesuccess', 'change:repeating_spell-3:spellsavesuccess', 'change:repeating_spell-4:spellsavesuccess',
+    'change:repeating_spell-5:spellsavesuccess', 'change:repeating_spell-6:spellsavesuccess', 'change:repeating_spell-7:spellsavesuccess',
+    'change:repeating_spell-8:spellsavesuccess', 'change:repeating_spell-9:spellsavesuccess', 'change:repeating_spell-cantrip:spellhldie',
+    'change:repeating_spell-1:spellhldie', 'change:repeating_spell-2:spellhldie', 'change:repeating_spell-3:spellhldie',
+    'change:repeating_spell-4:spellhldie', 'change:repeating_spell-5:spellhldie', 'change:repeating_spell-6:spellhldie',
+    'change:repeating_spell-7:spellhldie', 'change:repeating_spell-8:spellhldie', 'change:repeating_spell-9:spellhldie',
+    'change:repeating_spell-cantrip:spellhldietype', 'change:repeating_spell-1:spellhldietype', 'change:repeating_spell-2:spellhldietype',
+    'change:repeating_spell-3:spellhldietype', 'change:repeating_spell-4:spellhldietype', 'change:repeating_spell-5:spellhldietype',
+    'change:repeating_spell-6:spellhldietype', 'change:repeating_spell-7:spellhldietype', 'change:repeating_spell-8:spellhldietype',
+    'change:repeating_spell-9:spellhldietype', 'change:repeating_spell-cantrip:spell_updateflag', 'change:repeating_spell-1:spell_updateflag',
+    'change:repeating_spell-2:spell_updateflag', 'change:repeating_spell-3:spell_updateflag', 'change:repeating_spell-4:spell_updateflag',
+    'change:repeating_spell-5:spell_updateflag', 'change:repeating_spell-6:spell_updateflag', 'change:repeating_spell-7:spell_updateflag',
+    'change:repeating_spell-8:spell_updateflag', 'change:repeating_spell-9:spell_updateflag', 'change:repeating_spell-cantrip:spellattack',
+    'change:repeating_spell-1:spellattack', 'change:repeating_spell-2:spellattack', 'change:repeating_spell-3:spellattack',
+    'change:repeating_spell-4:spellattack', 'change:repeating_spell-5:spellattack', 'change:repeating_spell-6:spellattack',
+    'change:repeating_spell-7:spellattack', 'change:repeating_spell-8:spellattack', 'change:repeating_spell-9:spellattack',
+    'change:repeating_spell-cantrip:spellhlbonus', 'change:repeating_spell-1:spellhlbonus', 'change:repeating_spell-2:spellhlbonus',
+    'change:repeating_spell-3:spellhlbonus', 'change:repeating_spell-4:spellhlbonus', 'change:repeating_spell-5:spellhlbonus',
+    'change:repeating_spell-6:spellhlbonus', 'change:repeating_spell-7:spellhlbonus', 'change:repeating_spell-8:spellhlbonus',
+    'change:repeating_spell-9:spellhlbonus', 'change:repeating_spell-npc:spellname_base', 'change:repeating_spell-npc:spellrange',
+    'change:repeating_spell-npc:spelltarget', 'change:repeating_spell-npc:spelldamage', 'change:repeating_spell-npc:spelldamagetype',
+    'change:repeating_spell-npc:spelldamage2', 'change:repeating_spell-npc:spelldamagetype2', 'change:repeating_spell-npc:spellhealing',
+    'change:repeating_spell-npc:spelldmgmod', 'change:repeating_spell-npc:spellsave', 'change:repeating_spell-npc:spellsavesuccess',
+    'change:repeating_spell-npc:spellhldie', 'change:repeating_spell-npc:spellhldietype', 'change:repeating_spell-npc:spell_updateflag',
+    'change:repeating_spell-npc:spellattack', 'change:repeating_spell-npc:spellhlbonus', 'change:repeating_spell-npc:spellprepared'
+].join(), (eventinfo) => updateSpell('', '', eventinfo));
 
-on(
-    'change:npc_name change:npc_type change:npc_ac change:npc_actype change:hp_max change:npc_hpformula change:npc_speed change:strength change:dexterity change:constitution change:intelligence change:wisdom change:charisma change:npc_str_save change:npc_dex_save change:npc_con_save change:npc_int_save change:npc_wis_save change:npc_cha_save change:npc_acrobatics change:npc_animal_handling change:npc_arcana change:npc_athletics change:npc_deception change:npc_history change:npc_insight change:npc_intimidation change:npc_investigation change:npc_medicine change:npc_nature change:npc_perception change:npc_performance change:npc_persuasion change:npc_religion change:npc_sleight_of_hand change:npc_stealth change:npc_survival change:npc_vulnerabilities change:npc_resistances change:npc_immunities change:npc_condition_immunities change:npc_senses change:npc_languages change:npc_challenge change:npc_xp change:npc_legendary_actions change:npcreactionsflag change:npcspellcastingflag',
-    function () {
-        updateNPC();
-    }
-);
+on(['change:npc_name', 'change:npc_type', 'change:npc_ac',
+    'change:npc_actype', 'change:hp_max', 'change:npc_hpformula',
+    'change:npc_speed', 'change:strength', 'change:dexterity',
+    'change:constitution', 'change:intelligence', 'change:wisdom',
+    'change:charisma', 'change:npc_str_save', 'change:npc_dex_save',
+    'change:npc_con_save', 'change:npc_int_save', 'change:npc_wis_save',
+    'change:npc_cha_save', 'change:npc_acrobatics', 'change:npc_animal_handling',
+    'change:npc_arcana', 'change:npc_athletics', 'change:npc_deception',
+    'change:npc_history', 'change:npc_insight', 'change:npc_intimidation',
+    'change:npc_investigation', 'change:npc_medicine', 'change:npc_nature',
+    'change:npc_perception', 'change:npc_performance', 'change:npc_persuasion',
+    'change:npc_religion', 'change:npc_sleight_of_hand', 'change:npc_stealth',
+    'change:npc_survival', 'change:npc_vulnerabilities', 'change:npc_resistances',
+    'change:npc_immunities', 'change:npc_condition_immunities', 'change:npc_senses',
+    'change:npc_languages', 'change:npc_challenge', 'change:npc_xp',
+    'change:npc_legendary_actions', 'change:npcreactionsflag', 'change:npcspellcastingflag'
+], () => updateNPC());
 
-on(
-    'change:repeating_spell-cantrip:spellritualflag change:repeating_spell-1:spellritualflag change:repeating_spell-2:spellritualflag change:repeating_spell-3:spellritualflag change:repeating_spell-4:spellritualflag change:repeating_spell-5:spellritualflag change:repeating_spell-6:spellritualflag change:repeating_spell-7:spellritualflag change:repeating_spell-8:spellritualflag change:repeating_spell-9:spellritualflag change:repeating_spell-npc:spellritualflag',
-    function () {
-        getAttrs(['repeating_spell_spellritualflag'], function (v) {
-            flag =
-                v.repeating_spell_spellritualflag === 'Yes'
-                    ? '{{ritual=1}}'
-                    : '0';
-            setAttrs({
-                repeating_spell_spellritual: flag
-            });
-        });
-    }
-);
+on(['change:repeating_spell-cantrip:spellritualflag', 'change:repeating_spell-1:spellritualflag', 'change:repeating_spell-2:spellritualflag',
+    'change:repeating_spell-3:spellritualflag', 'change:repeating_spell-4:spellritualflag', 'change:repeating_spell-5:spellritualflag',
+    'change:repeating_spell-6:spellritualflag', 'change:repeating_spell-7:spellritualflag', 'change:repeating_spell-8:spellritualflag',
+    'change:repeating_spell-9:spellritualflag', 'change:repeating_spell-npc:spellritualflag'
+], () => getAttrs(['repeating_spell_spellritualflag'], (v) => {
+    const flag = v.repeating_spell_spellritualflag === 'Yes' ? '{{ritual=1}}' : '0';
+    setAttrs({ repeating_spell_spellritual: flag });
+}));
 
-on(
-    'change:repeating_spell-cantrip:spellconcentrationflag change:repeating_spell-1:spellconcentrationflag change:repeating_spell-2:spellconcentrationflag change:repeating_spell-3:spellconcentrationflag change:repeating_spell-4:spellconcentrationflag change:repeating_spell-5:spellconcentrationflag change:repeating_spell-6:spellconcentrationflag change:repeating_spell-7:spellconcentrationflag change:repeating_spell-8:spellconcentrationflag change:repeating_spell-9:spellconcentrationflag change:repeating_spell-npc:spellconcentrationflag',
-    function () {
-        getAttrs(['repeating_spell_spellconcentrationflag'], function (v) {
-            flag =
-                v.repeating_spell_spellconcentrationflag === 'Yes'
-                    ? '{{concentration=1}}'
-                    : '0';
-            setAttrs({
-                repeating_spell_spellconcentration: flag
-            });
-        });
-    }
-);
+on(['change:repeating_spell-cantrip:spellconcentrationflag', 'change:repeating_spell-1:spellconcentrationflag', 'change:repeating_spell-2:spellconcentrationflag',
+    'change:repeating_spell-3:spellconcentrationflag', 'change:repeating_spell-4:spellconcentrationflag', 'change:repeating_spell-5:spellconcentrationflag',
+    'change:repeating_spell-6:spellconcentrationflag', 'change:repeating_spell-7:spellconcentrationflag', 'change:repeating_spell-8:spellconcentrationflag',
+    'change:repeating_spell-9:spellconcentrationflag', 'change:repeating_spell-npc:spellconcentrationflag'
+], () => getAttrs(['repeating_spell_spellconcentrationflag'], (v) => {
+    const flag = v.repeating_spell_spellconcentrationflag === 'Yes' ? '{{concentration=1}}' : '0';
+    setAttrs({ repeating_spell_spellconcentration: flag });
+}));
 
 on(
     'change:repeating_spell-cantrip:spellcomp change:repeating_spell-1:spellcomp change:repeating_spell-2:spellcomp change:repeating_spell-3:spellcomp change:repeating_spell-4:spellcomp change:repeating_spell-5:spellcomp change:repeating_spell-6:spellcomp change:repeating_spell-7:spellcomp change:repeating_spell-8:spellcomp change:repeating_spell-9:spellcomp change:repeating_spell-npc:spellcomp',

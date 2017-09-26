@@ -41,19 +41,34 @@ async function renderJSFile (file, path) {
     return output.code || '';
 }
 
-const html_include = /^\s*@include "(.*?)";$/gm;
+const html_include = /^\s*@include "(.*)";$/gm;
 async function parseHTMLFile (content) {
+
     const matches = content.match(html_include);
     if (!matches) return content;
 
     return Promise.reduce(matches, async (content, match) => {
-        const [_, file] = html_include.exec(match);
-        const contents = await renderHTMLFile(file);
+        html_include.lastIndex = 0;
+        const [_, filename] = html_include.exec(match) || [];
+
+        if (!filename) {
+            console.error(`${match} returned no filenames.`);
+            return content;
+        }
+
+        const [file, extension] = filename.split('.');
+        const contents = await renderIncludeByExtension(file, extension);
         return content.replace(match, contents);
     }, content);
 }
 
-let i = 0;
+async function renderIncludeByExtension (file, extension) {
+    const filename = `${file}.${extension}`;
+
+    if (extension === 'html') return await renderHTMLFile(filename);
+    if (extension === 'js') return await renderJSFile(filename, './html');
+}
+
 async function renderHTMLFile (file) {
     const input = await fs.readFileAsync(`./html/${file}`);
     const contents = input.toString();
@@ -64,9 +79,11 @@ async function renderHTMLFile (file) {
 async function compileCSS () {
     const files = await fs.readdirAsync('./styles');
     const sassfiles = await Promise.filter(files, isSassFile);
-    const compiledfiles = await Promise.map(sassfiles, renderSassFile);
-    const stylesheet = compiledfiles.reduce((stylesheet, file) => stylesheet + file, "");
-    return fs.writeFileAsync('./writh.css', stylesheet);
+
+    await Promise.map(sassfiles, async (file) => {
+        const contents = await renderSassFile(file);
+        return await fs.writeFileAsync(`./${file}`.replace('scss','css'), contents);
+    });
 }
 
 async function compileJS () {
@@ -80,18 +97,11 @@ async function compileJS () {
 async function compileHTML () {
     const files = await fs.readdirAsync('./html');
     const htmlfiles = await Promise.filter(files, isHTMLFile);
-    const views = await Promise.map(htmlfiles, renderHTMLFile);
 
-    const files2 = await fs.readdirAsync('./html/workers');
-    const workerfiles = await Promise.filter(files2, (file) => isJSFile(file, './html/workers'));
-    const workers = await Promise.map(workerfiles, (file) => renderJSFile(file, './html/workers'));
-
-    views.push('<script type="text/worker">');
-    views.push(workers.join('\n'));
-    views.push('</script>');
-
-    const view = views.join('\n');
-    return fs.writeFileAsync('./writh.html', view);
+    await Promise.map(htmlfiles, async (file) => {
+        const view = await renderHTMLFile(file);
+        return fs.writeFileAsync(`./${file}`, view);
+    });
 }
 
 (async function main () {

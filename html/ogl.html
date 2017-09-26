@@ -1,0 +1,22 @@
+<div class="licensecontainer">
+    <input class="npc_toggle" name="attr_npc_toggle" type="hidden" value="0">
+    @include "ogl/npc.html";
+    @include "ogl/pc.html";
+</div>
+
+<div class="hidden" style="display: none;">
+    @include "ogl/hidden.html";
+</div>
+
+@include "ogl/rolltemplates.html";
+
+<script type="text/worker">
+@include "ogl/workers/base.js";
+@include "ogl/workers/sheet-opened.js";
+@include "ogl/workers/toggles.js";
+@include "ogl/workers/transfer-npc-shaped.js";
+@include "ogl/workers/transfer-npc-simple.js";
+@include "ogl/workers/transfer-pc.js";
+@include "ogl/workers/transition.js";
+@include "ogl/workers/versioning.js";
+</script>

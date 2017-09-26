@@ -15,6 +15,20 @@
     position: relative;
 }
 
+.sheet-scrollable { overflow: auto; }
+
+.sheet-scrollable::-webkit-scrollbar, .sheet-features .repcontainer::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px
+}
+
+.sheet-scrollable::-webkit-scrollbar-thumb, .sheet-features .repcontainer::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, .5)
+}
+
 .sheet-tab-button-container {
     display: block;
 }
@@ -449,18 +463,6 @@ button[type=roll] * {
     font-weight: bold;
 }
 
-.sheet-features {
-  max-height: 563px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.sheet-features > .sheet-label {
-    position: absolute;
-    bottom: 0;
-    margin-top: 0;
-}
-
 .sheet-insp-prof-container .sheet-value input,
 .sheet-saving-throw input[type=text],
 .sheet-skill input[type=text],
@@ -538,7 +540,7 @@ button[type=roll] * {
 .sheet-hp span,
 .sheet-hdice-dsaves-container span,
 .sheet-attacks span,
-.sheet-features span,
+.sheet-features .sheet-options span,
 .sheet-equipment span,
 .sheet-textbox span,
 .sheet-tool_proficiencies span,
@@ -553,6 +555,28 @@ button[type=roll] * {
     text-align: center;
     font-weight: bold;
     margin-top: 5px;
+}
+
+.sheet-features span.sheet-label {
+    position: sticky;
+    bottom: 0;
+    margin-top: 0;
+}
+
+.sheet-features .sheet-display button {
+    text-indent: -1em;
+    padding-left: 1em !important;
+}
+
+.sheet-features .sheet-display span {
+    font-weight: normal;
+    font-size: 9pt;
+    white-space: pre-line;
+    line-height: normal;
+}
+
+.sheet-features .sheet-display span.sheet-feature-name {
+    font-weight: bold;
 }
 
 span.sheet-label.sheet-deprecated:after {
@@ -783,6 +807,7 @@ span.sheet-label.sheet-deprecated:after {
 .sheet-features, .sheet-attacks {
     min-height: 274px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .sheet-features .sheet-display button[type=roll],
@@ -893,6 +918,38 @@ span.sheet-label.sheet-deprecated:after {
 {
     color: black;
     display: block;
+}
+
+.sheet-features input[type=checkbox].sheet-feature-collapse  {
+    -webkit-appearance: checkbox;
+    position: absolute;
+    top: 5px;
+    right: 18px;
+    width: auto;
+}
+
+.sheet-features input[type=checkbox].sheet-feature-collapse + label {
+    font-size: 9pt;
+    position: absolute;
+    right: 32px;
+    top: 2px;
+    width: 40px;
+}
+
+.sheet-features .repcontainer {
+    margin-top: 15px;
+    max-height: 511px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sheet-features input[type=checkbox].sheet-feature-collapse:checked ~ .repcontainer .sheet-display button {
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 238px;
+    max-height: 55px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .sheet-features .sheet-feature:hover .sheet-options-flag + span,

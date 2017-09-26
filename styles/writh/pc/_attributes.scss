@@ -21,10 +21,20 @@
     margin: 0 auto;
     position: relative;
 
-    label {
+    button {
+      background: transparent;
+      padding: 0;
+
+      &::before { display: none; }
+      &, * { cursor: pointer; }
+    }
+
+    .sheet-label {
       display: block;
       padding-top: 8px;
       text-align: center;
+
+      label { display: inline; }
     }
 
     input {

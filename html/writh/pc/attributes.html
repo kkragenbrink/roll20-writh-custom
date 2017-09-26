@@ -1,37 +1,61 @@
 <div class="attributes">
     <div class="attribute">
-        <label class="attr_strength" data-i18n="strength">Strength</label>
-        <input disabled="true" name="attr_strength_modifier" type="text" value="floor((@{strength}-10)/2)" />
+        <button type="roll" name="roll_strength" value="&{template:writh} {{title=Strength}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{strength_modifier}]][STR]]]}}">
+            <div class="label">
+                <label class="attr_strength" data-i18n="strength">Strength</label>
+            </div>
+            <input disabled="true" name="attr_strength_modifier" type="text" value="floor((@{strength}-10)/2)" />
+        </button>
         <input type="number" name="attr_strength" step="1" min="0" max="25" value="10" />
     </div>
 
     <div class="attribute">
-        <label class="attr_dexterity" data-i18n="dexterity">Dexterity</label>
-        <input disabled="true" name="attr_dexterity_modifier" type="text" value="floor((@{dexterity}-10)/2)" />
+        <button type="roll" name="roll_dexterity" value="&{template:writh} {{title=Dexterity}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{dexterity_modifier}]][DEX]]]}}">
+            <div class="label">
+                <label class="attr_dexterity" data-i18n="dexterity">Dexterity</label>
+            </div>
+            <input disabled="true" name="attr_dexterity_modifier" type="text" value="floor((@{dexterity}-10)/2)" />
+        </button>
         <input type="number" name="attr_dexterity" step="1" min="0" max="25" value="10" />
     </div>
 
     <div class="attribute">
-        <label class="attr_constitution" data-i18n="constitution">Constitution</label>
-        <input disabled="true" name="attr_constitution_modifier" type="text" value="floor((@{constitution}-10)/2)" />
+        <button type="roll" name="roll_constitution" value="&{template:writh} {{title=Constituion}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{constitution_modifier}]][CON]]]}}">
+            <div class="label">
+                <label class="attr_constitution" data-i18n="constitution">Constitution</label>
+            </div>
+            <input disabled="true" name="attr_constitution_modifier" type="text" value="floor((@{constitution}-10)/2)" />
+        </button>
         <input type="number" name="attr_constitution" step="1" min="0" max="25" value="10" />
     </div>
 
     <div class="attribute">
-        <label class="attr_intelligence" data-i18n="intelligence">Intelligence</label>
-        <input disabled="true" name="attr_intelligence_modifier" type="text" value="floor((@{intelligence}-10)/2)" />
+        <button type="roll" name="roll_intelligence" value="&{template:writh} {{title=Intelligence}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{intelligence_modifier}]][INT]]]}}">
+            <div class="label">
+                <label class="attr_intelligence" data-i18n="intelligence">Intelligence</label>
+            </div>
+            <input disabled="true" name="attr_intelligence_modifier" type="text" value="floor((@{intelligence}-10)/2)" />
+        </button>
         <input type="number" name="attr_intelligence" step="1" min="0" max="25" value="10" />
     </div>
 
     <div class="attribute">
-        <label class="attr_wisdom" data-i18n="wisdom">Wisdom</label>
-        <input disabled="true" name="attr_wisdom_modifier" type="text" value="floor((@{wisdom}-10)/2)" />
+        <button type="roll" name="roll_wisdom" value="&{template:writh} {{title=Wisdom}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{wisdom_modifier}]][WIS]]]}}">
+            <div class="label">
+                <label class="attr_wisdom" data-i18n="wisdom">Wisdom</label>
+            </div>
+            <input disabled="true" name="attr_wisdom_modifier" type="text" value="floor((@{wisdom}-10)/2)" />
+        </button>
         <input type="number" name="attr_wisdom" step="1" min="0" max="25" value="10" />
     </div>
 
     <div class="attribute">
-        <label class="attr_charisma" data-i18n="charisma">Charisma</label>
-        <input disabled="true" name="attr_charisma_modifier" type="text" value="floor((@{charisma}-10)/2)" />
+        <button type="roll" name="roll_charisma" value="&{template:writh} {{title=Charisma}} {{characterName=@{character_name}}} {{roll=[[?{Advantage?|Normal Roll,1d20|Advantage,2d20kh1[Advantage]|Disadvantage,2d20kl1[Disadvantage]}+[[@{charisma_modifier}]][CHA]]]}}">
+            <div class="label">
+                <label class="attr_charisma" data-i18n="charisma">Charisma</label>
+            </div>
+            <input disabled="true" name="attr_charisma_modifier" type="text" value="floor((@{charisma}-10)/2)" />
+        </button>
         <input type="number" name="attr_charisma" step="1" min="0" max="25" value="10" />
     </div>
 </div>

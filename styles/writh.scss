@@ -1,5 +1,7 @@
+@import "writh/colors";
+@import "writh/roll-templates";
+
 .sheet-container {
-  @import "writh/colors";
   @import "writh/reset";
 
   .sheet-npc, .sheet-pc { display: none; }

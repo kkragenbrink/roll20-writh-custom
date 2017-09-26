@@ -7,6 +7,10 @@
 }
 
 .sheet-hidden { display: none; }
+.sheet-dicefontd20 {
+  color: $label;
+  font-family: 'dicefontd20';
+}
 
 input {
   background: transparent;
@@ -19,7 +23,7 @@ input {
 
 label {
   color: $label;
-  font-size: 7.5pt;
+  font-size: 7pt;
   font-weight: normal;
   text-align: left;
   text-transform: uppercase;

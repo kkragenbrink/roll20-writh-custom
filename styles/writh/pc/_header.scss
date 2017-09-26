@@ -6,7 +6,7 @@
   height: 130px;
   width: 765px;
 
-  input[name=attr_name] {
+  input[name=attr_character_name] {
     position: absolute;
     top: 64px;
     left: 75px;
@@ -16,7 +16,7 @@
     font-weight: bold;
   }
 
-  label.attr_name {
+  label.attr_character_name {
     position: absolute;
     left: 80px;
     top: 97px;

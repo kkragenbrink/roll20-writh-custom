@@ -1,0 +1,19 @@
+<rolltemplate class="sheet-rolltemplate-writh">
+    <div class="template-container">
+        <div class="template-contents">
+            <div class="title">
+                {{title}}
+                {{#subtitle}}<span class="subtitle">({{subtitle}})</span>{{/subtitle}}
+            </div>
+            <div class="character-name">{{characterName}}</div>
+            {{#roll}}
+            <div class="roll">
+                {{roll}}
+                {{#advantage}}<span class="advantage">Advantage</span>{{/advantage}}
+                {{#disadvantage}}<span class="disadvantage">Advantage</span>{{/disadvantage}}
+            </div>
+            {{/roll}}
+            {{#text}}<div class="text">{{text}}</div>{{/text}}
+        </div>
+    </div>
+</rolltemplate>

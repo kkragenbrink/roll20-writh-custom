@@ -19,6 +19,7 @@ input {
   padding: 0;
 
   display: inline-block;
+  width: auto;
 }
 
 label {
@@ -31,3 +32,9 @@ label {
   display: inline-block;
   width: auto;
 }
+
+th {
+  text-align: left;
+}
+
+.repcontrol_del { width: 18px; }

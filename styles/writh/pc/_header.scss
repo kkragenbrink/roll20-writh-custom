@@ -38,7 +38,7 @@
       margin: 0 auto;
       padding: 1px;
 
-      input[name=attr_classlevel], .attr_classlevel { width: 250px; }
+      span[name=attr_classlevel], .attr_classlevel { display: inline-block; width: 250px; }
       input[name=attr_background], .attr_background { width: 130px; }
       input[name=attr_race], .attr_race,
       input[name=attr_alignment], .attr_alignment,

@@ -1,11 +1,27 @@
-@import "writh/colors";
-@import "writh/roll-templates";
+.sheet-writh {
+  position: relative;
+  width: 8.5in;
+  height: 11in;
 
-.sheet-container {
+  @import "writh/colors";
   @import "writh/reset";
+  @import "writh/roll-templates";
 
-  .sheet-npc, .sheet-pc { display: none; }
-  .sheet-npc-toggle:checked ~ .sheet-npc, .sheet-npc-toggle:not(:checked) ~ .sheet-pc { display: block; }
+  .sheet-container {
 
-  @import "writh/pc";
+    display: block;
+    z-index: 10;
+    position: relative;
+
+    .sheet-npc, .sheet-pc {
+      display: none;
+    }
+    .sheet-npc-toggle:checked ~ .sheet-npc, .sheet-npc-toggle:not(:checked) ~ .sheet-pc {
+      display: block;
+    }
+
+    @import "writh/pc";
+  }
+
+  @import "writh/dialog";
 }

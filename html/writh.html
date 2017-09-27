@@ -1,7 +1,14 @@
-<div class="container">
-    <input class="npc-toggle hidden" name="attr_npc-toggle" type="checkbox" />
-    @include "writh/npc.html";
-    @include "writh/pc.html";
+<div class="writh">
+    <div class="container">
+        <input class="npc-toggle hidden" name="attr_npc-toggle" type="checkbox" />
+        @include "writh/npc.html";
+        @include "writh/pc.html";
+    </div>
+    @include "writh/dialog.html";
+    @include "writh/hidden.html";
+    @include "writh/roll-templates.html";
 </div>
-@include "writh/hidden.html";
-@include "writh/roll-templates.html";
+<script type="text/worker">
+@include "writh/workers/TheAaronSheet.js";
+@include "writh/workers/classes.js";
+</script>

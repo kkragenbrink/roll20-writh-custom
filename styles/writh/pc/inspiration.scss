@@ -1,0 +1,47 @@
+.sheet-inspiration {
+  $width: 168px;
+  $height: 42px;
+
+  position: absolute;
+  top: 165px;
+  left: 100px;
+  background: $inspiration;
+  background-size: $width $height;
+  background-repeat: no-repeat;
+
+  width: $width;
+  height: $height;
+
+  input[type=checkbox] {
+    $size: 30px;
+
+    display: block;
+    width: $size;
+    height: $size;
+
+    -webkit-appearance: none;
+
+    position: absolute;
+    left: 7px;
+    top: 6px;
+
+    &:focus { outline: none; }
+
+    &:checked::before {
+      $size: 30px;
+      background: $inspiration-earned;
+      background-size: $size $size;
+      width: $size;
+      height: $size;
+
+      content: "";
+      display: block;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 12px;
+    left: 70px;
+  }
+}

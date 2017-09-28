@@ -1,0 +1,38 @@
+.sheet-proficiency-bonus {
+  $width: 168px;
+  $height: 51px;
+
+  position: absolute;
+  top: 215px;
+  left: 100px;
+  background: $proficiency-bonus;
+  background-size: $width $height;
+  background-repeat: no-repeat;
+
+  width: $width;
+  height: $height;
+
+  span[name=attr_proficiency-bonus] {
+    $size: 30px;
+
+    display: block;
+    width: $size;
+    height: $size;
+
+    position: absolute;
+    left: 7px;
+    top: 9px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: $size;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  label {
+    position: absolute;
+    top: 16px;
+    left: 55px;
+  }
+}

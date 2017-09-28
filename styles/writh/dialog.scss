@@ -29,7 +29,7 @@
     }
 
     .sheet-contents {
-      background: url(https://i.imgur.com/gSwjZwb.png) top left repeat-y;
+      background: $roll-template-background top left repeat-y;
       box-sizing: border-box;
       display: block;
       padding: 0 15px;
@@ -73,8 +73,8 @@
       height: 21px;
     }
 
-    &::before { background: url(https://i.imgur.com/6eLCGKD.png) top left no-repeat; }
-    &::after { background: url(https://i.imgur.com/dhUdejG.png) top left no-repeat; }
+    &::before { background: $roll-template-header top left no-repeat; }
+    &::after { background: $roll-template-footer top left no-repeat; }
   }
 }
 .sheet-dialog-display { display: none; }

@@ -1,17 +1,35 @@
+@import "writh/colors";
+@import "writh/images";
+@import "writh/roll-templates";
+
 .sheet-writh {
   position: relative;
   width: 8.5in;
   height: 11in;
 
-  @import "writh/colors";
   @import "writh/reset";
-  @import "writh/roll-templates";
+
+  .sheet-column {
+    z-index: 1000;
+    pointer-events: none;
+    position: relative;
+    width: 33%;
+    display: none;
+    height: 11in;
+
+    &:nth-child(1) { background: rgba(255,0,0,.1); }
+    &:nth-child(2) { background: rgba(0,255,0,.1); }
+    &:nth-child(3) { background: rgba(0,0,255,.1); }
+  }
 
   .sheet-container {
 
     display: block;
     z-index: 10;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8.5in;
 
     .sheet-npc, .sheet-pc {
       display: none;

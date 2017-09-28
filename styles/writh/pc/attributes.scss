@@ -1,22 +1,28 @@
 .sheet-attributes {
-  background-image: url(https://i.imgur.com/owwq3DG.png);
-  background-size: 105px 664px;
+  $width: 92px;
+  $height: 610px;
+
+  background-image: $attributes-container;
+  background-size: $width $height;
   background-repeat: no-repeat;
 
   position: absolute;
-  left: 50px;
+  left: 20px;
   top: 165px;
-  width: 105px;
-  height: 664px;
+  width: $width;
+  height: $height;
 
   padding-top: 16px;
 
   .sheet-attribute {
-    background-image: url(https://i.imgur.com/MiFkj5E.png);
-    background-size: 100px 105px;
+    $width: 86px;
+    $height: 96px;
 
-    width: 100px;
-    height: 105px;
+    background-image: $attribute;
+    background-size: $width $height;
+
+    width: $width;
+    height: $height;
 
     margin: 0 auto;
     position: relative;
@@ -32,6 +38,7 @@
     .sheet-label {
       display: block;
       padding-top: 8px;
+      font-size: 6.5pt;
       text-align: center;
 
       label { display: inline; }
@@ -47,12 +54,13 @@
 
     input[type=text] {
       font-size: 24pt;
-      margin-bottom: 14px;
+      margin-bottom: 4px;
     }
 
     input[type=number] {
       font-size: 14pt;
-      text-align: right;
+      text-align: center;
+      margin: 0 30px;
     }
   }
 }

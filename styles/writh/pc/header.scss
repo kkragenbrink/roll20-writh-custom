@@ -1,5 +1,5 @@
 .sheet-header {
-  background-image: url(https://i.imgur.com/Lw0D7jX.png);
+  background-image: $sheet-header;
   background-size: 765px 130px;
 
   position: relative;
@@ -25,7 +25,7 @@
 
   .sheet-main {
     position: absolute;
-    top: 38px;
+    top: 36px;
     left: 329px;
     height: 74px;
     width: 407px;
@@ -33,10 +33,26 @@
     .sheet-header-row {
       position: relative;
 
-      height: 37px;
+      height: 36px;
       width: 390px;
       margin: 0 auto;
       padding: 1px;
+
+      .sheet-dialog-display {
+        display: inline-block;
+        margin-top: -17px;
+        height: 0;
+
+        &:after {
+          color: $red;
+          font-weight: bold;
+          font-family: Pictos;
+          content: "p";
+
+          display: inline-block;
+          font-size: 10pt;
+        }
+      }
 
       span[name=attr_classlevel], .attr_classlevel { display: inline-block; width: 250px; }
       input[name=attr_background], .attr_background { width: 130px; }
@@ -48,7 +64,7 @@
         background-color: #CCC;
 
         height: 1px;
-        margin: 0;
+        margin: 1px 0;
         width: 100%;
       }
     }

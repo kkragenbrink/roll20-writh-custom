@@ -3,32 +3,44 @@
     <div class="proficiency">
         <input type="checkbox" name="attr_strength_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_strength_save_modifier" value="@{strength_modifier}+(@{strength_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="strength">Strength</label>
+        <button data-i18n="strength" type="roll" name="roll_strength_saving_throw" value="&{template:writh} {{title=Strength Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{strength_modifier}]][STR]+[[@{strength_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Strength
+        </button>
     </div>
     <div class="proficiency">
         <input type="checkbox" name="attr_dexterity_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_dexterity_save_modifier" value="@{dexterity_modifier}+(@{dexterity_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="dexterity">Dexterity</label>
+        <button data-i18n="dexterity" type="roll" name="roll_dexterity_saving_throw" value="&{template:writh} {{title=Dexterity Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{dexterity_modifier}]][DEX]+[[@{dexterity_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Dexterity
+        </button>
     </div>
     <div class="proficiency">
         <input type="checkbox" name="attr_constitution_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_constitution_save_modifier" value="@{constitution_modifier}+(@{constitution_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="constitution">Constitution</label>
+        <button data-i18n="constitution" type="roll" name="roll_constitution_saving_throw" value="&{template:writh} {{title=Constitution Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{constitution_modifier}]][CON]+[[@{constitution_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Constitution
+        </button>
     </div>
     <div class="proficiency">
         <input type="checkbox" name="attr_intelligence_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_intelligence_save_modifier" value="@{intelligence_modifier}+(@{intelligence_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="intelligence">Intelligence</label>
+        <button data-i18n="intelligence" type="roll" name="roll_intelligence_saving_throw" value="&{template:writh} {{title=Intelligence Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{intelligence_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Intelligence
+        </button>
     </div>
     <div class="proficiency">
         <input type="checkbox" name="attr_wisdom_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_wisdom_save_modifier" value="@{wisdom_modifier}+(@{wisdom_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="wisdom">Wisdom</label>
+        <button data-i18n="wisdom" type="roll" name="roll_wisdom_saving_throw" value="&{template:writh} {{title=Wisdom Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{wisdom_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Wisdom
+        </button>
     </div>
     <div class="proficiency">
         <input type="checkbox" name="attr_charisma_saving_throw" value="1" />
         <input disabled="true" type="text" name="attr_charisma_save_modifier" value="@{charisma_modifier}+(@{charisma_saving_throw}*@{proficiency_bonus})" />
-        <label data-i18n="charisma">Charisma</label>
+        <button data-i18n="charisma" type="roll" name="roll_charisma_saving_throw" value="&{template:writh} {{title=Charisma Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{charisma_saving_throw}*@{proficiency_bonus}]][PROF]]]}}">
+            Charisma
+        </button>
     </div>
     <label data-i18n="saving-throws">Saving Throws</label>
 </div>

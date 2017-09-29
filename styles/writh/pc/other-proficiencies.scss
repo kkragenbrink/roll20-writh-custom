@@ -1,0 +1,59 @@
+.sheet-other-proficiencies {
+  $width: 266px;
+  $height: 120px;
+
+  position: absolute;
+  left: $col1-left;
+  top: 910px;
+
+  background-image: $other-proficiencies-background;
+  background-size: $width $height;
+  width: $width;
+  height: $height;
+
+  z-index: 20;
+
+  &::before, &::after {
+    $height: 20px;
+
+    content: "";
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+
+    position: absolute;
+    left: 0;
+
+    height: $height;
+    width: $width;
+
+    z-index: 30;
+  }
+
+  &::before {
+    background-image: $other-proficiencies-header;
+    top: -5px;
+  }
+  &::after {
+    background-image: $other-proficiencies-footer;
+    bottom: 0;
+  }
+
+  label {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: $width;
+    text-align: center;
+    z-index: 40;
+  }
+
+  textarea {
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+    display: block;
+    z-index: 40;
+    position: relative;
+  }
+}

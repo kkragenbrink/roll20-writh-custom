@@ -8,14 +8,43 @@
   "race": "Race",
 
   "strength": "Strength",
+  "strength-abbreviation": "Str",
   "dexterity": "Dexterity",
+  "dexterity-abbreviation": "Dex",
   "constitution": "Constitution",
+  "constitution-abbreviation": "Con",
   "intelligence": "Intelligence",
+  "intelligence-abbreviation": "Int",
   "wisdom": "Wisdom",
+  "wisdom-abbreviation": "Wis",
   "charisma": "Charisma",
+  "charisma-abbreviation": "Cha",
 
   "inspiration": "Inspiration",
   "proficiency-bonus": "Proficiency Bonus",
+
+  "saving-throws": "Saving Throws",
+  "skills": "Skills",
+
+  "acrobatics": "Acrobatics",
+  "animal-handling": "Animal Handling",
+  "arcana": "Arcana",
+  "athletics": "Athletics",
+  "deception": "Deception",
+  "history": "History",
+  "insight": "Insight",
+  "intimidation": "Intimidation",
+  "investigation": "Investigation",
+  "passive-investigation": "Passive Intelligence (Investigation)",
+  "medicine": "Medicine",
+  "nature": "Nature",
+  "perception": "Perception",
+  "passive-perception": "Passive Wisdom (Perception)",
+  "persuasion": "Persuasion",
+  "religion": "Religion",
+  "sleight-of-hand": "Sleight of Hand",
+  "stealth": "Stealth",
+  "survival": "Survival",
 
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

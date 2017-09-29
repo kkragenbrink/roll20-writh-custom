@@ -1,0 +1,83 @@
+.sheet-proficiencies {
+  $width: 168px;
+  $art-height: 75px;
+
+  position: absolute;
+  left: $col1-right;
+
+  background: $proficiency-background;
+  background-repeat: no-repeat;
+
+  width: $width;
+  z-index: 20;
+  padding-top: 5px;
+
+  & > label {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 40;
+  }
+
+  &::before, &::after {
+    content: "";
+    background-color: white;
+    background-size: $width $art-height;
+
+    position: absolute;
+    left: 0;
+    width: $width;
+    height: $art-height;
+
+    z-index: 30;
+  }
+
+  &::before {
+    background-image: $proficiency-header;
+    top: -5px;
+  }
+
+  &::after {
+    background-image: $proficiency-footer;
+    bottom: 0px;
+  }
+
+  &.sheet-saving-throws {
+    $height: 150px;
+
+    top: 280px;
+    background-size: $width $height;
+    height: $height;
+
+  }
+
+  &.sheet-skills {
+    $height: 350px;
+
+    top: 450px;
+    background-size: $width $height;
+    height: $height;
+  }
+
+  .sheet-proficiency {
+    position: relative;
+    width: 150px;
+    margin: 0 auto;
+    z-index: 40;
+
+    font-size: 7pt;
+
+    input[type=text] {
+      border-bottom: 1px solid black;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sheet-abbreviation {
+      font-size: 7pt;
+      color: #999;
+    }
+  }
+}

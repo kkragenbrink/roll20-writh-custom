@@ -6,7 +6,7 @@ const CLASS_LEVEL_JOINER = '/';
 on(CLASS_WATCHERS.join(' '), () => {
     console.log('Calculating class level.');
     TAS.repeating('classes')
-        .attrs('level', 'proficiency-bonus', 'classlevel')
+        .attrs('level', 'proficiency_bonus', 'classlevel')
         .fields('name', 'level')
         .reduce(calculateLevels, {level: 0, labels: []}, setClassLevels)
         .execute();
@@ -25,6 +25,6 @@ function setClassLevels(levels, rowSet, attrSet) {
     console.log(`Setting level to: ${levels.level}.`);
 
     const proficiency = Math.floor((levels.level - 1) / 4) + 2;
-    attrSet['proficiency-bonus'] = `+${proficiency}`;
+    attrSet.proficiency_bonus= `+${proficiency}`;
     console.log(`Setting proficiency bonus to: ${proficiency}`);
 }

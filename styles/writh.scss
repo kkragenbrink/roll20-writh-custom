@@ -1,4 +1,4 @@
-@import "writh/colors";
+@import "writh/variables";
 @import "writh/images";
 @import "writh/roll-templates";
 
@@ -13,12 +13,12 @@
     z-index: 1000;
     pointer-events: none;
     position: relative;
-    width: 33%;
+    width: 31%;
     display: none;
     //display: inline-block;
     height: 11in;
 
-    &:nth-child(1) { background: rgba(255,0,0,.1); }
+    &:nth-child(1) { width: 37%; background: rgba(255,0,0,.1); }
     &:nth-child(2) { background: rgba(0,255,0,.1); }
     &:nth-child(3) { background: rgba(0,0,255,.1); }
   }

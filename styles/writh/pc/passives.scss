@@ -11,7 +11,7 @@
     background-size: $width $height;
     background-repeat: no-repeat;
 
-    margin-top: 10px;
+    margin-top: 5px;
     width: $width;
     height: $height;
 
@@ -29,7 +29,14 @@
       font-size: 14pt;
     }
 
-    label {
+    button {
+      background: none;
+      -webkit-appearance: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      font-size: 8pt;
+
       height: $height;
       line-height: $height;
 
@@ -39,6 +46,8 @@
 
       text-align: center;
       vertical-align: middle;
+
+      &::before { display: none; }
     }
   }
 }

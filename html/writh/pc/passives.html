@@ -1,10 +1,10 @@
 <div class="passives">
     <div class="passive">
         <input disabled="true" type="text" name="attr_passive_perception" value="@{perception_modifier}+10" />
-        <label data-i18n="passive-perception">Passive Wisdom (Perception)</label>
+        <button data-i18n="passive-perception" type="roll" value="&{template:writh} {{title=Passive Wisdom}} {{subtitle=Perception}} {{characterName=@{character_name}}} {{roll=[[10+[[@{wisdom_modifier}]][WIS]+[[@{perception_skill}*@{proficiency_bonus}]][PROF]]]}}">Passive Wisdom (Perception)</button>
     </div>
     <div class="passive">
         <input disabled="true" type="text" name="attr_passive_investigation" value="@{investigation_modifier}+10" />
-        <label data-i18n="passive-investigation">Passive Intelligence (Investigation)</label>
+        <button data-i18n="passive-investigation" type="roll" value="&{template:writh} {{title=Passive Intelligence}} {{subtitle=Investigation}} {{characterName=@{character_name}}} {{roll=[[10+[[@{intelligence_modifier}]][INT]+[[@{investigation_skill}*@{proficiency_bonus}]][PROF]]]}}">Passive Intelligence (Investigation)</button>
     </div>
 </div>

@@ -48,5 +48,11 @@
 
   "other-proficiencies": "Other Proficiencies",
 
+  "armor-class": "Armor Class",
+  "max-hp": "Max HP",
+  "temp-hp": "Temp HP",
+  "resist-immune": "Resist / Immune",
+  "hp": "HP",
+
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

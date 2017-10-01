@@ -75,17 +75,6 @@
       text-align: center;
     }
 
-    button {
-      background: none;
-      -webkit-appearance: none;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      font-size: 8pt;
-
-      &::before { display: none; }
-    }
-
     .sheet-abbreviation {
       font-size: 7pt;
       color: #999;

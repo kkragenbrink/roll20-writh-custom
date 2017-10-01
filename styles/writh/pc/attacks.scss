@@ -1,0 +1,104 @@
+.sheet-attacks {
+  $height: 200px;
+  $width: 515px;
+
+  position: absolute;
+  left: 295px;
+  top: 360px;
+
+  height: $height;
+  width: $width;
+
+  background-image: $attacks-background;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+
+  z-index: 20;
+
+  .repcontainer {
+    height: $height - 60px;
+    width: $width - 50px;
+
+    margin: 0 auto;
+    position: relative;
+    z-index: 40;
+
+    @include scrollable();
+
+    .repitem { background-color: $oddrow; margin-bottom: 5px; }
+
+    input {
+      border-bottom: 1px solid black;
+      font-size: 9pt;
+    }
+  }
+
+  .repcontrol {
+    width: $width - 50px;
+    z-index: 40;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &::before, &::after {
+    content: "";
+    background-color: white;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    left: 0;
+
+    width: $width;
+
+    z-index: 30;
+  }
+
+  &::before {
+    $height: 17px;
+
+    background-image: $attacks-header;
+    top: -5px;
+
+    background-size: $width $height;
+    height: $height;
+  }
+
+  &::after {
+    $height: 40px;
+    background-image: $attacks-footer;
+    bottom: 0;
+
+    background-size: $width $height;
+    height: $height;
+  }
+
+  .sheet-header {
+    width: $width - 50px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 40;
+
+    label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      text-align: left;
+      display: inline-block;
+    }
+  }
+
+  .sheet-name { width: 200px; }
+  .sheet-attack { width: 45px; }
+  .sheet-damage { width: 75px; }
+  .sheet-range { width: 75px; }
+  .sheet-ammo { width: 50px; }
+  .sheet-ammo-left { text-align: right; }
+  .sheet-ammo-left, .sheet-ammo-total { width: 25px; }
+
+  & > label {
+    position: absolute;
+    bottom: 5px;
+    z-index: 40;
+    width: 100%;
+    text-align: center;
+  }
+}

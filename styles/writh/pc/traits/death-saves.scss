@@ -1,0 +1,39 @@
+.sheet-death-saves {
+  $height: 68px;
+  $width: 120px;
+
+  position: absolute;
+  top: 113px;
+  left: 5px;
+  padding-top: 8px;
+
+  background-image: $death-saves;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+
+  height: $height;
+  width: $width;
+
+  .sheet-row {
+    width: $width - 30px;
+    margin: 0 auto;
+    text-align: right;
+
+    span {
+      font-size: 8pt;
+      font-variant: small-caps;
+      text-transform: lowercase;
+    }
+  }
+
+  button {
+    color: $label;
+    font-size: 7pt;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+
+    display: inline-block;
+    width: 100%;
+  }
+}

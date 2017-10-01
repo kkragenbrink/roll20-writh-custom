@@ -1,0 +1,19 @@
+<div class="traits">
+    @include "writh/pc/traits/hit-dice.html";
+    @include "writh/pc/traits/death-saves.html";
+
+    <div class="initiative">
+        <input type="text" disabled="true" name="attr_initiative" value="[[@{dexterity_modifier}]][DEX]" />
+        <button type="roll" data-i18n="initiative" value="&{template:writh} {{title=Initiative}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+@{initiative}&{tracker}]]}}">Initiative</button>
+    </div>
+
+    <div class="speed">
+        <input type="text" name="attr_speed" value="30 feet" />
+        <button type="roll" data-i18n="speed" value="&{template:writh} {{title=Speed}} {{characterName=@{character_name}}} {{roll=@{speed}}}">Speed</button>
+    </div>
+
+    <div class="vision">
+        <input type="text" name="attr_vision" value="Normal" />
+        <button type="roll" data-i18n="vision" value="&{template:writh} {{title=Vision}} {{characterName=@{character_name}}} {{roll=@{vision}}}">Vision</button>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 /** COLORS **/
 $label: #666;
+$oddrow: #EEE;
 
 $gold: #c9ad6a;
 $red: #58180D;
@@ -7,3 +8,17 @@ $red: #58180D;
 /** POSITIONS **/
 $col1-left: 25px;
 $col1-right: $col1-left + 100px;
+
+@mixin scrollable() {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, .5)
+  }
+}

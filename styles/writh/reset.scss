@@ -23,7 +23,7 @@ button[type=roll] {
   &::before { display: none; }
 }
 
-input {
+input[type=text], input[type=number] {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -31,6 +31,20 @@ input {
 
   display: inline-block;
   width: auto;
+}
+
+input[type=checkbox] {
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  height: 8px;
+  width: 8px;
+
+  -webkit-appearance: none;
+
+  &:checked {
+    background: black;
+  }
 }
 
 label {
@@ -51,17 +65,7 @@ textarea {
 
   &:focus { outline: none; }
 
-  &::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 8px;
-    height: 8px
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    border: 2px solid rgba(0, 0, 0, 0);
-    background-color: rgba(0, 0, 0, .5)
-  }
+  @include scrollable();
 }
 
 th {

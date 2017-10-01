@@ -1,0 +1,32 @@
+.sheet-hit-dice {
+  $height: 104px;
+  $width: 120px;
+
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  padding-top: 8px;
+
+  background-image: $hit-dice;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+
+  height: $height;
+  width: $width;
+
+  .sheet-row {
+    width: $width - 30px;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 2em;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+
+  label {
+    width: 100%;
+    text-align: center;
+  }
+}

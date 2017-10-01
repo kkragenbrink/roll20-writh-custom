@@ -54,5 +54,26 @@
   "resist-immune": "Resist / Immune",
   "hp": "HP",
 
+  "d6": "d6",
+  "d8": "d8",
+  "d10": "d10",
+  "d12": "d12",
+
+  "hit-dice": "Hit Dice",
+  "death-saves": "Death Saves",
+  "successes": "Successes",
+  "failures": "Failures",
+  "initiative": "Initiative",
+  "speed": "Speed",
+  "vision": "Vision",
+
+  "attacks": "Attacks",
+
+  "name": "Name",
+  "attack": "Attack",
+  "damage": "Damage",
+  "range": "Range",
+  "ammo": "Ammo",
+
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

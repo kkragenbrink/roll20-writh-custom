@@ -4,8 +4,8 @@
         <button type="roll" name="roll_armor_class" value="&{template:writh} {{title=Armor Class}} {{characterName=@{character_name}}} {{roll=[[@{armor_class}]]}}" data-i18n="armor-class">Armor Class</button>
     </div>
     <div class="max-hp">
-        <input type="text"  name="attr_max_hp" />
-        <button type="roll" name="roll_max-hp" value="&{template:writh} {{title=Maximum HP}} {{characterName=@{character_name}}} {{roll=[[@{max_hp}]]}}" data-i18n="max-hp">Max HP</button>
+        <input type="text"  name="attr_hp_max" />
+        <button type="roll" name="roll_hp_max" value="&{template:writh} {{title=Maximum HP}} {{characterName=@{character_name}}} {{roll=[[@{hp_max}]]}}" data-i18n="hp-max">Max HP</button>
     </div>
     <div class="temp-hp">
         <input type="text" name="attr_temp_hp" />
@@ -16,7 +16,7 @@
         <button type="roll" name="roll_resist_immune" value="&{template:writh} {{title=Resist/Immune}} {{characterName=@{character_name}}} {{text=@{resist_immune}}}" data-i18n="resist-immune">Resist / Immune</button>
     </div>
     <div class="hp">
-        <input type="text" name="attr_hp" value="@{max_hp}" />
+        <input type="text" name="attr_hp" />
         <button type="roll" name="roll_hp" value="&{template:writh} {{title=Hit Points}} {{characterName=@{character_name}}} {{roll=[[@{hp}]]}}" data-i18n="hp">HP</button>
     </div>
 </div>

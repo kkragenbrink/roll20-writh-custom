@@ -49,10 +49,10 @@
   "other-proficiencies": "Other Proficiencies",
 
   "armor-class": "Armor Class",
-  "max-hp": "Max HP",
+  "hp": "HP",
+  "hp-max": "Max HP",
   "temp-hp": "Temp HP",
   "resist-immune": "Resist / Immune",
-  "hp": "HP",
 
   "d6": "d6",
   "d8": "d8",

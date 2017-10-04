@@ -15,11 +15,14 @@
     position: relative;
 
     .sheet-dialog-display {
+      border: none;
       display: block;
       position: absolute;
       right: 10px;
       top: 10px;
       height: 0;
+
+      &:checked { background-color: transparent; }
 
       &:after {
         color: $red;

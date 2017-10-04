@@ -39,9 +39,12 @@
       padding: 1px;
 
       .sheet-dialog-display {
+        border: none;
         display: inline-block;
         margin-top: -17px;
         height: 0;
+
+        &:checked { background-color: transparent; }
 
         &:after {
           color: $red;

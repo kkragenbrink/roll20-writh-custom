@@ -69,6 +69,24 @@
 
     font-size: 7pt;
 
+    input[type=checkbox] {
+      position: relative;
+      z-index: 20;
+
+      & + input[type=checkbox] {
+        border: 1px dotted $label;
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        z-index: 10;
+        width: 7px;
+        height: 7px;
+        pointer-events: none;
+
+        &:checked { background-color: $label; }
+      }
+    }
+
     input[type=text] {
       border-bottom: 1px solid black;
       width: 20px;

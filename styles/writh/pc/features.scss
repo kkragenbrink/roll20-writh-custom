@@ -1,0 +1,113 @@
+.sheet-features {
+  $width: 250px;
+  $height: 445px;
+
+  position: absolute;
+  right: 10px;
+  top: 570px;
+  z-index: 10;
+
+  height: $height;
+  width: $width;
+
+  background-image: $features-background;
+  background-size: $width ($height - 16px - 38px);
+  background-position: 0 16px;
+  background-repeat: no-repeat;
+
+  padding: 15px;
+
+  & > label {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 40;
+  }
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    width: $width;
+
+    z-index: 20;
+  }
+
+  &::before {
+    $height: 16px;
+
+    background-image: $features-header;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+
+    height: $height;
+    top: 0;
+  }
+
+  &::after {
+    $height: 38px;
+
+    background-image: $features-footer;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+
+    height: $height;
+    bottom: 0;
+  }
+
+  .repitem {
+    position: relative;
+
+    button[type=roll] {
+      background: #EEE;
+      text-align: left;
+      width: 100%;
+
+      span { font-size: 8pt; }
+
+      .sheet-name { font-weight: bold; }
+      input[type=checkbox] { display: none; }
+      .sheet-uses-wrapper { display: none; }
+      input[name=attr_show_uses]:checked ~ .sheet-uses-wrapper { display: inline; }
+    }
+
+
+    input[name=attr_edit_feature] {
+      display: none;
+      visibility: hidden;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &::before {
+        visibility: visible;
+        content: 'y';
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-family: pictos;
+        font-size: 12pt;
+      }
+    }
+
+    &:hover input[name=attr_edit_feature] { display: block; }
+
+    .sheet-edit-section {
+      display: none;
+
+      input[type=text] { border-bottom: 1px solid $label; }
+      input.sheet-uses { width: 25px; }
+      select[name=attr_recharge] { width: 75px; }
+      textarea {
+        border: 1px solid $label;
+      }
+    }
+
+    input[name=attr_edit_feature]:checked ~ .sheet-edit-section { display: block; }
+  }
+}

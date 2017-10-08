@@ -1,0 +1,38 @@
+<div class="features">
+    <fieldset class="repeating_features">
+        <div class="feature">
+            <button type="roll" name="roll_feature" value="&{template:writh} {{title=@{name}}} {{characterName=@{character_name}}} {{text=@{description}}}">
+                <span class="name" name="attr_name"></span>
+                <input type="checkbox" name="attr_show_uses" />
+                <span class="uses-wrapper">
+                    (<span class="uses" name="attr_uses"></span>/<span class="uses" name="attr_uses_max"></span>)
+                </span>
+                <span class="recharge" name="attr_recharge"></span>
+            </button>
+            <input type="checkbox" name="attr_edit_feature"/>
+            <div class="edit-section">
+                <div class="row">
+                    <label data-i18n="name">Name</label>
+                    <input type="text" name="attr_name"/>
+                </div>
+                <div class="row">
+                    <label data-i18n="uses">Uses</label>
+                    <input type="text" class="uses" name="attr_uses" />/
+                    <input type="text" class="uses" name="attr_uses_max" />
+                </div>
+                <div class="row">
+                    <label data-i18n="recharge">Recharge</label>
+                    <select name="attr_recharge">
+                        <option value="">&mdash;</option>
+                        <option value="short-rest">Short Rest</option>
+                        <option value="long-rest">Long Rest</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <textarea name="attr_description"></textarea>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <label data-i18n="features-and-traits">Features & Traits</label>
+</div>

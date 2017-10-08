@@ -14,7 +14,7 @@
   z-index: 20;
 
   &::before, &::after {
-    $height: 20px;
+    $height: 10px;
 
     content: "";
     background-color: white;

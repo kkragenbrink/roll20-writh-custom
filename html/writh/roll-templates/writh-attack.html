@@ -1,0 +1,34 @@
+<rolltemplate class="sheet-rolltemplate-writh-attack">
+    <div class="template-container">
+        <div class="template-contents">
+            <div class="title">
+                {{title}}
+                {{#subtitle}}<span class="subtitle">({{subtitle}})</span>{{/subtitle}}
+            </div>
+            <div class="character-name">{{characterName}}</div>
+            {{#attack}}
+            <div class="row">
+                <label data-i18n="attack">Attack</label>
+                {{attack}}
+                <label data-i18n="vs">vs</label>
+                <label data-i18n="ac">AC</label>
+            </div>
+            {{/attack}}
+            {{#save}}
+            <div class="row">
+                <label data-i18n="saving-throw">Saving Throw</label>
+                <span data-i18n="{{save_ability}}">Ability</span>
+                <label data-i18n="vs">vs</label>
+                {{save}}
+            </div>
+            {{/save}}
+            {{#damage}}
+            <div class="row">
+                <label data-i18n="damage">Damage</label>
+                {{damage}}
+                <label>{{damage_type}}</label>
+            </div>
+            {{/damage}}
+        </div>
+    </div>
+</rolltemplate>

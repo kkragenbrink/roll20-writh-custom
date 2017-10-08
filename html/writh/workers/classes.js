@@ -25,6 +25,6 @@ function setClassLevels(levels, rowSet, attrSet) {
     console.log(`Setting level to: ${levels.level}.`);
 
     const proficiency = Math.floor((levels.level - 1) / 4) + 2;
-    attrSet.proficiency_bonus= `+${proficiency}`;
+    attrSet.proficiency_bonus = `+${proficiency}`;
     console.log(`Setting proficiency bonus to: ${proficiency}`);
 }

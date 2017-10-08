@@ -17,15 +17,20 @@
 
   .repcontainer {
     height: $height - 60px;
-    width: $width - 50px;
+    width: $width - 55px;
 
     margin: 0 auto;
     position: relative;
     z-index: 40;
 
+    overflow-y: auto;
+    overflow-x: hidden;
     @include scrollable();
 
-    .repitem { background-color: $oddrow; margin-bottom: 5px; }
+    .repitem {
+      background-color: $oddrow;
+      margin-bottom: 5px;
+    }
 
     input {
       border-bottom: 1px solid black;
@@ -34,7 +39,7 @@
   }
 
   .repcontrol {
-    width: $width - 50px;
+    width: $width - 55px;
     z-index: 40;
     position: relative;
     margin: 0 auto;
@@ -73,7 +78,7 @@
   }
 
   .sheet-header {
-    width: $width - 50px;
+    width: $width - 55px;
     margin: 0 auto;
     position: relative;
     z-index: 40;
@@ -86,13 +91,109 @@
     }
   }
 
-  .sheet-name { width: 200px; }
-  .sheet-attack { width: 45px; }
-  .sheet-damage { width: 75px; }
-  .sheet-range { width: 75px; }
-  .sheet-ammo { width: 50px; }
-  .sheet-ammo-left { text-align: right; }
-  .sheet-ammo-left, .sheet-ammo-total { width: 25px; }
+  .sheet-header, button {
+    .sheet-name {
+      display: inline-block;
+      width: 160px;
+      text-align: left;
+    }
+    .sheet-attack {
+      width: 45px;
+      display: inline-block;
+      text-align: center;
+    }
+    .sheet-damage {
+      width: 100px;
+      display: inline-block;
+      text-align: center;
+    }
+    .sheet-range {
+      width: 75px;
+      display: none;
+
+      text-align: center;
+    }
+    .sheet-ammo {
+      width: 50px;
+      display: none;
+
+      .sheet-ammo-left {
+        text-align: right;
+      }
+      .sheet-ammo-left, .sheet-ammo-total {
+        width: 25px;
+      }
+    }
+  }
+
+  .sheet-attack {
+    width: $width - 58px;
+
+    .sheet-display_edit {
+      display: none;
+      visibility: hidden;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &::before {
+        content: 'y';
+        display: block;
+        width: 20px;
+        height: 20px;
+        font-family: pictos;
+        visibility: visible;
+        font-size: 12pt;
+      }
+    }
+
+    &:hover .sheet-display_edit {
+      display: block;
+    }
+
+    .sheet-edit-region {
+      display: none;
+      width: 300px;
+      margin: 0 auto;
+      padding: 0 15px;
+      background: white;
+
+      .sheet-row {
+        height: 24px;
+        line-height: 24px;
+        vertical-align: middle;
+      }
+
+      select {
+        border: 1px solid $label;
+        padding: 0;
+        height: 18px;
+        width: 50px;
+      }
+      input[type="text"] {
+        text-align: center;
+        width: 25px;
+
+        &.sheet-name {
+          width: 200px;
+        }
+      }
+      input[type="checkbox"] {
+        border-radius: 0;
+      }
+      input[name="attr_flat_dc"], input[name="attr_use_flat_save_dc"] {
+        display: none;
+      }
+      input[name="attr_use_flat_save_dc"]:checked ~ input[name="attr_flat_dc"] { display: inline; }
+      input[name="attr_damage_type"] { width: 50px; }
+    }
+
+    .sheet-display_edit:checked ~ .sheet-edit-region {
+      display: block;
+    }
+  }
 
   & > label {
     position: absolute;

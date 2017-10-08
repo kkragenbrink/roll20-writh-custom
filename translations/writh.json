@@ -49,6 +49,7 @@
   "other-proficiencies": "Other Proficiencies",
 
   "armor-class": "Armor Class",
+  "ac": "AC",
   "hp": "HP",
   "hp-max": "Max HP",
   "temp-hp": "Temp HP",
@@ -71,9 +72,17 @@
 
   "name": "Name",
   "attack": "Attack",
+  "atk": "ATK",
   "damage": "Damage",
+  "dmg": "DMG",
   "range": "Range",
+  "rng": "RNG",
   "ammo": "Ammo",
+  "proficient": "Proficient",
+  "saving-throw": "Saving Throw",
+  "vs": "vs",
+  "dc": "DC",
+  "flat": "Flat",
 
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

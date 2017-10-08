@@ -1,17 +1,104 @@
 <div class="attacks">
     <div class="header">
         <label class="name" data-i18n="name">Name</label>
-        <label class="attack" data-i18n="attack">Attack</label>
-        <label class="damage" data-i18n="damage">Damage</label>
-        <label class="range" data-i18n="range">Range</label>
+        <label class="attack" data-i18n="atk">ATK</label>
+        <label class="damage" data-i18n="dmg">Dmg</label>
+        <label class="range" data-i18n="rng">RNG</label>
         <label class="ammo" data-i18n="ammo">Ammo</label>
     </div>
     <fieldset class="repeating_attacks">
-        <input type="text" class="name" name="attr_name" />
-        <input type="text" class="attack" name="attr_attack" />
-        <input type="text" class="damage" name="attr_damage" />
-        <input type="text" class="range" name="attr_range" />
-        <input type="text" class="ammo-left" name="attr_ammo_left" /> / <input type="text" class="ammo-total" name="attr_ammo_total" />
+        <div class="compendium-drop-target attack">
+            <input type="checkbox" class="display_edit" name="display_edit" />
+
+            <input type="hidden" name="attr_attack_roll" value="" />
+            <input type="hidden" name="attr_save_dc" value="" />
+            <input type="hidden" name="attr_save_roll" value="" />
+            <input type="hidden" name="attr_damage_roll" value="" />
+            <input type="hidden" name="attr_roll" value="" />
+            <button type="roll" name="roll_attack" value="@{roll}">
+                <input type="hidden" name="attr_attack_display" />
+                <input type="hidden" name="attr_damage_display" />
+
+                <span type="text" class="name" name="attr_name"></span>
+                <span type="text" class="attack" name="attr_attack_display" value=""></span>
+                <span type="text" class="damage" name="attr_damage_display"></span>
+                <span type="text" class="range" name="attr_range" accept="Range"></span>
+                <span class="ammo">
+                    <span type="text" class="ammo-left" name="attr_ammo_left"></span> /
+                    <span type="text" class="ammo-total" name="attr_ammo_total"></span>
+                </span>
+            </button>
+
+            <div class="edit-region">
+                <div class="row">
+                    <label class="name" data-i18n="name">Name</label>
+                    <input type="text" class="name" name="attr_name" accept="Name" />
+                </div>
+
+                <div class="row">
+                    <input type="checkbox" name="attr_is_attack" />
+                    <label data-i18n="attack">Attack</label>
+                    <select name="attr_attack_ability">
+                        <option value="strength" data-i18n="strength-abbreviation">Str</option>
+                        <option value="dexterity" data-i18n="dexterity-abbreviation">Dex</option>
+                        <option value="constitution" data-i18n="constitution-abbreviation">Con</option>
+                        <option value="intelligence" data-i18n="intelligence-abbreviation">Int</option>
+                        <option value="wisdom" data-i18n="wisdom-abbreviation">Wis</option>
+                        <option value="charisma" data-i18n="charisma-abbreviation">Cha</option>
+                    </select>
+                    +
+                    <input type="text" placeholder="0" name="attr_attack_modifier" />
+                    +
+                    <input type="checkbox" name="attr_attack_proficient" />
+                    <label data-i18n="proficient">Proficient</label>
+                </div>
+
+                <div class="row">
+                    <input type="checkbox" name="attr_is_save" />
+                    <label data-i18n="saving-throw">Saving Throw</label>
+                    <select name="attr_save_ability">
+                        <option value="strength" data-i18n="strength-abbreviation">Str</option>
+                        <option value="dexterity" data-i18n="dexterity-abbreviation">Dex</option>
+                        <option value="constitution" data-i18n="constitution-abbreviation">Con</option>
+                        <option value="intelligence" data-i18n="intelligence-abbreviation">Int</option>
+                        <option value="wisdom" data-i18n="wisdom-abbreviation">Wis</option>
+                        <option value="charisma" data-i18n="charisma-abbreviation">Cha</option>
+                    </select>
+                    <label data-i18n="vs">vs</label>
+                    <label data-i18n="dc">DC</label>
+                    <select name="attr_save_dc_ability">
+                        <option value="strength" data-i18n="strength-abbreviation">Str</option>
+                        <option value="dexterity" data-i18n="dexterity-abbreviation">Dex</option>
+                        <option value="constitution" data-i18n="constitution-abbreviation">Con</option>
+                        <option value="intelligence" data-i18n="intelligence-abbreviation">Int</option>
+                        <option value="wisdom" data-i18n="wisdom-abbreviation">Wis</option>
+                        <option value="charisma" data-i18n="charisma-abbreviation">Cha</option>
+                        <option value="flat" data-i18n="flat">Flat</option>
+                    </select>
+                    <input type="checkbox" name="attr_use_flat_save_dc" />
+                    <input type="text" name="attr_flat_dc" value="10" />
+                </div>
+
+                <div class="row">
+                    <input type="checkbox" name="attr_has_damage" />
+                    <label data-i18n="damage">Damage</label>
+                    <input type="text" name="attr_damage_base" placeholder="1d6" accept="Damage" />
+                    +
+                    <select name="attr_damage_ability">
+                        <option value="none">&mdash;</option>
+                        <option value="strength" data-i18n="strength-abbreviation">Str</option>
+                        <option value="dexterity" data-i18n="dexterity-abbreviation">Dex</option>
+                        <option value="constitution" data-i18n="constitution-abbreviation">Con</option>
+                        <option value="intelligence" data-i18n="intelligence-abbreviation">Int</option>
+                        <option value="wisdom" data-i18n="wisdom-abbreviation">Wis</option>
+                        <option value="charisma" data-i18n="charisma-abbreviation">Cha</option>
+                    </select>
+                    +
+                    <input type="text" name="attr_damage_modifier" placeholder="0" />
+                    <input type="text" name="attr_damage_type" value="slashing" />
+                </div>
+            </div>
+        </div>
     </fieldset>
     <label data-i18n="attacks">Attacks</label>
 </div>

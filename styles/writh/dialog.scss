@@ -10,17 +10,26 @@
   z-index: 20;
 
   .sheet-dialog-box {
-    width: 230px;
-    margin: 0 auto;
+    $width: 515px;
+
+    width: $width;
+    margin: 100px auto 0;
+    padding: 15px;
     position: relative;
+
+    background-image: $attacks-background;
+    background-repeat: no-repeat;
+    background-size: $width 95%;
+    z-index: 20;
 
     .sheet-dialog-display {
       border: none;
       display: block;
       position: absolute;
-      right: 10px;
-      top: 10px;
+      right: 20px;
+      top: 0;
       height: 0;
+      z-index: 100;
 
       &:checked { background-color: transparent; }
 
@@ -32,11 +41,9 @@
     }
 
     .sheet-contents {
-      background: $roll-template-background top left repeat-y;
-      box-sizing: border-box;
       display: block;
-      padding: 0 15px;
-      width: 230px;
+      position: relative;
+      z-index: 50;
 
       .sheet-title {
         color: $red;
@@ -63,21 +70,37 @@
         input { border-bottom: 1px solid rgba(0, 0, 0, .05); }
       }
 
-      .sheet-class { width: 130px; }
-      .sheet-level {
-        text-align: center;
-        width: 65px;
-      }
+      @import "dialog/classes-levels";
     }
 
     &::before, &::after {
-      content: " ";
-      display: block;
-      height: 21px;
+      content: "";
+      background-repeat: no-repeat;
+
+      position: absolute;
+      left: 0;
+
+      width: $width;
+
+      z-index: 30;
     }
 
-    &::before { background: $roll-template-header top left no-repeat; }
-    &::after { background: $roll-template-footer top left no-repeat; }
+    &::before {
+      $height: 17px;
+      background-image: $dialog-header;
+      top: -5px;
+
+      background-size: $width $height;
+      height: $height;
+    }
+    &::after {
+      $height: 40px;
+      background-image: $dialog-footer;
+      bottom: 0;
+
+      background-size: $width $height;
+      height: $height;
+    }
   }
 }
 .sheet-dialog-display { display: none; }

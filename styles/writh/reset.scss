@@ -72,4 +72,59 @@ th {
   text-align: left;
 }
 
+.repcontrol_add {
+  margin-top: 10px;
+  visibility: hidden;
+
+  &::before {
+    content: '&';
+    visibility: visible;
+    font-family: pictos;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 12px;
+    height: 12px;
+    width: 12px;
+    padding: 2px 4px 2px 4px;
+    color: black;
+  }
+}
+
+.repcontrol_edit {
+  margin-top: 10px;
+  visibility: hidden;
+
+  &::before {
+    content: '(';
+    visibility: visible;
+    font-family: pictos;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 12px;
+    height: 12px;
+    width: 12px;
+    padding: 2px 4px 2px 4px;
+    color: black;
+  }
+}
+
+.repcontrol {
+  height: 28px;
+}
+
+.editmode ~ .repcontrol_edit::before {
+  content: ')';
+}
+
+.repcontrol .btn {
+  width: 18px;
+}
+
+.repcontrol_move {
+  width: 20px;
+  border: 1px solid #EEE;
+}
+
 .repcontrol_del { width: 18px; }

@@ -23,20 +23,40 @@
     z-index: 20;
 
     .sheet-dialog-display {
-      border: none;
       display: block;
+
       position: absolute;
       right: 20px;
       top: 0;
-      height: 0;
+
+      height: 13px;
+      width: 13px;
+
       z-index: 100;
 
-      &:checked { background-color: transparent; }
-
-      &:after {
+      span {
         color: $red;
-        font-weight: bold;
-        content: "✖";
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 110;
+
+        height: 13px;
+        width: 13px;
+
+      }
+
+      input[type=checkbox] {
+        opacity: 0;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 120;
+
+        height: 13px;
+        width: 13px;
       }
     }
 

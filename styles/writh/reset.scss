@@ -60,7 +60,7 @@ th {
 
 .repcontrol_add {
   margin-top: 10px;
-  visibility: hidden;
+  color: transparent;
 
   &::before {
     content: '&';
@@ -79,7 +79,7 @@ th {
 
 .repcontrol_edit {
   margin-top: 10px;
-  visibility: hidden;
+  color: transparent;
 
   &::before {
     content: '(';

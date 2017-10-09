@@ -1,7 +1,7 @@
 <div class="proficiencies skills">
     <div class="proficiency">
-        <input type="checkbox" name="attr_acrobatics_skill" value="1" />
-        <input type="checkbox" name="attr_acrobatics_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_acrobatics_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_acrobatics_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_acrobatics_modifier" value="@{dexterity_modifier}+((@{acrobatics_skill}+@{acrobatics_expertise})*@{proficiency_bonus})" />
         <button data-i18n="acrobatics" type="roll" name="roll_acrobatics" value="&{template:writh} {{title=Dexterity}} {{subtitle=Acrobatics}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{dexterity_modifier}]][DEX]+[[@{acrobatics_skill}*@{proficiency_bonus}]][PROF]+[[@{acrobatics_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Acrobatics
@@ -9,8 +9,8 @@
         (<span class="abbreviation" data-i18n="dexterity-abbreviation">Dex</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_animal_handling_skill" value="1" />
-        <input type="checkbox" name="attr_animal_handling_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_animal_handling_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_animal_handling_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_animal_handling_modifier" value="@{wisdom_modifier}+(@{animal_handling_skill}*@{proficiency_bonus})" />
         <button data-i18n="animal-handling" type="roll" name="roll_animal_handling" value="&{template:writh} {{title=Wisdom}} {{subtitle=Animal Handling}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{animal_handling_skill}*@{proficiency_bonus}]][PROF]+[[@{animal_handling_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Animal Handling
@@ -18,8 +18,8 @@
         (<span class="abbreviation" data-i18n="wisdom-abbreviation">Wis</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_arcana_skill" value="1" />
-        <input type="checkbox" name="attr_arcana_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_arcana_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_arcana_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_arcana_modifier" value="@{intelligence_modifier}+((@{arcana_skill}+@{arcana_expertise})*@{proficiency_bonus})" />
         <button data-i18n="arcana" type="roll" name="roll_arcana" value="&{template:writh} {{title=Intelligence}} {{subtitle=Arcana}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{arcana_skill}*@{proficiency_bonus}]][PROF]+[[@{arcana_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Arcana
@@ -27,8 +27,8 @@
         (<span class="abbreviation" data-i18n="intelligence-abbreviation">Int</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_athletics_skill" value="1" />
-        <input type="checkbox" name="attr_athletics_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_athletics_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_athletics_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_athletics_modifier" value="@{strength_modifier}+((@{athletics_skill}+@{athletics_expertise})*@{proficiency_bonus})" />
         <button data-i18n="athletics" type="roll" name="roll_athletics" value="&{template:writh} {{title=Strength}} {{subtitle=Athletics}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{athletics_modifier}]][STR]+[[@{athletics_skill}*@{proficiency_bonus}]][PROF]+[[@{athletics_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Athletics
@@ -36,8 +36,8 @@
         (<span class="abbreviation" data-i18n="strength-abbreviation">Str</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_deception_skill" value="1" />
-        <input type="checkbox" name="attr_deception_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_deception_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_deception_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_deception_modifier" value="@{charisma_modifier}+((@{deception_skill}+@{deception_expertise})*@{proficiency_bonus})" />
         <button data-i18n="deception" type="roll" name="roll_deception" value="&{template:writh} {{title=Charisma}} {{subtitle=Deception}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{deception_skill}*@{proficiency_bonus}]][PROF]+[[@{deception_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Deception
@@ -45,8 +45,8 @@
         (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_history_skill" value="1" />
-        <input type="checkbox" name="attr_history_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_history_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_history_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_history_modifier" value="@{intelligence_modifier}+((@{history_skill}+@{history_expertise})*@{proficiency_bonus})" />
         <button data-i18n="history" type="roll" name="roll_history" value="&{template:writh} {{title=Intelligence}} {{subtitle=History}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{history_skill}*@{proficiency_bonus}]][PROF]+[[@{history_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             History
@@ -54,8 +54,8 @@
         (<span class="abbreviation" data-i18n="intelligence-abbreviation">Int</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_insight_skill" value="1" />
-        <input type="checkbox" name="attr_insight_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_insight_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_insight_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_insight_modifier" value="@{wisdom_modifier}+((@{insight_skill}+@{insight_expertise})*@{proficiency_bonus})" />
         <button data-i18n="insight" type="roll" name="roll_insight" value="&{template:writh} {{title=Wisdom}} {{subtitle=Insight}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{insight_skill}*@{proficiency_bonus}]][PROF]+[[@{insight_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Insight
@@ -63,8 +63,8 @@
         (<span class="abbreviation" data-i18n="wisdom-abbreviation">Wis</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_intimidation_skill" value="1" />
-        <input type="checkbox" name="attr_intimidation_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_intimidation_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_intimidation_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_intimidation_modifier" value="@{charisma_modifier}+((@{intimidation_skill}+@{intimidation_expertise})*@{proficiency_bonus})" />
         <button data-i18n="intimidation" type="roll" name="roll_intimidation" value="&{template:writh} {{title=Charisma}} {{subtitle=Intimidation}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{intimidation_skill}*@{proficiency_bonus}]][PROF]+[[@{intimidation_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Intimidation
@@ -72,8 +72,8 @@
         (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_investigation_skill" value="1" />
-        <input type="checkbox" name="attr_investigation_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_investigation_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_investigation_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_investigation_modifier" value="@{intelligence_modifier}+((@{investigation_skill}+@{investigation_expertise})*@{proficiency_bonus})" />
         <button data-i18n="investigation" type="roll" name="roll_investigation" value="&{template:writh} {{title=Intelligence}} {{subtitle=Investigation}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{investigation_skill}*@{proficiency_bonus}]][PROF]+[[@{investigation_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Investigation
@@ -81,8 +81,8 @@
         (<span class="abbreviation" data-i18n="intelligence-abbreviation">Int</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_medicine_skill" value="1" />
-        <input type="checkbox" name="attr_medicine_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_medicine_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_medicine_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_medicine_modifier" value="@{wisdom_modifier}+((@{medicine_skill}+@{medicine_expertise})*@{proficiency_bonus})" />
         <button data-i18n="medicine" type="roll" name="roll_medicine" value="&{template:writh} {{title=Wisdom}} {{subtitle=Medicine}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{medicine_skill}*@{proficiency_bonus}]][PROF]+[[@{medicine_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Medicine
@@ -90,8 +90,8 @@
         (<span class="abbreviation" data-i18n="wisdom-abbreviation">Wis</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_nature_skill" value="1" />
-        <input type="checkbox" name="attr_nature_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_nature_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_nature_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_nature_modifier" value="@{intelligence_modifier}+((@{nature_skill}+@{nature_expertise})*@{proficiency_bonus})" />
         <button data-i18n="nature" type="roll" name="roll_nature" value="&{template:writh} {{title=Intelligence}} {{subtitle=Nature}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{nature_skill}*@{proficiency_bonus}]][PROF]+[[@{nature_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Nature
@@ -99,8 +99,8 @@
         (<span class="abbreviation" data-i18n="intelligence-abbreviation">Int</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_perception_skill" value="1" />
-        <input type="checkbox" name="attr_perception_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_perception_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_perception_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_perception_modifier" value="@{wisdom_modifier}+((@{perception_skill}+@{perception_expertise})*@{proficiency_bonus})" />
         <button data-i18n="perception" type="roll" name="roll_perception" value="&{template:writh} {{title=Wisdom}} {{subtitle=Perception}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{perception_skill}*@{proficiency_bonus}]][PROF]+[[@{perception_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Perception
@@ -108,8 +108,8 @@
         (<span class="abbreviation" data-i18n="wisdom-abbreviation">Wis</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_persuasion_skill" value="1" />
-        <input type="checkbox" name="attr_persuasion_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_persuasion_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_persuasion_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_persuasion_modifier" value="@{charisma_modifier}+((@{persuasion_skill}+@{persuasion_expertise})*@{proficiency_bonus})" />
         <button data-i18n="persuasion" type="roll" name="roll_persuasion" value="&{template:writh} {{title=Charisma}} {{subtitle=Persuasion}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{persuasion_skill}*@{proficiency_bonus}]][PROF]+[[@{persuasion_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Persuasion
@@ -117,8 +117,8 @@
         (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_religion_skill" value="1" />
-        <input type="checkbox" name="attr_religion_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_religion_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_religion_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_religion_modifier" value="@{intelligence_modifier}+((@{religion_skill}+@{religion_expertise})*@{proficiency_bonus})" />
         <button data-i18n="religion" type="roll" name="roll_religion" value="&{template:writh} {{title=Intelligence}} {{subtitle=Religion}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{intelligence_modifier}]][INT]+[[@{religion_skill}*@{proficiency_bonus}]][PROF]+[[@{religion_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Religion
@@ -126,8 +126,8 @@
         (<span class="abbreviation" data-i18n="intelligence-abbreviation">Int</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_sleight_of_hand_skill" value="1" />
-        <input type="checkbox" name="attr_sleight_of_hand_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_sleight_of_hand_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_sleight_of_hand_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_sleight_of_hand_modifier" value="@{dexterity_modifier}+((@{sleight_of_hand_skill}+@{sleight_of_hand_expertise})*@{proficiency_bonus})" />
         <button data-i18n="sleight-of-hand" type="roll" name="roll_sleight_of_hand" value="&{template:writh} {{title=Dexterity}} {{subtitle=Sleight of Hand}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{dexterity_modifier}]][DEX]+[[@{sleight_of_hand_skill}*@{proficiency_bonus}]][PROF]+[[@{sleight_of_hand_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Sleight of Hand
@@ -135,8 +135,8 @@
         (<span class="abbreviation" data-i18n="dexterity-abbreviation">Dex</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_stealth_skill" value="1" />
-        <input type="checkbox" name="attr_stealth_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_stealth_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_stealth_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_stealth_modifier" value="@{dexterity_modifier}+((@{stealth_skill}+@{stealth_expertise})*@{proficiency_bonus})" />
         <button data-i18n="stealth" type="roll" name="roll_stealth" value="&{template:writh} {{title=Dexterity}} {{subtitle=Stealth}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{dexterity_modifier}]][DEX]+[[@{stealth_skill}*@{proficiency_bonus}]][PROF]+[[@{stealth_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Stealth
@@ -144,8 +144,8 @@
         (<span class="abbreviation" data-i18n="dexterity-abbreviation">Dex</span>)
     </div>
     <div class="proficiency">
-        <input type="checkbox" name="attr_survival_skill" value="1" />
-        <input type="checkbox" name="attr_survival_expertise" value="1" />
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_survival_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_survival_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_survival_modifier" value="@{wisdom_modifier}+((@{survival_skill}+@{survival_expertise})*@{proficiency_bonus})" />
         <button data-i18n="survival" type="roll" name="roll_survival" value="&{template:writh} {{title=Wisdom}} {{subtitle=Survival}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{wisdom_modifier}]][WIS]+[[@{survival_skill}*@{proficiency_bonus}]][PROF]+[[@{survival_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Survival

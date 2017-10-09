@@ -1,15 +1,15 @@
 <div class="death-saves">
     <div class="row">
-        <span data-i18n="successes">Successes</span>
-        <input type="checkbox" name="attr_death_success_1" />
-        <input type="checkbox" name="attr_death_success_2" />
-        <input type="checkbox" name="attr_death_success_3" />
+        <label data-i18n="successes">Successes</label>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_success_1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_success_2" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_success_3" /><span></span></div>
     </div>
     <div class="row">
-        <span data-i18n="failures">Failures</span>
-        <input type="checkbox" name="attr_death_failure_1" />
-        <input type="checkbox" name="attr_death_failure_2" />
-        <input type="checkbox" name="attr_death_failure_3" />
+        <label data-i18n="failures">Failures</label>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_failure_1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_failure_2" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_death_failure_3" /><span></span></div>
     </div>
     <button data-i18n="death-saves" type="roll" name="roll_death-saves" value="&{template:writh} {{title=Death Save}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}]]}}" >Death Saves</button>
 </div>

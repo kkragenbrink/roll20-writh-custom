@@ -33,20 +33,6 @@ input[type=text], input[type=number] {
   width: auto;
 }
 
-input[type=checkbox] {
-  border: 1px solid #000;
-  border-radius: 50%;
-
-  height: 8px;
-  width: 8px;
-
-  -webkit-appearance: none;
-
-  &:checked {
-    background: black;
-  }
-}
-
 label {
   color: $label;
   font-size: 7pt;

@@ -129,31 +129,43 @@
   .sheet-attack {
     width: $width - 58px;
 
-    .sheet-display_edit {
+    .sheet-edit-attack {
       display: none;
-      visibility: hidden;
+
       width: 20px;
       height: 20px;
       position: absolute;
       right: 0;
       top: 0;
 
-      &::before {
-        content: 'y';
+      span {
         display: block;
         width: 20px;
         height: 20px;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+
         font-family: pictos;
-        visibility: visible;
         font-size: 12pt;
+      }
+
+      input[type=checkbox] {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 20;
       }
     }
 
-    &:hover .sheet-display_edit {
-      display: block;
-    }
+    &:hover .sheet-edit-attack { display: block; }
+    .sheet-edit-attack-checkbox { display: none; }
+    .sheet-edit-attack-checkbox:checked ~ .sheet-edit-section { display: block; }
 
-    .sheet-edit-region {
+    .sheet-edit-section {
       display: none;
       width: 300px;
       margin: 0 auto;
@@ -188,10 +200,6 @@
       }
       input[name="attr_use_flat_save_dc"]:checked ~ input[name="attr_flat_dc"] { display: inline; }
       input[name="attr_damage_type"] { width: 50px; }
-    }
-
-    .sheet-display_edit:checked ~ .sheet-edit-region {
-      display: block;
     }
   }
 

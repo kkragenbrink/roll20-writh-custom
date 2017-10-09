@@ -8,8 +8,6 @@
     </div>
     <fieldset class="repeating_attacks">
         <div class="compendium-drop-target attack">
-            <input type="checkbox" class="display_edit" name="display_edit" />
-
             <input type="hidden" name="attr_attack_roll" value="" />
             <input type="hidden" name="attr_save_dc" value="" />
             <input type="hidden" name="attr_save_roll" value="" />
@@ -29,7 +27,10 @@
                 </span>
             </button>
 
-            <div class="edit-region">
+            <div class="edit-attack"><input type="checkbox" name="attr_edit_attack" /><span>y</span></div>
+            <input class="edit-attack-checkbox" type="checkbox" name="attr_edit_attack" />
+
+            <div class="edit-section">
                 <div class="row">
                     <label class="name" data-i18n="name">Name</label>
                     <input type="text" class="name" name="attr_name" accept="Name" />

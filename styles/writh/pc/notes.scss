@@ -1,0 +1,64 @@
+.sheet-notes {
+  $width: 250px;
+  $height: 445px;
+
+  position: absolute;
+  right: 270px;
+  top: 570px;
+  z-index: 10;
+
+  height: $height;
+  width: $width;
+
+  background-image: $features-background;
+  background-size: $width ($height - 16px - 38px);
+  background-position: 0 16px;
+  background-repeat: no-repeat;
+
+  padding: 15px;
+
+  & > label {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 40;
+  }
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    width: $width;
+
+    z-index: 20;
+  }
+
+  &::before {
+    $height: 16px;
+
+    background-image: $features-header;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+
+    height: $height;
+    top: 0;
+  }
+
+  &::after {
+    $height: 38px;
+
+    background-image: $features-footer;
+    background-repeat: no-repeat;
+    background-size: $width $height;
+
+    height: $height;
+    bottom: 0;
+  }
+
+  textarea {
+    height: 405px;
+  }
+}

@@ -3,8 +3,8 @@ const SKILL_WATCHERS = [
     'change:athletics_skill', 'change:deception_skill', 'change:history_skill',
     'change:insight_skill', 'change:intimidation_skill', 'change:investigation_skill',
     'change:medicine_skill', 'change:nature_skill', 'change:perception_skill',
-    'change:religion_skill', 'change:sleight_of_hand_skill', 'change:stealth_skill',
-    'change:survival_skill'
+    'change:performance_skill', 'change:persuasion_skill', 'change:religion_skill',
+    'change:sleight_of_hand_skill', 'change:stealth_skill', 'change:survival_skill'
 ];
 
 const SKILL = /^(.+?)_skill$/;

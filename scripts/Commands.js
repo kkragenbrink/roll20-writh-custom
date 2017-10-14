@@ -1,4 +1,4 @@
-// @flow
+'use strict';
 
 function processCommand(evt) {
     const [command, ...args] = evt.content.split(' ');
@@ -30,7 +30,7 @@ function processCommand(evt) {
     }
 }
 
-function debugTokenProperties(evt, selectedId: String) {
+function debugTokenProperties(evt, selectedId) {
     const tokens = getSelectedTokens(evt);
     tokens.forEach(token => {
         const represents = token.get('represents');

@@ -108,10 +108,19 @@
         (<span class="abbreviation" data-i18n="wisdom-abbreviation">Wis</span>)
     </div>
     <div class="proficiency">
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_performance_skill" value="1" /><span></span></div>
+        <div class="rounded-checkbox"><input type="checkbox" name="attr_performance_expertise" value="1" /><span></span></div>
+        <input disabled="true" type="text" name="attr_performance_modifier" value="@{charisma_modifier}+((@{performance_skill}+@{performance_expertise})*@{proficiency_bonus})" />
+        <button data-i18n="performance" type="roll" name="roll_performance" value="&{template:writh} {{title=Charisma}} {{subtitle=Performance}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][WIS]+[[@{performance_skill}*@{proficiency_bonus}]][PROF]+[[@{performance_expertise}*@{proficiency_bonus}]][EXP]]]}}">
+            Performance
+        </button>
+        (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)
+    </div>
+    <div class="proficiency">
         <div class="rounded-checkbox"><input type="checkbox" name="attr_persuasion_skill" value="1" /><span></span></div>
         <div class="rounded-checkbox"><input type="checkbox" name="attr_persuasion_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_persuasion_modifier" value="@{charisma_modifier}+((@{persuasion_skill}+@{persuasion_expertise})*@{proficiency_bonus})" />
-        <button data-i18n="persuasion" type="roll" name="roll_persuasion" value="&{template:writh} {{title=Charisma}} {{subtitle=Persuasion}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{persuasion_skill}*@{proficiency_bonus}]][PROF]+[[@{persuasion_expertise}*@{proficiency_bonus}]][EXP]]]}}">
+        <button data-i18n="persuasion" type="roll" name="roll_persuasion" value="&{template:writh} {{title=Charisma}} {{subtitle=Persuasion}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][WIS]+[[@{persuasion_skill}*@{proficiency_bonus}]][PROF]+[[@{persuasion_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Persuasion
         </button>
         (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)

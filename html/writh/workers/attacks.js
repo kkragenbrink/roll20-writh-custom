@@ -43,7 +43,7 @@ function configureAttack(row, attrSet) {
     atk += Math.floor((attrSet[ability] - 10) / 2);
     formula.push(`[[@{${modifier}}]][${abbreviation}]`);
 
-    atk += row.attack_modifier || 0;
+    atk += parseInt(row.attack_modifier) || 0;
     formula.push(`[[${row.attack_modifier || 0}]][MOD]`);
 
     if (row.attack_proficient === 'on') {

@@ -58,67 +58,104 @@
     bottom: 0;
   }
 
-  .repitem {
-    position: relative;
+  .repcontainer {
+    height: 395px;
 
-    button[type=roll] {
-      background: #EEE;
-      text-align: left;
-      width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include scrollable();
 
-      span { font-size: 8pt; }
+    .repitem {
+      position: relative;
 
-      .sheet-name { font-weight: bold; }
-      input[type=checkbox] { display: none; }
-      .sheet-uses-wrapper { display: none; }
-      input[name=attr_show_uses]:checked ~ .sheet-uses-wrapper { display: inline; }
-    }
+      button[type=roll] {
+        background: #EEE;
+        text-align: left;
+        width: 100%;
 
-    .sheet-edit-feature {
-      display: none;
+        span {
+          font-size: 8pt;
+        }
 
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      right: 0;
-      top: 0;
+        .sheet-name {
+          font-weight: bold;
+        }
+        input[type=checkbox] {
+          display: none;
+        }
+        .sheet-uses-wrapper {
+          display: none;
+        }
+        input[name=attr_show_uses]:checked ~ .sheet-uses-wrapper {
+          display: inline;
+        }
+      }
 
-      span {
-        display: block;
+      .sheet-edit-feature {
+        display: none;
+
         width: 20px;
         height: 20px;
-
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
-        z-index: 10;
 
-        font-family: pictos;
-        font-size: 12pt;
+        span {
+          display: block;
+          width: 20px;
+          height: 20px;
+
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 10;
+
+          font-family: pictos;
+          font-size: 12pt;
+        }
+
+        input[type=checkbox] {
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 20;
+        }
       }
 
-      input[type=checkbox] {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 20;
+      &:hover .sheet-edit-feature {
+        display: block;
+      }
+      .sheet-edit-feature-checkbox {
+        display: none;
+      }
+      .sheet-edit-feature-checkbox:checked ~ .sheet-edit-section {
+        display: block;
+      }
+
+      .sheet-edit-section {
+        display: none;
+
+        input[type=text] {
+          border-bottom: 1px solid $label;
+        }
+        input.sheet-uses {
+          width: 25px;
+        }
+        select[name=attr_recharge] {
+          width: 100px;
+        }
+        textarea {
+          border: 1px solid $label;
+        }
       }
     }
+  }
 
-    &:hover .sheet-edit-feature { display: block; }
-    .sheet-edit-feature-checkbox { display: none; }
-    .sheet-edit-feature-checkbox:checked ~ .sheet-edit-section { display: block; }
-
-    .sheet-edit-section {
-      display: none;
-
-      input[type=text] { border-bottom: 1px solid $label; }
-      input.sheet-uses { width: 25px; }
-      select[name=attr_recharge] { width: 100px; }
-      textarea {
-        border: 1px solid $label;
-      }
-    }
+  .repcontrol {
+    width: $width - 55px;
+    z-index: 50;
+    position: relative;
+    margin: 0 auto;
   }
 }

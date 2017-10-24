@@ -1,0 +1,52 @@
+.sheet-pages {
+  display: block;
+
+  border: solid 2px $red;
+  border-top: none;
+
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  position: absolute;
+  right: 20px;
+  top: 0;
+
+  overflow: hidden;
+
+  input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+
+    display: inline-block;
+    padding: 2px 10px;
+
+    font-weight: bold;
+  }
+
+  input[type=radio]:checked + label {
+    background-color: $red;
+    color: white;
+
+    border: none;
+    border-top: 2px solid $red;
+  }
+
+  label + input[type=radio] + label {
+    border-left: 1px solid $red;
+    margin-left: -4px;
+  }
+}
+
+.sheet-page { display: none; }
+
+input[name="attr_pc_page"][value="main"] ~ .sheet-main,
+input[name="attr_pc_page"][value="main"] ~ .sheet-header .sheet-main { display: block; }

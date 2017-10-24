@@ -1,6 +1,10 @@
 {
   "character-name": "Character Name",
 
+  "page-main": "Main",
+  "page-spells": "Spells",
+  "page-options": "Options",
+
   "alignment": "Alignment",
   "background": "Background",
   "class-level": "Class &amp; Level",

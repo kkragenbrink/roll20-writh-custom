@@ -11,6 +11,8 @@
 
   padding: 0.25in;
 
+  @import "pc/pages";
+
   @import "pc/header";
   @import "pc/attributes";
   @import "pc/inspiration";

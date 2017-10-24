@@ -1,13 +1,13 @@
 const DEBUG = true;
 
 const TOKEN_SIZES = {
-    tiny: 30,
-    small: 50,
-    medium: 70,
-    large: 140,
-    huge: 210,
-    gargantuan: 280,
-    colossal: 350
+    tiny: 50,
+    small: 75,
+    medium: 100,
+    large: 200,
+    huge: 300,
+    gargantuan: 400,
+    colossal: 500
 };
 
 function debug(...args) {

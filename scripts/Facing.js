@@ -1,4 +1,4 @@
-const BIAS = 45;
+const BIAS = 90;
 const ROTATIONS = [0, 45, 90, 135, 180, 225, 270, 315];
 const SNAP_TO_GRID = false;
 

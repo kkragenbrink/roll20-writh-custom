@@ -95,5 +95,10 @@
 
   "notes": "Notes",
 
+  "cantrips": "Cantrips",
+  "spell-level": "Spell Level",
+  "slots-total": "Slots Total",
+  "slots-remaining": "Slots Remaining",
+
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

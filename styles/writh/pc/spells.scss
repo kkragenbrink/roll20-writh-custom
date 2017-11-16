@@ -1,0 +1,119 @@
+.sheet-page.sheet-spells {
+  .sheet-columns {
+    $height: 860px;
+    $width: 766px;
+
+    height: $height;
+    width: $width;
+    padding-top: 20px;
+
+    background-image: $spells-background;
+    background-size: $width $height;
+    background-repeat: no-repeat;
+
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+
+    .sheet-spell-list {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin-bottom: 20px;
+
+      @include rounded-checkbox();
+      input[type=text] { border-bottom: 1px solid black; }
+      input[name=attr_name] { padding-left: 13px; width: 100%; }
+      input.sheet-slots-total {
+        width: 50px;
+        position: absolute;
+        left: 30px;
+        top: 10px;
+        font-size: 20pt;
+        text-align: right;
+      }
+      input.sheet-slots-remaining {
+        width: 119px;
+        position: absolute;
+        left: 102px;
+        top: 10px;
+        font-size: 20pt;
+        text-align: center;
+      }
+      .sheet-rounded-checkbox { position: absolute; left: 0; top: 3px; }
+
+      .sheet-header {
+        position: relative;
+
+        background-image: $spells-list-header;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+        height: 53px;
+        width: 95%;
+        margin: 0 auto;
+
+        label:first-of-type {
+          position: absolute;
+          left: 8px;
+          top: 18px;
+          font-size: 14pt;
+          font-weight: bold;
+        }
+      }
+
+      .sheet-spell {
+        position: relative;
+        margin: 0 auto;
+        width: 95%;
+        button { width: 100%; }
+      }
+
+      &.sheet-cantrips {
+        margin-bottom: 30px;
+
+        .sheet-header {
+          background-image: $spells-cantrip-header;
+
+          label + label {
+            margin: 0 auto;
+            width: 9em;
+            display: block;
+            padding-left: 2em;
+            padding-top: 18px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        label { position: absolute; }
+
+        label.sheet-spell-level {
+          left: -3px;
+          top: -20px;
+          text-align: center;
+          width: 3em;
+          line-height: 10px;
+        }
+
+        label.sheet-slots-total {
+          top: -20px;
+          left: 40px;
+          width: 3em;
+          text-align: center;
+          line-height: 10px;
+        }
+
+        label.sheet-slots-remaining {
+          top: -10px;
+          left: 115px;
+          line-height: 10px;
+        }
+      }
+    }
+  }
+}

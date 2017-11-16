@@ -22,3 +22,60 @@ $col1-right: $col1-left + 100px;
     background-color: rgba(0, 0, 0, .5)
   }
 }
+
+@mixin rounded-checkbox () {
+  .sheet-rounded-checkbox {
+    $size: 10px;
+
+    position: relative;
+    z-index: 20;
+    width: $size;
+    height: $size;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 3px;
+
+    background: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+
+    input[type=checkbox] {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 20;
+    }
+
+    span {
+      display: none;
+      width: $size;
+      height: $size;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+
+      background: black;
+    }
+
+    input[type=checkbox]:checked ~ span { display: block; }
+
+    & ~ .sheet-rounded-checkbox {
+      position: absolute;
+      left: 4px;
+      top: 3px;
+      z-index: 10;
+      margin: 0;
+
+      width: $size - 2px;
+      height: $size - 2px;
+
+      input[type=checkbox] {
+        pointer-events: none;
+      }
+    }
+  }
+}

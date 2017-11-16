@@ -50,3 +50,6 @@
 
 input[name="attr_pc_page"][value="main"] ~ .sheet-main,
 input[name="attr_pc_page"][value="main"] ~ .sheet-header .sheet-main { display: block; }
+
+input[name="attr_pc_page"][value="spells"] ~ .sheet-spells,
+input[name="attr_pc_page"][value="spells"] ~ .sheet-header .sheet-spells { display: block; }

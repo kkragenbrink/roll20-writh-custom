@@ -12,8 +12,8 @@
   padding: 0.25in;
 
   @import "pc/pages";
-
   @import "pc/header";
+
   @import "pc/attributes";
   @import "pc/inspiration";
   @import "pc/proficiency";
@@ -25,6 +25,9 @@
   @import "pc/attacks";
   @import "pc/notes";
   @import "pc/features";
+
+  @import "pc/spells";
+
 
   .sheet-trademark {
     color: #999;

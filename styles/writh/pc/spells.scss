@@ -1,29 +1,43 @@
 .sheet-page.sheet-spells {
-  .sheet-columns {
-    $height: 860px;
-    $width: 766px;
+  $height: 860px;
+  $width: 766px;
 
+  &.sheet-content {
     height: $height;
     width: $width;
-    padding-top: 20px;
 
     background-image: $spells-background;
     background-size: $width $height;
     background-repeat: no-repeat;
+  }
 
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+  .sheet-spell-column {
+    $width: 249px;
 
-    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 10px; /* Firefox */
-    column-gap: 10px;
+    height: $height;
+    width: $width;
+
+    position: absolute;
+    top: 165px;
+
+    padding-top: 20px;
+
+    &.sheet-left-column { left: 26px; }
+    &.sheet-middle-column { left: 282px; }
+    &.sheet-right-column {
+      right: 26px;
+      .sheet-spell-list {
+        height: 180px;
+      }
+    }
 
     .sheet-spell-list {
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;
-      margin-bottom: 20px;
+      height: 250px;
+      max-height: 250px;
+      margin-bottom: 30px;
 
       @include rounded-checkbox();
       input[type=text] { border-bottom: 1px solid black; }

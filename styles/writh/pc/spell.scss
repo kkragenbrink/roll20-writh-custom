@@ -1,0 +1,44 @@
+.sheet-spell {
+  position: relative;
+  width: 230px;
+  margin: 5px 0 0 7px;
+
+  button {
+    background: lightgray;
+    border-bottom: 1px solid black;
+    margin-left: 15px;
+    text-align: left;
+    height: 19px;
+    width: 210px;
+  }
+
+  @include rounded-checkbox();
+  .sheet-rounded-checkbox { position: absolute; left: 0; top: 3px; }
+
+  @include edit-checkbox();
+  .sheet-edit-spell-checkbox { display: none; }
+  .sheet-edit-spell-checkbox:checked ~ .sheet-edit-section { display: block; }
+  .sheet-edit-section {
+    display: none;
+    input[type=text], select { border-bottom: 1px solid black; }
+    select { height: auto; }
+
+    input[name=attr_name] { width: 195px; }
+    select[name=attr_school] { width: 110px; }
+    input[name=attr_casting_time] { width: 155px; }
+    input[name=attr_range] { width: 188px; }
+    input[name=attr_components_material_component] {
+      display: block;
+      margin-left: 15px;
+      width: 207px;
+    }
+    input[name=attr_duration] { width: 170px; }
+    textarea[name=attr_description] {
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 230px;
+      max-height: 100px;
+      @include scrollable();
+    }
+  }
+}

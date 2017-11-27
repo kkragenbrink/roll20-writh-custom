@@ -20,7 +20,7 @@
     position: absolute;
     top: 165px;
 
-    padding-top: 20px;
+    padding-top: 10px;
 
     &.sheet-left-column { left: 26px; }
     &.sheet-middle-column { left: 282px; }
@@ -28,20 +28,26 @@
       right: 26px;
       .sheet-spell-list {
         height: 180px;
+
+        .repcontainer {
+          height: 105px;
+        }
       }
     }
 
     .sheet-spell-list {
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
       height: 250px;
       max-height: 250px;
       margin-bottom: 30px;
 
-      @include rounded-checkbox();
-      input[type=text] { border-bottom: 1px solid black; }
-      input[name=attr_name] { padding-left: 13px; width: 100%; }
+      .repcontainer {
+        height: 175px;
+        max-height: 175px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include scrollable();
+      }
+
       input.sheet-slots-total {
         width: 50px;
         position: absolute;
@@ -58,7 +64,6 @@
         font-size: 20pt;
         text-align: center;
       }
-      .sheet-rounded-checkbox { position: absolute; left: 0; top: 3px; }
 
       .sheet-header {
         position: relative;
@@ -80,16 +85,9 @@
         }
       }
 
-      .sheet-spell {
-        position: relative;
-        margin: 0 auto;
-        width: 95%;
-        button { width: 100%; }
-      }
+      @import "spell.scss";
 
       &.sheet-cantrips {
-        margin-bottom: 30px;
-
         .sheet-header {
           background-image: $spells-cantrip-header;
 
@@ -101,32 +99,51 @@
             padding-top: 18px;
           }
         }
+
+        .sheet-spell {
+          .sheet-rounded-checkbox { visibility: hidden; }
+        }
       }
 
       &:nth-child(2) {
-        label { position: absolute; }
+        .sheet-header {
+          label {
+            position: absolute;
 
-        label.sheet-spell-level {
-          left: -3px;
-          top: -20px;
-          text-align: center;
-          width: 3em;
-          line-height: 10px;
-        }
+            &.sheet-spell-level {
+              left: -3px;
+              top: -20px;
+              text-align: center;
+              width: 3em;
+              line-height: 10px;
+            }
 
-        label.sheet-slots-total {
-          top: -20px;
-          left: 40px;
-          width: 3em;
-          text-align: center;
-          line-height: 10px;
-        }
+            &.sheet-slots-total {
+              top: -20px;
+              left: 40px;
+              width: 3em;
+              text-align: center;
+              line-height: 10px;
+            }
 
-        label.sheet-slots-remaining {
-          top: -10px;
-          left: 115px;
-          line-height: 10px;
+            &.sheet-slots-remaining {
+              top: -10px;
+              left: 115px;
+              line-height: 10px;
+            }
+          }
         }
+      }
+
+      .repcontrol {
+        width: $width;
+        z-index: 50;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .itemcontrol {
+        z-index: 4;
       }
     }
   }

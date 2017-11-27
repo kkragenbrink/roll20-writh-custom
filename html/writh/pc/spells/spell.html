@@ -1,0 +1,60 @@
+<div class="spell compendium-drop-target">
+    <div class="rounded-checkbox"><input type="checkbox" name="attr_prepared" value="1" /><span></span></div>
+    <button>
+        <span class="name" name="attr_name"></span>
+    </button>
+
+    <div class="edit-control-checkbox edit-spell"><input type="checkbox" name="attr_edit_spell" checked="checked" /><span>y</span></div>
+    <input class="edit-spell-checkbox" type="checkbox" name="attr_edit_spell" checked="checked" />
+    <div class="edit-section">
+        <div class="row">
+            <label data-i18n="name">Name</label>
+            <input type="text" accept="Name" name="attr_name" />
+        </div>
+        <div class="row">
+            <label data-i18n="school">School</label>
+            <select name="attr_school" accept="School">
+                <option value="Abjuration">Abjuration</option>
+                <option value="Conjuration">Conjuration</option>
+                <option value="Divination">Divination</option>
+                <option value="Enchantment">Enchantment</option>
+                <option value="Evocation">Evocation</option>
+                <option value="Illusion">Illusion</option>
+                <option value="Necromancy">Necromancy</option>
+                <option value="Transmutation">Transmutation</option>
+            </select>
+            <label data-i18n="ritual">Ritual</label>
+            <input type="checkbox" accept="Ritual" name="attr_ritual" value="Yes" />
+        </div>
+        <div class="row">
+            <label data-i18n="casting-time">Casting Time</label>
+            <input type="text" accept="Casting Time" name="attr_casting_time" />
+        </div>
+        <div class="row">
+            <label data-i18n="range">Range</label>
+            <input type="text" accept="Range" name="attr_range" />
+        </div>
+        <div class="row">
+            <input type="hidden" accept="Components" name="attr_components" />
+            <label data-i18n="components">Components</label>
+            <input type="checkbox" name="attr_components_verbal" />
+            <span>V</span>
+            <input type="checkbox" name="attr_components_somatic" />
+            <span>S</span>
+            <input type="checkbox" name="attr_components_material" />
+            <span>M</span>
+            <input type="text" accept="Material" name="attr_components_material_component" />
+        </div>
+        <div class="row">
+            <label data-i18n="duration">Duration</label>
+            <input type="text" accept="Duration" name="attr_duration" />
+        </div>
+        <div class="row">
+            <label data-i18n="concentration">Concentration</label>
+            <input type="checkbox" accept="Concentration" name="attr_concentration" value="Yes" />
+        </div>
+        <div class="row">
+            <textarea name="attr_description" accept="Content"></textarea>
+        </div>
+    </div>
+</div>

@@ -129,39 +129,7 @@
   .sheet-attack {
     width: $width - 58px;
 
-    .sheet-edit-attack {
-      display: none;
-
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      right: 0;
-      top: 0;
-
-      span {
-        display: block;
-        width: 20px;
-        height: 20px;
-
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 10;
-
-        font-family: pictos;
-        font-size: 12pt;
-      }
-
-      input[type=checkbox] {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 20;
-      }
-    }
-
-    &:hover .sheet-edit-attack { display: block; }
+    @include edit-checkbox();
     .sheet-edit-attack-checkbox { display: none; }
     .sheet-edit-attack-checkbox:checked ~ .sheet-edit-section { display: block; }
 

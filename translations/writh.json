@@ -99,6 +99,12 @@
   "spell-level": "Spell Level",
   "slots-total": "Slots Total",
   "slots-remaining": "Slots Remaining",
+  "school": "School",
+  "ritual": "Ritual",
+  "casting-time": "Casting Time",
+  "components": "Components",
+  "duration": "Duration",
+  "concentration": "Concentration",
 
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

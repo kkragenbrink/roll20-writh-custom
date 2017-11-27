@@ -7,6 +7,8 @@ const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
 const sass = Promise.promisifyAll(require('node-sass'));
 
+const beautify =  (process.argv[2] === '--beautify');
+
 async function isTypedFile(types, file, path) {
     const stat = await fs.statAsync(`${path}/${file}`);
     const isType = new RegExp(`^[^_].+?\\.(${types.join('|')})$`);
@@ -35,7 +37,7 @@ async function renderSassFile (file) {
 
 async function renderJSFile (file, path) {
     const input = await fs.readFileAsync(`${path}/${file}`);
-    const output = Uglify.minify(input.toString(), {compress:false, mangle:false});
+    const output = Uglify.minify(input.toString(), {compress:false, mangle:false, output: {beautify}});
 
     // if (output.error) throw output.error;
     return output.code || '';

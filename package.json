@@ -22,6 +22,7 @@
   },
   "scripts": {
     "compile": "node bin/compile.js",
+    "compile-beautiful": "node bin/compile.js --beautify",
     "precommit": "lint-staged && npm run-script compile"
   },
   "author": "Kevin Kragenbrink <kevin@writh.net>",

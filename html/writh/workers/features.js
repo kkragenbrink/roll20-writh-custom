@@ -7,9 +7,7 @@ on(FEATURE_WATCHERS.join(' '), () => {
     TAS.repeating('features')
         .fields('uses', 'show_uses')
         .each((row) => {
-            console.log(row);
-
-            if (row.uses !== undefined) return row.show_uses = 'on';
+            if (row.uses !== undefined && row.uses !== '') return row.show_uses = 'on';
             return row.show_uses = '0';
         })
         .execute();

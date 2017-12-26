@@ -77,3 +77,11 @@ function selectTokenSide(token, represents) {
         token.set('imgsrc', src);
     }, NPC_SETUP_TIME);
 }
+
+function toggleSight(evt) {
+    const tokens = getSelectedTokens(evt);
+    tokens.forEach((token) => {
+        const sight = token.get('light_hassight');
+        token.set('light_hassight', !sight);
+    });
+}

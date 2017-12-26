@@ -53,3 +53,6 @@ input[name="attr_pc_page"][value="main"] ~ .sheet-header .sheet-main { display: 
 
 input[name="attr_pc_page"][value="spells"] ~ .sheet-spells,
 input[name="attr_pc_page"][value="spells"] ~ .sheet-header .sheet-spells { display: block; }
+
+input[name="attr_pc_page"][value="equipment"] ~ .sheet-equipment,
+input[name="attr_pc_page"][value="equipment"] ~ .sheet-header .sheet-equipment { display: block; }

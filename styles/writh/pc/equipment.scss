@@ -71,8 +71,8 @@
 
   .sheet-labels, .sheet-item { text-align: center; }
   .sheet-item input { border-bottom: 1px solid #CCC; }
-  .sheet-item .sheet-quantity, .sheet-labels .sheet-quantity { width: 40px; }
+  .sheet-item .sheet-quantity, .sheet-labels .sheet-quantity { text-align: center; width: 30px; }
   .sheet-item .sheet-name, .sheet-labels .sheet-name { width: 150px; }
-  .sheet-item .sheet-weight, .sheet-labels .sheet-weight { width: 50px; }
+  .sheet-item .sheet-weight, .sheet-labels .sheet-weight { text-align: center; width: 40px; }
   .sheet-labels select { height: auto; width: 150px; }
 }

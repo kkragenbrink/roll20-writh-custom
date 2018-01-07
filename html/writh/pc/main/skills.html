@@ -39,7 +39,7 @@
         <div class="rounded-checkbox"><input type="checkbox" name="attr_deception_skill" value="1" /><span></span></div>
         <div class="rounded-checkbox"><input type="checkbox" name="attr_deception_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_deception_modifier" value="@{charisma_modifier}+((@{deception_skill}+@{deception_expertise})*@{proficiency_bonus})" />
-        <button data-i18n="deception" type="roll" name="roll_deception" value="&{template:writh} {{title=Charisma}} {{subtitle=Deception}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{charisma_modifier}]][CHA]+[[@{deception_skill}*@{proficiency_bonus}]][PROF]+[[@{deception_expertise}*@{proficiency_bonus}]][EXP]]]}}">
+        <button data-i18n="deception" type="roll" name="roll_deception" value="&{template:writh} {{title=Charisma}} {{subtitle=Deception}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+ [[@{charisma_modifier}]][CHA]+[[@{deception_skill}*@{proficiency_bonus}]][PROF]+[[@{deception_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Deception
         </button>
         (<span class="abbreviation" data-i18n="charisma-abbreviation">Cha</span>)

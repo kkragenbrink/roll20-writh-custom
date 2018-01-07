@@ -30,7 +30,7 @@
         <div class="rounded-checkbox"><input type="checkbox" name="attr_athletics_skill" value="1" /><span></span></div>
         <div class="rounded-checkbox"><input type="checkbox" name="attr_athletics_expertise" value="1" /><span></span></div>
         <input disabled="true" type="text" name="attr_athletics_modifier" value="@{strength_modifier}+((@{athletics_skill}+@{athletics_expertise})*@{proficiency_bonus})" />
-        <button data-i18n="athletics" type="roll" name="roll_athletics" value="&{template:writh} {{title=Strength}} {{subtitle=Athletics}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{athletics_modifier}]][STR]+[[@{athletics_skill}*@{proficiency_bonus}]][PROF]+[[@{athletics_expertise}*@{proficiency_bonus}]][EXP]]]}}">
+        <button data-i18n="athletics" type="roll" name="roll_athletics" value="&{template:writh} {{title=Strength}} {{subtitle=Athletics}} {{characterName=@{character_name}}} {{roll=[[@{advantage_query}+[[@{strength_modifier}]][STR]+[[@{athletics_skill}*@{proficiency_bonus}]][PROF]+[[@{athletics_expertise}*@{proficiency_bonus}]][EXP]]]}}">
             Athletics
         </button>
         (<span class="abbreviation" data-i18n="strength-abbreviation">Str</span>)

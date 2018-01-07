@@ -6,27 +6,14 @@ function processCommand(evt) {
     debug(`${evt.who} sent ${command}${args ? ' ' + args.join(' ') : null}.`);
 
     switch (command) {
-        case '!shapechanger':
-            shapechange(evt);
-            break;
-        case '!resize':
-            resize(evt, args);
-            break;
-        case '!follow':
-            follow(evt, ...args);
-            break;
-        case '!debug':
-            debugTokenProperties(evt, ...args);
-            break;
-        case '!searchForTokenAnomalies':
-            searchForTokenAnomalies(evt, ...args);
-            break;
-        case '!cleanupTokenAnomalies':
-            cleanupTokenAnomalies(evt, ...args);
-            break;
-        case '!resetOrdinals':
-            resetOrdinals(evt);
-            break;
+        case '!cleanupTokenAnomalies': cleanupTokenAnomalies(evt, ...args); break;
+        case '!debug': debugTokenProperties(evt, ...args); break;
+        case '!follow': follow(evt, ...args); break;
+        case '!resetOrdinals': resetOrdinals(evt); break;
+        case '!resize': resize(evt, args); break;
+        case '!searchForTokenAnomalies': searchForTokenAnomalies(evt, ...args); break;
+        case '!shapechanger': shapechange(evt); break;
+        case '!sight': toggleSight(evt); break;
     }
 }
 

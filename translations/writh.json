@@ -2,6 +2,7 @@
   "character-name": "Character Name",
 
   "page-main": "Main",
+  "page-equipment": "Equipment",
   "page-spells": "Spells",
   "page-options": "Options",
 
@@ -105,6 +106,13 @@
   "components": "Components",
   "duration": "Duration",
   "concentration": "Concentration",
+
+  "equipment": "Equipment",
+  "carried-worn": "Carried/Worn",
+  "left-behind": "Left Behind",
+  "quantity": "Qty",
+  "weight": "Wt",
+  "container-type": "Type",
 
   "trademark": "TM &amp; &copy; 2017 Kevin Kragenbrink."
 }

@@ -1,0 +1,78 @@
+.sheet-page.sheet-equipment {
+  $height: 860px;
+  $width: 766px;
+
+  &.sheet-content {
+    height: $height;
+    width: $width;
+
+    background-image: $equipment-background;
+    background-size: $width $height;
+    background-repeat: no-repeat;
+  }
+
+  .sheet-equipment-column {
+    $width: 249px;
+
+    height: $height;
+    width: $width;
+
+    position: absolute;
+    top: 165px;
+    padding-top: 10px;
+
+    &.sheet-left-column { left: 26px; }
+    &.sheet-middle-column { left: 282px; }
+    &.sheet-right-column { right: 26px; }
+  }
+
+  .sheet-equipment-container {
+    height: 250px;
+    max-height: 250px;
+    margin-bottom: 30px;
+
+    .sheet-header {
+      background-image: $equipment-header;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+
+      height: 53px;
+      width: 95%;
+      margin: 0 auto;
+
+      text-align: center;
+      padding-top: 10px;
+
+      input {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .repcontainer {
+      height: 175px;
+      max-height: 175px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @include scrollable();
+    }
+
+    .repcontrol {
+      width: $width;
+      z-index: 50;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .itemcontrol {
+      z-index: 4;
+    }
+  }
+
+  .sheet-labels, .sheet-item { text-align: center; }
+  .sheet-item input { border-bottom: 1px solid #CCC; }
+  .sheet-item .sheet-quantity, .sheet-labels .sheet-quantity { width: 40px; }
+  .sheet-item .sheet-name, .sheet-labels .sheet-name { width: 150px; }
+  .sheet-item .sheet-weight, .sheet-labels .sheet-weight { width: 50px; }
+  .sheet-labels select { height: auto; width: 150px; }
+}

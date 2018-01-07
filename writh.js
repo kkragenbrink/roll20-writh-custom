@@ -4,32 +4,36 @@ function processCommand(evt) {
     const [command, ...args] = evt.content.split(" ");
     debug(`${evt.who} sent ${command}${args ? " " + args.join(" ") : null}.`);
     switch (command) {
-      case "!shapechanger":
-        shapechange(evt);
-        break;
-
-      case "!resize":
-        resize(evt, args);
-        break;
-
-      case "!follow":
-        follow(evt, ...args);
+      case "!cleanupTokenAnomalies":
+        cleanupTokenAnomalies(evt, ...args);
         break;
 
       case "!debug":
         debugTokenProperties(evt, ...args);
         break;
 
-      case "!searchForTokenAnomalies":
-        searchForTokenAnomalies(evt, ...args);
-        break;
-
-      case "!cleanupTokenAnomalies":
-        cleanupTokenAnomalies(evt, ...args);
+      case "!follow":
+        follow(evt, ...args);
         break;
 
       case "!resetOrdinals":
         resetOrdinals(evt);
+        break;
+
+      case "!resize":
+        resize(evt, args);
+        break;
+
+      case "!searchForTokenAnomalies":
+        searchForTokenAnomalies(evt, ...args);
+        break;
+
+      case "!shapechanger":
+        shapechange(evt);
+        break;
+
+      case "!sight":
+        toggleSight(evt);
         break;
     }
 }
@@ -313,6 +317,14 @@ function selectTokenSide(token, represents) {
         token.set("currentSide", side);
         token.set("imgsrc", src);
     }, NPC_SETUP_TIME);
+}
+
+function toggleSight(evt) {
+    const tokens = getSelectedTokens(evt);
+    tokens.forEach(token => {
+        const sight = token.get("light_hassight");
+        token.set("light_hassight", !sight);
+    });
 }
 function resize(evt, size) {
     const tokens = getSelectedTokens(evt);
